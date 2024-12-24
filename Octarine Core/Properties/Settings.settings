@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Octarine_Core.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ApiUrlRegister" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/auth/registration</Value>
+    </Setting>
+    <Setting Name="ApiUrlConfirm" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/auth/confirm</Value>
+    </Setting>
+    <Setting Name="ApiUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/auth/login</Value>
+    </Setting>
+    <Setting Name="ApiUrlSendCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/auth/send_code</Value>
+    </Setting>
+    <Setting Name="JwtToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,135 @@
+﻿<Window x:Class="Octarine_Core.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:properties="clr-namespace:Octarine_Core.Properties"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        WindowState="Maximized" 
+        WindowStyle="None" 
+        Height="1080" 
+        Width="1920">
+    <Grid x:Name="MainGrid" Background="{DynamicResource MainGray}">
+        <!-- Логотип -->
+        <Viewbox Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="200">
+            <Image Source="/Resource/Icons/OctarineLogo.png" Height="543" Width="543" />
+        </Viewbox>
+
+        <!-- Верхняя панель -->
+        <DockPanel Height="40" VerticalAlignment="Top" Background="{DynamicResource SecondGreen}" MouseLeftButtonDown="UpBar_MouseLeftButtonDown">
+            <Button x:Name="CloseBtn" Width="35" DockPanel.Dock="Right" Click="CloseBtn_Click" Height="35">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resource/Icons/CloseIcon.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            <Button x:Name="SizeBtn" Width="35" DockPanel.Dock="Right" Click="SizeBtn_Click" Height="35">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resource/Icons/SizeButtonIcon.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+            <Button x:Name="HideBtn" Width="35" DockPanel.Dock="Right" Click="HideBtn_Click" HorizontalAlignment="Right" Height="35">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resource/Icons/DontShowIcon.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
+        </DockPanel>
+
+        <!-- Карточка авторизации -->
+        <Border x:Name="AuthBrd" CornerRadius="25" Background="{DynamicResource SecondGreen}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50" Width="600" d:IsHidden="True">
+            <StackPanel>
+                <TextBlock Text="{x:Static properties:Resources.Authorization}" 
+                           FontSize="36" TextAlignment="Center" Margin="0,0,0,20" />
+
+                <!-- Поле Email -->
+                <TextBlock Text="{x:Static properties:Resources.Email}" 
+                           FontSize="24" Margin="0,0,0,5" />
+                <TextBox x:Name="EmailTxb" MaxLength="254" Height="35" FontSize="20" BorderBrush="{DynamicResource MainWhite}" PreviewKeyDown="PassPsb_PreviewKeyDown" />
+
+                <!-- Поле Password -->
+                <TextBlock Text="{x:Static properties:Resources.Password}" 
+                           FontSize="24" Margin="0,20,0,5" />
+                <Border CornerRadius="10" BorderBrush="{DynamicResource MainWhite}" BorderThickness="1" Background="{DynamicResource MainGray}">
+                    <PasswordBox x:Name="PassPsb" Height="35" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource MainWhite}" SelectionBrush="{x:Null}" PreviewKeyDown="PassPsb_PreviewKeyDown" />
+                </Border>
+
+                <!-- Кнопки -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                    <Button x:Name="EnterBtn" Content="{x:Static properties:Resources.Enter}" 
+                            Width="130" Height="34" Margin="10,0" Background="{DynamicResource LightGreen}" BorderBrush="{DynamicResource MainWhite}" Click="EnterBtn_Click" FontFamily="Montserrat Medium" FontSize="18" />
+                    <Button x:Name="DontHaveAccBtn" Content="{x:Static properties:Resources.DontHaveAcc}" 
+                            Width="130" Height="34" Margin="10,0" Background="{DynamicResource MainGray}" Click="DontHaveAccBtn_Click" FontFamily="Montserrat Medium" FontSize="18" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border x:Name="ErrorBorder" BorderBrush="{DynamicResource MainWhite}" Visibility="Hidden" BorderThickness="1" Margin="699,841,699,117" Background="#FFC83131" d:IsHidden="True">
+            <TextBlock x:Name="ErrorOut" TextWrapping="Wrap" Text="TextBlock" Margin="5,5,5,5" FontSize="18"/>
+        </Border>
+        <Border x:Name="RegistrationBrd" CornerRadius="25" Background="{DynamicResource SecondGreen}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50" Width="600" d:IsHidden="True">
+            <StackPanel>
+                <TextBlock Text="{x:Static properties:Resources.Registration}" 
+                    FontSize="36" TextAlignment="Center" Margin="0,0,0,20" />
+
+                <!-- Поле Email -->
+                <TextBlock Text="{x:Static properties:Resources.Email}" 
+                    FontSize="24" Margin="0,0,0,5" />
+                <TextBox x:Name="RegEmailTxb" MaxLength="254" Height="35" FontSize="20" BorderBrush="{DynamicResource MainWhite}" PreviewKeyDown="PassPsb_PreviewKeyDown" Text="acc.8uy@yandex.ru" />
+                <TextBlock Text="{x:Static properties:Resources.Reg_Login}" 
+                    FontSize="24" Margin="0,20,0,5" />
+                <TextBox x:Name="RegLogintxb" MaxLength="254" Height="35" FontSize="20" BorderBrush="{DynamicResource MainWhite}" PreviewKeyDown="PassPsb_PreviewKeyDown" Text="Гомосекус" />
+
+                <!-- Поле Password -->
+                <TextBlock Text="{x:Static properties:Resources.Password}" 
+                    FontSize="24" Margin="0,20,0,5" />
+                <Border CornerRadius="10" BorderBrush="{DynamicResource MainWhite}" BorderThickness="1" Background="{DynamicResource MainGray}">
+                    <PasswordBox x:Name="RegPassPsb" Height="35" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource MainWhite}" SelectionBrush="{x:Null}" PreviewKeyDown="PassPsb_PreviewKeyDown" />
+                </Border>
+                <TextBlock Text="{x:Static properties:Resources.Repeat_Password}" 
+                    FontSize="24" Margin="0,20,0,5" />
+                <Border CornerRadius="10" BorderBrush="{DynamicResource MainWhite}" BorderThickness="1" Background="{DynamicResource MainGray}">
+                    <PasswordBox x:Name="RegRepeatPassPsb" Height="35" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource MainWhite}" SelectionBrush="{x:Null}" PreviewKeyDown="PassPsb_PreviewKeyDown" />
+                </Border>
+
+                <!-- Кнопки -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                    <Button x:Name="RegBtn" Content="{x:Static properties:Resources.Registration}" 
+                        Width="130" Height="34" Margin="10,0" Background="{DynamicResource LightGreen}" BorderBrush="{DynamicResource MainWhite}" FontFamily="Montserrat Medium" FontSize="18" Click="RegBtn_Click" />
+                    <Button x:Name="CanelRegistrationBtn" Content="{x:Static properties:Resources.Canel}" 
+                        Width="130" Height="34" Background="{DynamicResource MainGray}" BorderBrush="{DynamicResource MainWhite}" FontFamily="Montserrat Medium" FontSize="18" Margin="10,0,10,0" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border x:Name="ConfirmBrd" CornerRadius="25" Background="{DynamicResource SecondGreen}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50" Width="600">
+            <StackPanel>
+                <TextBlock Text="{x:Static properties:Resources.Сonfirm}" 
+                    FontSize="36" TextAlignment="Center" Margin="0,0,0,20" TextWrapping="Wrap" />
+                <StackPanel x:Name="Nubers_Stack" Height="100" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <TextBox TextWrapping="Wrap" Width="51" MaxLength="1" FontSize="36" Height="50" TextAlignment="Center" Margin="10,0,10,0" PreviewTextInput="NumberOnlyImput" TextChanged="TxtBox_TextChanged"/>
+                    <TextBox TextWrapping="Wrap" Width="51" MaxLength="1" FontSize="36" Height="50" TextAlignment="Center" Margin="10,0,10,0" PreviewTextInput="NumberOnlyImput" TextChanged="TxtBox_TextChanged"/>
+                    <TextBox TextWrapping="Wrap" Width="51" MaxLength="1" FontSize="36" Height="50" TextAlignment="Center" Margin="10,0,10,0" PreviewTextInput="NumberOnlyImput" TextChanged="TxtBox_TextChanged"/>
+                    <TextBox TextWrapping="Wrap" Width="51" MaxLength="1" FontSize="36" Height="50" TextAlignment="Center" Margin="10,0,10,0" PreviewTextInput="NumberOnlyImput" TextChanged="TxtBox_TextChanged"/>
+                    <TextBox TextWrapping="Wrap" Width="51" MaxLength="1" FontSize="36" Height="50" TextAlignment="Center" Margin="10,0,10,0" PreviewTextInput="NumberOnlyImput" TextChanged="TxtBox_TextChanged"/>
+                    <TextBox TextWrapping="Wrap" Width="51" MaxLength="1" FontSize="36" Height="50" TextAlignment="Center" Margin="10,0,10,0" PreviewTextInput="NumberOnlyImput" TextChanged="TxtBox_TextChanged"/>
+                </StackPanel>
+                <Button x:Name="SendCodeAgainBtn" Background="{DynamicResource SecondGreen}" BorderBrush="{x:Null}" FontFamily="Montserrat Medium" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SendCodeAgainBtn_Click">
+
+                    <TextBlock Text="{x:Static properties:Resources.SendAgain}" Foreground="{DynamicResource Lime}"/>
+                </Button>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                    <Button x:Name="ConfirmBtn" Content="{x:Static properties:Resources.Confirm_Text}" 
+                        Width="130" Height="34" Margin="10,0" Background="{DynamicResource LightGreen}" BorderBrush="{DynamicResource MainWhite}" FontFamily="Montserrat Medium" FontSize="18" Click="ConfirmBtn_Click" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border x:Name="ComfirmTrurBrd" CornerRadius="25" Background="{DynamicResource SecondGreen}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50" Width="600" d:IsHidden="True">
+            <StackPanel>
+                <TextBlock Text="{x:Static properties:Resources.ConfirmInfo}" 
+                    FontSize="36" TextAlignment="Center" Margin="0,0,0,20" TextWrapping="Wrap" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                    <Button x:Name="ContinueBtn" Content="{x:Static properties:Resources.Continue}" 
+                        Width="130" Height="34" Margin="10,0" Background="{DynamicResource LightGreen}" BorderBrush="{DynamicResource MainWhite}" FontFamily="Montserrat Medium" FontSize="18" Click="ContinueBtn_Click" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

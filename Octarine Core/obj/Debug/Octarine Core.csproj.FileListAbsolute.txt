@@ -1,0 +1,80 @@
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine Core.csproj.AssemblyReference.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Resource\Colors.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Resource\Ojects.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Resource\Texts.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Autorisation\Auth.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\App.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.lref
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\Octarine Core.exe.config
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\Octarine Core.exe
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Buffers.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Memory.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Text.Json.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.ValueTuple.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Buffers.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Memory.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Text.Json.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\bin\Debug\System.ValueTuple.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\App.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Autorisation\Auth.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine Core.g.resources
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine_Core.Properties.Resources.resources
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine Core.csproj.GenerateResource.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine Core.csproj.CoreCompileInputs.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine.E0A7653C.Up2Date
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine Core.exe
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine Core\Octarine Core\obj\Debug\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Octarine Core.exe.config
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Octarine Core.exe
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Buffers.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Memory.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Text.Json.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.ValueTuple.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Buffers.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Memory.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Text.Json.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.ValueTuple.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.csproj.AssemblyReference.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\Colors.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\Ojects.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\Texts.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Autorisation\Auth.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\App.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.lref
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\App.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Autorisation\Auth.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.g.resources
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine_Core.Properties.Resources.resources
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.csproj.GenerateResource.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.csproj.CoreCompileInputs.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine.E0A7653C.Up2Date
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.exe
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.pdb

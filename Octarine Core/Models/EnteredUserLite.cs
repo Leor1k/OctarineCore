@@ -25,6 +25,10 @@ namespace Octarine_Core.Models
         {
             return Properties.Settings.Default.ApiAll + id.ToString() + "/list";
         }
+        public string GetFriendsRequestApi()
+        {
+            return Properties.Settings.Default.GetUsersRuquests + id;
+        }
         public int GetIdUser ()
         {
             return id;

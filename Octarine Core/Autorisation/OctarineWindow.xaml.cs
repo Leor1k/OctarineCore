@@ -22,16 +22,34 @@ namespace Octarine_Core.Autorisation
         {
             EnteredUserData = JWT.GetUserNameFromToken(Properties.Settings.Default.JwtToken.ToString());
             EnteredUserData.LoadUserBrick(UsersEnteredBrick);
+            await LoadUsersFriendRequests();
             await LoadUesrsFriends();
+
+        }
+        private async Task LoadUsersFriendRequests()
+        {
+            ApiRequests ap = new ApiRequests();
+            var friends = await ap.GetAsync<WhantsBeFriend>(EnteredUserData.GetFriendsRequestApi());
+            if(friends!= null)
+            {
+                foreach (var friend in friends)
+                {
+                    FriendsAllStack.Children.Add(friend.CreateAcceptBrick());
+                }
+            }
         }
         private async Task LoadUesrsFriends ()
         {
             ApiRequests ap = new ApiRequests();
             var friends = await ap.GetAsync<Friends>(EnteredUserData.GetPersonalApi());
-            foreach (var friend in friends)
+            if (friends != null)
             {
-                FriendsStack.Children.Add(friend.CreateFriendBrick());
-            }
+                foreach (var friend in friends)
+                {
+                    FriendsStack.Children.Add(friend.CreateFriendBrick());
+                    FriendsAllStack.Children.Add(friend.CreateSearchBrick());
+                }
+            }   
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

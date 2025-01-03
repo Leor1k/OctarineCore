@@ -19,5 +19,10 @@ namespace Octarine_Core.Models
             FriendBrick friendBrick = new FriendBrick(FriendName,FriendStatus);
             return friendBrick;
         }
+        public SearchingFriend CreateSearchBrick()
+        {
+            SearchingFriend sf = new SearchingFriend(FriendId, FriendName, "В друзьях");
+            return sf;
+        }
     }
 }

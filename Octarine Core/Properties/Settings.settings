@@ -26,5 +26,11 @@
     <Setting Name="SearchFriend" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://147.45.175.135:5000/api/friends/search?currentUserId=</Value>
     </Setting>
+    <Setting Name="AcceptFriend" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/friends/request/accept</Value>
+    </Setting>
+    <Setting Name="GetUsersRuquests" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/friends/friend-requests?userId=</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

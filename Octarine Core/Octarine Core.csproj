@@ -108,6 +108,7 @@
     <Compile Include="Models\EnteredUserLite.cs" />
     <Compile Include="Models\FriendDto.cs" />
     <Compile Include="Models\Friends.cs" />
+    <Compile Include="Models\WhantsBeFriend.cs" />
     <Compile Include="Resource\UsersIntefeces\FriendBrick.xaml.cs">
       <DependentUpon>FriendBrick.xaml</DependentUpon>
     </Compile>

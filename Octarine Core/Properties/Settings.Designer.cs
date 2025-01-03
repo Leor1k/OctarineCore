@@ -97,5 +97,23 @@ namespace Octarine_Core.Properties {
                 return ((string)(this["SearchFriend"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/friends/request/accept")]
+        public string AcceptFriend {
+            get {
+                return ((string)(this["AcceptFriend"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/friends/friend-requests?userId=")]
+        public string GetUsersRuquests {
+            get {
+                return ((string)(this["GetUsersRuquests"]));
+            }
+        }
     }
 }

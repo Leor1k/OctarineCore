@@ -56,12 +56,20 @@ namespace Octarine_Core.Apis
                 }
                 else
                 {
-                    var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
-                    if (responseData != null && responseData.ContainsKey("message"))
+                    try
                     {
-                        throw new Exception(responseData["message"]);
+                        var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
+                        if (responseData != null && responseData.ContainsKey("message"))
+                        {
+                            throw new Exception(responseData["message"]);
+                        }
+                        throw new Exception("Произошла непредвиденная ошибка сервера.");
                     }
-                    throw new Exception("Произошла непредвиденная ошибка сервера.");
+                    catch
+                    {
+                        return null;
+                    }
+                   
                 }
             }
         }

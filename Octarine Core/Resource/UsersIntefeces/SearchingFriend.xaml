@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Octarine_Core.Resource.UsersIntefeces"
-             mc:Ignorable="d"  Width="1500" Height="77" Foreground="{x:Null}">
+             mc:Ignorable="d"  Width="1500" Height="77" Foreground="{x:Null}" Margin="0,0,0,15">
     <Grid>
         <Rectangle Stroke="{DynamicResource Lime}" Fill="{DynamicResource MainGray}" RadiusX="15" RadiusY="15"/>
         <StackPanel Orientation="Horizontal">
@@ -14,7 +14,7 @@
                     <EllipseGeometry Center="32.5,32.5" RadiusX="32.5" RadiusY="32.5"/>
                 </Image.Clip>
             </Image>
-            <TextBlock x:Name="NameSrachingUser" Text="NameHere" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,0" FontSize="24"/>
+            <TextBlock x:Name="NameSrachingUser" Text="NameHere" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,0" FontSize="24" TextAlignment="Center"/>
             <TextBlock x:Name="StatusSearchingUser" Text="StatusHere" FontSize="20" Margin="25,0,0,0" FontFamily="Montserrat Light" VerticalAlignment="Center" HorizontalAlignment="Left"/>
             <TextBlock x:Name="StatysRequestTb" Text="StatusRequestHere" FontSize="20" FontFamily="Montserrat Light" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="500,0,0,0"/>
         </StackPanel>

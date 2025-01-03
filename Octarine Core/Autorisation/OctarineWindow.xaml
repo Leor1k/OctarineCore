@@ -84,7 +84,7 @@
                 </StackPanel>
             </StackPanel>
         </Border>
-        <Border x:Name="SearchFrindBrd" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}" d:IsLocked="True">
+        <Border x:Name="SearchFrindBrd" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}">
             <Grid x:Name="FriendsSystemGrid">
                 <StackPanel Orientation="Horizontal" Margin="40,6,40,923">
                     <Button x:Name="YourFriendBtn" Content="{x:Static properties:Resources.YourFriends}" FontFamily="Montserrat Medium" Background="{DynamicResource MainGray}" Width="120" Click="YourFriendBtn_Click"/>

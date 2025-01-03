@@ -6,7 +6,8 @@
         xmlns:properties="clr-namespace:Octarine_Core.Properties"
         mc:Ignorable="d"
         Title="MainWindow" 
-        WindowState="Maximized" 
+        ResizeMode="CanResize"
+        WindowState="Maximized"
         WindowStyle="None" 
         Height="1080" 
         Width="1920">
@@ -17,7 +18,7 @@
         </Viewbox>
 
         <!-- Верхняя панель -->
-        <DockPanel Height="40" VerticalAlignment="Top" Background="{DynamicResource SecondGreen}" MouseLeftButtonDown="UpBar_MouseLeftButtonDown">
+        <DockPanel Height="40" VerticalAlignment="Top" Background="{DynamicResource SecondGreen}" MouseLeftButtonDown="UpBar_MouseLeftButtonDown" Margin="5,10,5,0">
             <Button x:Name="CloseBtn" Width="35" DockPanel.Dock="Right" Click="CloseBtn_Click" Height="35">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resource/Icons/CloseIcon.png" Stretch="Uniform" />
@@ -44,13 +45,13 @@
                 <!-- Поле Email -->
                 <TextBlock Text="{x:Static properties:Resources.Email}" 
                            FontSize="24" Margin="0,0,0,5" />
-                <TextBox x:Name="EmailTxb" MaxLength="254" Height="35" FontSize="20" BorderBrush="{DynamicResource MainWhite}" PreviewKeyDown="PassPsb_PreviewKeyDown" />
+                <TextBox x:Name="EmailTxb" MaxLength="254" Height="35" FontSize="20" BorderBrush="{DynamicResource MainWhite}" PreviewKeyDown="PassPsb_PreviewKeyDown" Text="acc.8uy@yandex.ru" />
 
                 <!-- Поле Password -->
                 <TextBlock Text="{x:Static properties:Resources.Password}" 
                            FontSize="24" Margin="0,20,0,5" />
                 <Border CornerRadius="10" BorderBrush="{DynamicResource MainWhite}" BorderThickness="1" Background="{DynamicResource MainGray}">
-                    <PasswordBox x:Name="PassPsb" Height="35" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource MainWhite}" SelectionBrush="{x:Null}" PreviewKeyDown="PassPsb_PreviewKeyDown" />
+                    <PasswordBox x:Name="PassPsb" Password="TrySendCodeAgain" Height="35" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource MainWhite}" SelectionBrush="{x:Null}" PreviewKeyDown="PassPsb_PreviewKeyDown" />
                 </Border>
 
                 <!-- Кнопки -->

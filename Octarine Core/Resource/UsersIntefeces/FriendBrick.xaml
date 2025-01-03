@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Octarine_Core.Resource.UsersIntefeces.FriendBrick"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Octarine_Core.Resource.UsersIntefeces"
+             mc:Ignorable="d" 
+             d:DesignHeight="75" d:DesignWidth="275" Margin="5,5,5,5">
+    <Grid>
+        <Rectangle x:Name="BackGround" Stroke="{DynamicResource Lime}" Fill="{DynamicResource MainGray}" RadiusX="15" RadiusY="15"/>
+
+        <!-- Круглая рамка -->
+        <Ellipse HorizontalAlignment="Left" Height="65" Margin="10,0,0,0" 
+                 Stroke="{DynamicResource LightGreen}" VerticalAlignment="Center" Width="65"/>
+
+        <!-- Изображение с маской -->
+        <Image Height="65" Width="65" HorizontalAlignment="Left" Margin="11,5,0,5" 
+               Source="/Resource/Icons/IconUser.png">
+            <Image.Clip>
+                <EllipseGeometry Center="32.5,32.5" RadiusX="32.5" RadiusY="32.5"/>
+            </Image.Clip>
+        </Image>
+        <TextBlock x:Name="UserNameTx" HorizontalAlignment="Left" Margin="123,14,0,0" TextWrapping="Wrap" Text="Deaf" VerticalAlignment="Top" FontFamily="Montserrat Light" FontSize="20"/>
+        <TextBlock x:Name="StatusUserTx" HorizontalAlignment="Left" Margin="126,43,0,0" TextWrapping="Wrap" Text="Deaf" VerticalAlignment="Top" FontFamily="Montserrat Light"/>
+    </Grid>
+</UserControl>

@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\autorisation\\auth.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\autorisation\\auth.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\resource\\usersintefeces\\searchingfriend.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\resource\\usersintefeces\\searchingfriend.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\apis\\apirequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\apis\\apirequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\resource\\usersintefeces\\searchingfriend.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\resource\\usersintefeces\\searchingfriend.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\autorisation\\auth.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\autorisation\\auth.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\resource\\usersintefeces\\friendbrick.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\resource\\usersintefeces\\friendbrick.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\autorisation\\octarinewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\autorisation\\octarinewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\autorisation\\octarinewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\autorisation\\octarinewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +30,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Auth.xaml",
-              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\Auth.xaml",
-              "RelativeDocumentMoniker": "Octarine Core\\Autorisation\\Auth.xaml",
-              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\Auth.xaml",
-              "RelativeToolTip": "Octarine Core\\Autorisation\\Auth.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-19T10:50:58.475Z",
-              "IsPinned": true
+              "DocumentIndex": 0,
+              "Title": "SearchingFriend.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\SearchingFriend.xaml.cs",
+              "RelativeDocumentMoniker": "Octarine Core\\Resource\\UsersIntefeces\\SearchingFriend.xaml.cs",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\SearchingFriend.xaml.cs",
+              "RelativeToolTip": "Octarine Core\\Resource\\UsersIntefeces\\SearchingFriend.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T12:28:57.82Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ApiRequests.cs",
-              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Apis\\ApiRequests.cs",
-              "RelativeDocumentMoniker": "Octarine Core\\Apis\\ApiRequests.cs",
-              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Apis\\ApiRequests.cs",
-              "RelativeToolTip": "Octarine Core\\Apis\\ApiRequests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T14:01:17.674Z"
+              "Title": "SearchingFriend.xaml",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\SearchingFriend.xaml",
+              "RelativeDocumentMoniker": "Octarine Core\\Resource\\UsersIntefeces\\SearchingFriend.xaml",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\SearchingFriend.xaml",
+              "RelativeToolTip": "Octarine Core\\Resource\\UsersIntefeces\\SearchingFriend.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-03T12:28:53.866Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Auth.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\Auth.xaml.cs",
-              "RelativeDocumentMoniker": "Octarine Core\\Autorisation\\Auth.xaml.cs",
-              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\Auth.xaml.cs",
-              "RelativeToolTip": "Octarine Core\\Autorisation\\Auth.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FriendBrick.xaml",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\FriendBrick.xaml",
+              "RelativeDocumentMoniker": "Octarine Core\\Resource\\UsersIntefeces\\FriendBrick.xaml",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\FriendBrick.xaml",
+              "RelativeToolTip": "Octarine Core\\Resource\\UsersIntefeces\\FriendBrick.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-03T12:28:49.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OctarineWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\OctarineWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Octarine Core\\Autorisation\\OctarineWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\OctarineWindow.xaml.cs",
+              "RelativeToolTip": "Octarine Core\\Autorisation\\OctarineWindow.xaml.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAgwEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T13:23:29.956Z",
+              "WhenOpened": "2025-01-02T11:52:48.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OctarineWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\OctarineWindow.xaml",
+              "RelativeDocumentMoniker": "Octarine Core\\Autorisation\\OctarineWindow.xaml",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\OctarineWindow.xaml",
+              "RelativeToolTip": "Octarine Core\\Autorisation\\OctarineWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-30T15:22:10.291Z",
               "EditorCaption": ""
             }
           ]

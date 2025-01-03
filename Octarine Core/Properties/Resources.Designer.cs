@@ -142,6 +142,15 @@ namespace Octarine_Core.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Найти друга.
+        /// </summary>
+        public static string LetsSeachFriend {
+            get {
+                return ResourceManager.GetString("LetsSeachFriend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Пароль.
         /// </summary>
         public static string Password {
@@ -183,6 +192,33 @@ namespace Octarine_Core.Properties {
         public static string SendAgain {
             get {
                 return ResourceManager.GetString("SendAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Что было в ваще отсутстве?.
+        /// </summary>
+        public static string WhatsNew {
+            get {
+                return ResourceManager.GetString("WhatsNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кого ищем?.
+        /// </summary>
+        public static string WhoAreWeLookingFor {
+            get {
+                return ResourceManager.GetString("WhoAreWeLookingFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ваши друзья.
+        /// </summary>
+        public static string YourFriends {
+            get {
+                return ResourceManager.GetString("YourFriends", resourceCulture);
             }
         }
         

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Shell;
 using Octarine_Core.Apis;
+using Octarine_Core.Autorisation;
 namespace Octarine_Core
 
 {
@@ -20,6 +19,7 @@ namespace Octarine_Core
             RegistrationBrd.Visibility = Visibility.Hidden;
             ConfirmBrd.Visibility = Visibility.Hidden;
             ComfirmTrurBrd.Visibility = Visibility.Hidden;
+            WindowChrome.SetWindowChrome(this, new WindowChrome());
         }
 
         private async void TryLogin()
@@ -39,7 +39,9 @@ namespace Octarine_Core
                 var tokenResponse = await apir.PostAsync<object>(Properties.Settings.Default.ApiUrl, loginRequest);
                 Properties.Settings.Default.JwtToken = tokenResponse;
                 Properties.Settings.Default.Save();
-                MessageBox.Show("Авторизация успешна!");
+                Window window = new OctarineWindow();
+                window.Show();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -67,7 +69,7 @@ namespace Octarine_Core
             {
                 ErrorMessage($"Возникла ошибка: {ex.Message}");
             }
-        } //Тест
+        } //ну так +-
         private async void TryConfirm(string code)
         {
             ApiRequests apir = new ApiRequests();
@@ -87,7 +89,7 @@ namespace Octarine_Core
             {
                 ErrorMessage($"Возникла ошибка: {ex.Message}");
             }
-        } //Тест
+        } //Вроде тоже да
         private async void TrySendCodeAgain()
         {
             ApiRequests apir = new ApiRequests();
@@ -105,7 +107,7 @@ namespace Octarine_Core
             {
                 ErrorMessage($"Возникла ошибка: {ex.Message}");
             }
-        } //Тест
+        } //Вроде тоже да
         private void ErrorMessage(string message)
         {
             ErrorBorder.Visibility = Visibility.Visible;
@@ -212,6 +214,9 @@ namespace Octarine_Core
             AuthBrd.Visibility = Visibility.Hidden;
             RegistrationBrd.Visibility = Visibility.Visible;
             ErrorBorder.Visibility = Visibility.Hidden;
+            Window window = new OctarineWindow();
+            window.Show();
+            this.Close();
         }
 
         private void RegBtn_Копировать_Click(object sender, RoutedEventArgs e)

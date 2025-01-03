@@ -70,5 +70,32 @@ namespace Octarine_Core.Properties {
                 this["JwtToken"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/friends/")]
+        public string ApiAll {
+            get {
+                return ((string)(this["ApiAll"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/friends/request/send")]
+        public string ApiAddFriend {
+            get {
+                return ((string)(this["ApiAddFriend"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/friends/search?currentUserId=")]
+        public string SearchFriend {
+            get {
+                return ((string)(this["SearchFriend"]));
+            }
+        }
     }
 }

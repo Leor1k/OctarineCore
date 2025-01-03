@@ -42,7 +42,13 @@ C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Octa
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Octarine Core.exe
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Octarine Core.pdb
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.Bcl.TimeProvider.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.IdentityModel.Tokens.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Buffers.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.IO.Pipelines.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Memory.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Numerics.Vectors.dll
@@ -52,7 +58,13 @@ C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Syst
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.ValueTuple.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.Bcl.TimeProvider.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.IdentityModel.Tokens.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Buffers.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.IO.Pipelines.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Memory.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Numerics.Vectors.xml
@@ -66,11 +78,18 @@ C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Reso
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\Ojects.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\Texts.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Autorisation\Auth.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Autorisation\OctarineWindow.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\UsersBrick.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\App.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.cache
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.lref
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\App.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Autorisation\Auth.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Autorisation\OctarineWindow.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendBrick.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\UsersBrick.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.g.resources
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine_Core.Properties.Resources.resources
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.csproj.GenerateResource.cache
@@ -78,3 +97,5 @@ C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octa
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine.E0A7653C.Up2Date
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.exe
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\SearchingFriend.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\SearchingFriend.baml

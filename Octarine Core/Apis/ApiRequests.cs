@@ -26,11 +26,36 @@ namespace Octarine_Core.Apis
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return responseContent;  // Возвращаем строку, если запрос успешен
+                    return responseContent;
                 }
                 else
                 {
-                    // В случае ошибки десериализуем в Dictionary для извлечения сообщения
+                    var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
+                    if (responseData != null && responseData.ContainsKey("message"))
+                    {
+                        throw new Exception(responseData["message"]);
+                    }
+                    throw new Exception("Произошла непредвиденная ошибка сервера.");
+                }
+            }
+        }
+        public async Task<List<T>> GetAsync<T>(string apiUrl)
+        {
+            if (string.IsNullOrEmpty(apiUrl))
+                throw new ArgumentException("URL не может быть пустым.", nameof(apiUrl));
+
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(apiUrl);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return JsonSerializer.Deserialize<List<T>>(responseContent)
+                           ?? new List<T>();
+                }
+                else
+                {
                     var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
                     if (responseData != null && responseData.ContainsKey("message"))
                     {

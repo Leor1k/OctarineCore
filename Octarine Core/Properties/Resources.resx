@@ -144,6 +144,9 @@
   <data name="Enter" xml:space="preserve">
     <value>Войти</value>
   </data>
+  <data name="LetsSeachFriend" xml:space="preserve">
+    <value>Найти друга</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Пароль</value>
   </data>
@@ -158,6 +161,15 @@
   </data>
   <data name="SendAgain" xml:space="preserve">
     <value>Выслать код ещё раз</value>
+  </data>
+  <data name="WhatsNew" xml:space="preserve">
+    <value>Что было в ваще отсутстве?</value>
+  </data>
+  <data name="WhoAreWeLookingFor" xml:space="preserve">
+    <value>Кого ищем?</value>
+  </data>
+  <data name="YourFriends" xml:space="preserve">
+    <value>Ваши друзья</value>
   </data>
   <data name="Сonfirm" xml:space="preserve">
     <value>На вашу почту был выслан код подтверждения.</value>

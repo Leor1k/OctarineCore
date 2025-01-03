@@ -1,0 +1,121 @@
+﻿<Window x:Class="Octarine_Core.Autorisation.OctarineWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:users="clr-namespace:Octarine_Core.Resource.UsersIntefeces"
+        xmlns:properties="clr-namespace:Octarine_Core.Properties"
+        mc:Ignorable="d"
+        Title="Octarine App"
+        Height="1080"
+        Width="1920"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanResize"
+        WindowState="Maximized"
+        Loaded="Window_Loaded">
+
+
+    <Grid Background="{DynamicResource MainGray}">
+        <!-- Ваш кастомный UpBar -->
+        <Border x:Name="UpBrd" BorderBrush="{DynamicResource MainWhite}" BorderThickness="2" CornerRadius="5" Padding="0" Margin="0,10,0,0" Width="1910" Height="44" VerticalAlignment="Top" Background="{DynamicResource SecondGreen}" MouseLeftButtonDown="UpBar_MouseLeftButtonDown" d:IsLocked="True">
+            <DockPanel x:Name="UpBar" Height="40" VerticalAlignment="Top">
+                <Button x:Name="CloseBtn" Width="35" DockPanel.Dock="Right" Click="CloseBtn_Click" Height="35">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resource/Icons/CloseIcon.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="SizeBtn" Width="35" DockPanel.Dock="Right" Click="SizeBtn_Click" Height="35">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resource/Icons/SizeButtonIcon.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="HideBtn" Width="35" DockPanel.Dock="Right" Click="HideBtn_Click" Height="35" HorizontalAlignment="Right">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resource/Icons/DontShowIcon.png" Stretch="Uniform" TileMode="None" />
+                    </Button.Background>
+                </Button>
+                <Image Width="40" Source="/Resource/Icons/OctarineLogo.png" Margin="15,0,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+            </DockPanel>
+        </Border>
+
+        <DockPanel x:Name="MainDock" LastChildFill="False" Margin="3,5,0,25" HorizontalAlignment="Left" d:IsLocked="True">
+            <Border BorderBrush="{DynamicResource LightGreen}" BorderThickness="2" CornerRadius="10" Padding="0" Margin="5,55,5,0" Background="{DynamicResource SecondGreen}">
+                <StackPanel x:Name="LeftStack" Width="300">
+                    <users:UsersBrick x:Name="UsersEnteredBrick" Margin="5,5,5,5"/>
+                    <Border  Height="1" Background="{DynamicResource LightGreen}" Margin="0,0,0,5"/>
+                    <StackPanel x:Name="FriendsStack" Height="800" Margin="0,3,0,0"/>
+                    <Border BorderThickness="1" Height="82" BorderBrush="{DynamicResource MainWhite}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel x:Name="SpeshialNatonsStack" Orientation="Horizontal" Width="299">
+                            <Button x:Name="SearchFriendBtn" VerticalAlignment="Center" Height="55" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="10,0,0,0" Click="SearchFriendBtn_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Resource/Icons/IconUser.png" Stretch="Fill"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Height="55" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="10,0,0,0">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Resource/Icons/Zalupa.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Height="55" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="10,0,0,0">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Resource/Icons/ZaPupapng.png" Stretch="None"/>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </DockPanel>
+        <Border x:Name="InfoBorder" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}" d:IsLocked="True">
+            <StackPanel>
+                <Image Source="/Resource/Icons/OctarineLogo.png" Height="200" Margin="0,10,0,0"/>
+                <TextBlock Text="{x:Static properties:Resources.WhatsNew}" FontFamily="Montserrat Medium" FontSize="48" TextAlignment="Center" Margin="0,10,0,0"/>
+                <StackPanel x:Name="NewsStack" Height="100">
+                    <TextBlock Text="Куплю гараж" FontFamily="Montserrat Medium" FontSize="48" TextAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border x:Name="SearchFrindBrd" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}" d:IsLocked="True">
+            <Grid x:Name="FriendsSystemGrid">
+                <StackPanel Orientation="Horizontal" Margin="40,6,40,923">
+                    <Button x:Name="YourFriendBtn" Content="{x:Static properties:Resources.YourFriends}" FontFamily="Montserrat Medium" Background="{DynamicResource MainGray}" Width="120" Click="YourFriendBtn_Click"/>
+                    <Button x:Name="SearchYourFriendBtn" Content="{x:Static properties:Resources.LetsSeachFriend}" FontFamily="Montserrat Light" Background="{DynamicResource MainGray}" Width="120" Margin="5,0,0,0" Click="SearchYourFriendBtn_Click"/>
+                </StackPanel>
+                <Grid x:Name="SearchFriendGrd" Visibility="Hidden">
+                    <StackPanel Margin="0,100,0,10">
+                        <StackPanel x:Name="SearchfriendStack" Margin="5,0,5,0">
+                            <TextBlock TextWrapping="Wrap" Text="{x:Static properties:Resources.WhoAreWeLookingFor}" VerticalAlignment="Top" TextAlignment="Center" FontSize="48" Background="{DynamicResource SecondGreen}"/>
+                            <StackPanel Height="50" Orientation="Horizontal">
+                                <TextBox x:Name="SearchingUserIdTb" FontSize="36" Height="47" Width="1500" PreviewTextInput="NumberOnlyImput"/>
+                                <Button BorderBrush="{x:Null}" Width="45" Height="45" Margin="15,0,0,0" Click="SearchBt_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/Resource/Icons/Lupa.png"/>
+                                    </Button.Background>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel x:Name="SearchStack" Height="674"/>
+                    </StackPanel>
+                </Grid>
+                <Grid x:Name="AllFriendsGrid">
+                    <StackPanel Margin="0,100,0,0">
+                        <TextBlock TextWrapping="Wrap" Text="{x:Static properties:Resources.YourFriends}" TextAlignment="Center" FontSize="48"/>
+                        <StackPanel x:Name="FriendsAllStack" Height="808"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border x:Name="ErrorAutbrd" BorderBrush="{DynamicResource MainWhite}" Visibility="Hidden" BorderThickness="1" Margin="538,945,242,51" Background="{DynamicResource MainGray}" d:IsLocked="True">
+            <TextBlock x:Name="ErrorOutTb" TextWrapping="Wrap" Text="TextBlock" FontSize="24" TextAlignment="Center" Margin="5,5,5,5"/>
+        </Border>
+    </Grid>
+</Window>

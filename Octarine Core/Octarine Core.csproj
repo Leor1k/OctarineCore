@@ -105,10 +105,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Apis\JWT.cs" />
+    <Compile Include="Classic\FormConroller.cs" />
+    <Compile Include="Models\Chats.cs" />
     <Compile Include="Models\EnteredUserLite.cs" />
     <Compile Include="Models\FriendDto.cs" />
     <Compile Include="Models\Friends.cs" />
     <Compile Include="Models\WhantsBeFriend.cs" />
+    <Compile Include="Resource\UsersIntefeces\ChatUpBur.xaml.cs">
+      <DependentUpon>ChatUpBur.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resource\UsersIntefeces\FriendBrick.xaml.cs">
       <DependentUpon>FriendBrick.xaml</DependentUpon>
     </Compile>
@@ -144,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\Texts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\UsersIntefeces\ChatUpBur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,6 +216,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Icons\IconUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icons\Group 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icons\Send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icons\PhoneButtob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icons\PinBt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icons\MoreBt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

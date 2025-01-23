@@ -4,19 +4,24 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Shell;
 using Octarine_Core.Apis;
+using Octarine_Core.Classic;
 using Octarine_Core.Models;
+using Octarine_Core.Resource.UsersIntefeces;
 
 namespace Octarine_Core.Autorisation
 {
     public partial class OctarineWindow : Window
     {
         private EnteredUserLite EnteredUserData;
+        private FormConroller formc;
         public OctarineWindow()
         {
             InitializeComponent();
             WindowChrome.SetWindowChrome(this, new WindowChrome());
             LoadUserData();
-            SearchFrindBrd.Visibility = Visibility.Hidden;
+            FormConroller ff = new FormConroller(MainGrid);
+            formc = ff;
+            formc.SwitchOctarineBorder(InfoBorder);
         }
         private async void LoadUserData()
         {
@@ -34,7 +39,7 @@ namespace Octarine_Core.Autorisation
             {
                 foreach (var friend in friends)
                 {
-                    FriendsAllStack.Children.Add(friend.CreateAcceptBrick());
+                    FriendsAllStack.Children.Add(friend.CreateAcceptBrick(this));
                 }
             }
         }
@@ -47,7 +52,7 @@ namespace Octarine_Core.Autorisation
                 foreach (var friend in friends)
                 {
                     FriendsStack.Children.Add(friend.CreateFriendBrick());
-                    FriendsAllStack.Children.Add(friend.CreateSearchBrick());
+                    FriendsAllStack.Children.Add(friend.CreateSearchBrick(this));
                 }
             }   
         }
@@ -87,8 +92,7 @@ namespace Octarine_Core.Autorisation
 
         private void SearchFriendBtn_Click(object sender, RoutedEventArgs e)
         {
-            SearchFrindBrd.Visibility = Visibility.Visible;
-            InfoBorder.Visibility = Visibility.Hidden;
+            formc.SwitchOctarineBorder(SearchFrindBrd);
         }
 
         private async void SearchBt_Click(object sender, RoutedEventArgs e)
@@ -102,7 +106,7 @@ namespace Octarine_Core.Autorisation
             foreach (var friend in friends)
             {
                 SearchStack.Children.Clear();
-                SearchStack.Children.Add(friend.CreateSearchBrick());
+                SearchStack.Children.Add(friend.CreateSearchBrick(this));
             }
         }
         private void NumberOnlyImput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -124,6 +128,13 @@ namespace Octarine_Core.Autorisation
         {
             SearchFriendGrd.Visibility = Visibility.Visible;
             AllFriendsGrid.Visibility = Visibility.Hidden;
+        }
+        public void ShowUsersChat(SearchingFriend sf, int friendID)
+        {
+            formc.SwitchOctarineBorder(ChatWindow);
+            MainChatStack.Children.Clear();
+            ChatUpBur cb = new ChatUpBur(sf.NameSrachingUser.Text,friendID);
+            MainChatStack.Children.Add(cb);
         }
     }
 }

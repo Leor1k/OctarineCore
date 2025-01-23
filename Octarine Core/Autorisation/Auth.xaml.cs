@@ -14,6 +14,8 @@ namespace Octarine_Core
         public MainWindow()
         {
             InitializeComponent();
+            //Properties.Settings.Default.JwtToken = null;
+            CheckAutorisation();
             this.Width = SystemParameters.PrimaryScreenWidth;
             this.Height = SystemParameters.PrimaryScreenHeight;
             RegistrationBrd.Visibility = Visibility.Hidden;
@@ -48,7 +50,6 @@ namespace Octarine_Core
                 ErrorMessage($"Возникла ошибка: {ex.Message}");
             }
         } //Готово
-
         private async void TryRegister()
         {
             ApiRequests apir = new ApiRequests();
@@ -138,12 +139,10 @@ namespace Octarine_Core
                 this.WindowState = WindowState.Normal;
             }
         }
-
         private void HideBtn_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
-
         private void UpBar_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (e.ClickCount == 2)
@@ -157,7 +156,6 @@ namespace Octarine_Core
                 this.DragMove();
             }
         }
-
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -171,7 +169,6 @@ namespace Octarine_Core
                 ErrorOut.Text = ex.Message;
             }
         }
-
         private void CheckPasswordAndEmail(string Email, string Password)
         {
             if (String.IsNullOrEmpty(Email.Trim()))
@@ -191,7 +188,6 @@ namespace Octarine_Core
                 throw new Exception("Пароль должен состоять мининмум из 8 символов");
             }
         }
-
         public bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -200,7 +196,6 @@ namespace Octarine_Core
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
         }
-
         private void PassPsb_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space)
@@ -208,7 +203,6 @@ namespace Octarine_Core
                 e.Handled = true;
             }
         }
-
         private void DontHaveAccBtn_Click(object sender, RoutedEventArgs e)
         {
             AuthBrd.Visibility = Visibility.Hidden;
@@ -218,14 +212,12 @@ namespace Octarine_Core
             window.Show();
             this.Close();
         }
-
         private void RegBtn_Копировать_Click(object sender, RoutedEventArgs e)
         {
             AuthBrd.Visibility = Visibility.Visible;
             RegistrationBrd.Visibility = Visibility.Hidden;
             ErrorBorder.Visibility = Visibility.Hidden;
         }
-
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -245,7 +237,6 @@ namespace Octarine_Core
                 ErrorOut.Text = ex.Message;
             }
         }
-
         private void CheckLogin(string login)
         {
             if (String.IsNullOrEmpty(login))
@@ -265,7 +256,6 @@ namespace Octarine_Core
                 throw new Exception("\"Логин\" должен содержать минимум из 3 букв");
             }
         }
-
         private void ConfirmBtn_Click(object sender, RoutedEventArgs e)
         {
             string a = null;
@@ -286,7 +276,6 @@ namespace Octarine_Core
             }
 
         }
-
         private void NumberOnlyImput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             if (!char.IsDigit(e.Text, 0))
@@ -295,7 +284,6 @@ namespace Octarine_Core
                 return;
             }
         }
-
         private void TxtBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             var selTb = (TextBox)sender;
@@ -309,18 +297,23 @@ namespace Octarine_Core
             }
 
         }
-
         private void ContinueBtn_Click(object sender, RoutedEventArgs e)
         {
             ComfirmTrurBrd.Visibility = Visibility.Hidden;
             AuthBrd.Visibility = Visibility.Visible;
         }
-
         private void SendCodeAgainBtn_Click(object sender, RoutedEventArgs e)
         {
             TrySendCodeAgain();
         }
-
+        private void CheckAutorisation()
+        {
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.JwtToken))
+            {
+                Window window = new OctarineWindow();
+                window.Show();
+                this.Close();
+            }
+        }
     }
-
 }

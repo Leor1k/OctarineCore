@@ -115,5 +115,17 @@ namespace Octarine_Core.Properties {
                 return ((string)(this["GetUsersRuquests"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/create-private-chat")]
+        public string CreatePrivateChate {
+            get {
+                return ((string)(this["CreatePrivateChate"]));
+            }
+            set {
+                this["CreatePrivateChate"] = value;
+            }
+        }
     }
 }

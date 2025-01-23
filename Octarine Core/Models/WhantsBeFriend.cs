@@ -1,6 +1,7 @@
 ﻿
 
 using System.Text.Json.Serialization;
+using Octarine_Core.Autorisation;
 using Octarine_Core.Resource.UsersIntefeces;
 
 namespace Octarine_Core.Models
@@ -15,9 +16,9 @@ namespace Octarine_Core.Models
 
         [JsonPropertyName("userName")]
         public string UserName { get; set; }
-        public SearchingFriend CreateAcceptBrick()
+        public SearchingFriend CreateAcceptBrick(OctarineWindow oc)
         {
-            SearchingFriend sf = new SearchingFriend(UserId, UserName, "Хочет дружить)");
+            SearchingFriend sf = new SearchingFriend(oc, UserId, UserName, "Хочет дружить)");
             return sf;
         }
     }

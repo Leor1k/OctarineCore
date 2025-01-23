@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Octarine_Core.Resource.UsersIntefeces"
-             mc:Ignorable="d"  Width="1500" Height="77" Foreground="{x:Null}" Margin="0,0,0,15">
+             mc:Ignorable="d"  Width="1500" Height="77" Foreground="{x:Null}">
     <Grid>
         <Rectangle Stroke="{DynamicResource Lime}" Fill="{DynamicResource MainGray}" RadiusX="15" RadiusY="15"/>
         <StackPanel Orientation="Horizontal">
@@ -17,7 +17,14 @@
             <TextBlock x:Name="NameSrachingUser" Text="NameHere" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,0" FontSize="24" TextAlignment="Center"/>
             <TextBlock x:Name="StatusSearchingUser" Text="StatusHere" FontSize="20" Margin="25,0,0,0" FontFamily="Montserrat Light" VerticalAlignment="Center" HorizontalAlignment="Left"/>
             <TextBlock x:Name="StatysRequestTb" Text="StatusRequestHere" FontSize="20" FontFamily="Montserrat Light" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="500,0,0,0"/>
+            <StackPanel x:Name="ButtonsStack" Orientation="Horizontal">
+                <Button x:Name="Chat_Btn" Visibility="Hidden" FontSize="72" BorderBrush="{x:Null}" Height="70" Margin="15,0,0,0" Width="50" Click="Chat_Btn_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resource/Icons/Group 2.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="AddFriendBtn" Content="+" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Click="AddFriendBtn_Click" Height="70" Margin="15,0,0,0" Width="50"/>
+            </StackPanel>
         </StackPanel>
-        <Button x:Name="AddFriendBtn" Content="+" HorizontalAlignment="Right" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,15,0" Click="AddFriendBtn_Click"/>
     </Grid>
 </UserControl>

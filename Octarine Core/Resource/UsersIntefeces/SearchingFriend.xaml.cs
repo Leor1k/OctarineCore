@@ -14,14 +14,17 @@ namespace Octarine_Core.Resource.UsersIntefeces
     public partial class SearchingFriend : UserControl
     {
         private int _id;
-        public SearchingFriend(int Id, string Name, string Status)
+        private OctarineWindow OctarineWindowS { get; set; }
+        public SearchingFriend(OctarineWindow oc,int Id, string Name, string Status)
         {
             InitializeComponent();
             _id = Id;
+            OctarineWindowS = oc;
             NameSrachingUser.Text = Name;
             if (Status == "В друзьях")
             {
                 AddFriendBtn.Visibility = Visibility.Hidden;
+                Chat_Btn.Visibility = Visibility.Visible;
             }    
             StatusSearchingUser.Text = Status;
             StatysRequestTb.Visibility = Visibility.Hidden;
@@ -32,10 +35,12 @@ namespace Octarine_Core.Resource.UsersIntefeces
             if (StatusSearchingUser.Text != "Хочет дружить)")
             {
                 await TryAddFeind();
+                
             }
             else
             {
                 await TryAcceptFeind();
+                Chat_Btn.Visibility = Visibility.Visible;
             }
         }
         private async Task TryAcceptFeind()
@@ -77,6 +82,26 @@ namespace Octarine_Core.Resource.UsersIntefeces
             catch (Exception ex)
             {
                StatysRequestTb.Text = $"Возникла ошибочка :{ex.Message}";
+            }
+        }
+
+        private void Chat_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            EnteredUserLite en = JWT.GetUserNameFromToken(Properties.Settings.Default.JwtToken);
+            Chats chat = new Chats();
+            int id = en.GetIdUser();
+            try
+            {
+                chat.CreateChats(id, _id);
+
+            }
+            catch
+            {
+                
+            }
+            finally 
+            {
+                OctarineWindowS.ShowUsersChat(this,_id);
             }
         }
     }

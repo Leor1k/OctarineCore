@@ -21,7 +21,6 @@ namespace Octarine_Core.Apis
             using (var httpClient = new HttpClient())
             {
                 var response = await httpClient.PostAsync(apiUrl, content);
-
                 var responseContent = await response.Content.ReadAsStringAsync();
 
                 if (response.IsSuccessStatusCode)
@@ -30,15 +29,22 @@ namespace Octarine_Core.Apis
                 }
                 else
                 {
-                    var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
-                    if (responseData != null && responseData.ContainsKey("message"))
+                    try
                     {
-                        throw new Exception(responseData["message"]);
+                        var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
+                        if (responseData != null && responseData.ContainsKey("message"))
+                        {
+                            throw new Exception(responseData["message"]);
+                        }
                     }
-                    throw new Exception("Произошла непредвиденная ошибка сервера.");
+                    catch (JsonException)
+                    {
+                    }
+                    throw new Exception($"Ошибка {response.StatusCode}: {responseContent}");
                 }
             }
         }
+
         public async Task<List<T>> GetAsync<T>(string apiUrl)
         {
             if (string.IsNullOrEmpty(apiUrl))
@@ -73,6 +79,5 @@ namespace Octarine_Core.Apis
                 }
             }
         }
-
     }
 }

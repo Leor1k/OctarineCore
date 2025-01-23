@@ -1,5 +1,6 @@
 ﻿
 using System.Text.Json.Serialization;
+using Octarine_Core.Autorisation;
 using Octarine_Core.Resource.UsersIntefeces;
 
 namespace Octarine_Core.Models
@@ -19,9 +20,9 @@ namespace Octarine_Core.Models
             FriendBrick friendBrick = new FriendBrick(FriendName,FriendStatus);
             return friendBrick;
         }
-        public SearchingFriend CreateSearchBrick()
+        public SearchingFriend CreateSearchBrick(OctarineWindow oc)
         {
-            SearchingFriend sf = new SearchingFriend(FriendId, FriendName, "В друзьях");
+            SearchingFriend sf = new SearchingFriend(oc,FriendId, FriendName, "В друзьях");
             return sf;
         }
     }

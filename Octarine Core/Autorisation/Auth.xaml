@@ -37,7 +37,7 @@
         </DockPanel>
 
         <!-- Карточка авторизации -->
-        <Border x:Name="AuthBrd" CornerRadius="25" Background="{DynamicResource SecondGreen}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50" Width="600" d:IsHidden="True">
+        <Border x:Name="AuthBrd" CornerRadius="25" Background="{DynamicResource SecondGreen}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50" Width="600">
             <StackPanel>
                 <TextBlock Text="{x:Static properties:Resources.Authorization}" 
                            FontSize="36" TextAlignment="Center" Margin="0,0,0,20" />
@@ -45,13 +45,13 @@
                 <!-- Поле Email -->
                 <TextBlock Text="{x:Static properties:Resources.Email}" 
                            FontSize="24" Margin="0,0,0,5" />
-                <TextBox x:Name="EmailTxb" MaxLength="254" Height="35" FontSize="20" BorderBrush="{DynamicResource MainWhite}" PreviewKeyDown="PassPsb_PreviewKeyDown" Text="acc.8uy@yandex.ru" />
+                <TextBox x:Name="EmailTxb" MaxLength="254" Height="35" FontSize="20" BorderBrush="{DynamicResource MainWhite}" PreviewKeyDown="PassPsb_PreviewKeyDown" Text="1projectmgs@yandex.ru" />
 
                 <!-- Поле Password -->
                 <TextBlock Text="{x:Static properties:Resources.Password}" 
                            FontSize="24" Margin="0,20,0,5" />
                 <Border CornerRadius="10" BorderBrush="{DynamicResource MainWhite}" BorderThickness="1" Background="{DynamicResource MainGray}">
-                    <PasswordBox x:Name="PassPsb" Password="TrySendCodeAgain" Height="35" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource MainWhite}" SelectionBrush="{x:Null}" PreviewKeyDown="PassPsb_PreviewKeyDown" />
+                    <PasswordBox x:Name="PassPsb" Password="12345678" Height="35" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource MainWhite}" SelectionBrush="{x:Null}" PreviewKeyDown="PassPsb_PreviewKeyDown" />
                 </Border>
 
                 <!-- Кнопки -->
@@ -100,7 +100,7 @@
                 </StackPanel>
             </StackPanel>
         </Border>
-        <Border x:Name="ConfirmBrd" CornerRadius="25" Background="{DynamicResource SecondGreen}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50" Width="600">
+        <Border x:Name="ConfirmBrd" CornerRadius="25" Background="{DynamicResource SecondGreen}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50" Width="600" d:IsHidden="True">
             <StackPanel>
                 <TextBlock Text="{x:Static properties:Resources.Сonfirm}" 
                     FontSize="36" TextAlignment="Center" Margin="0,0,0,20" TextWrapping="Wrap" />

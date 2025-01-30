@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Octarine_Core.Models;
 
 namespace Octarine_Core.Apis
 {
@@ -79,5 +80,6 @@ namespace Octarine_Core.Apis
                 }
             }
         }
+   
     }
 }

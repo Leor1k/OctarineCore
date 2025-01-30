@@ -116,15 +116,42 @@ namespace Octarine_Core.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/create-private-chat")]
         public string CreatePrivateChate {
             get {
                 return ((string)(this["CreatePrivateChate"]));
             }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/get-messages")]
+        public string GetMessagies {
+            get {
+                return ((string)(this["GetMessagies"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/get-chats/")]
+        public string GetChats {
+            get {
+                return ((string)(this["GetChats"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int UserID {
+            get {
+                return ((int)(this["UserID"]));
+            }
             set {
-                this["CreatePrivateChate"] = value;
+                this["UserID"] = value;
             }
         }
     }

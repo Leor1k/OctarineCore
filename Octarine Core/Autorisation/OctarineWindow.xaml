@@ -52,7 +52,7 @@
                 <StackPanel x:Name="LeftStack" Width="300">
                     <users:UsersBrick x:Name="UsersEnteredBrick" Margin="5,5,5,5"/>
                     <Border  Height="1" Background="{DynamicResource LightGreen}" Margin="0,0,0,5"/>
-                    <StackPanel x:Name="FriendsStack" Height="800" Margin="0,3,0,0"/>
+                    <StackPanel x:Name="ChatStack" Height="800" Margin="0,3,0,0"/>
                     <Border BorderThickness="1" Height="82" BorderBrush="{DynamicResource MainWhite}" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel x:Name="SpeshialNatonsStack" Orientation="Horizontal" Width="299">
                             <Button x:Name="SearchFriendBtn" VerticalAlignment="Center" Height="55" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="10,0,0,0" Click="SearchFriendBtn_Click">

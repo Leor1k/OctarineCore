@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Octarine_Core.Apis;
 using Octarine_Core.Autorisation;
+using Octarine_Core.Classic;
 using Octarine_Core.Models;
 
 namespace Octarine_Core.Resource.UsersIntefeces
@@ -14,12 +15,12 @@ namespace Octarine_Core.Resource.UsersIntefeces
     public partial class SearchingFriend : UserControl
     {
         private int _id;
-        private OctarineWindow OctarineWindowS { get; set; }
-        public SearchingFriend(OctarineWindow oc,int Id, string Name, string Status)
+        public ChatController chatController { get; set; }
+        public SearchingFriend(ChatController ch,int Id, string Name, string Status)
         {
             InitializeComponent();
             _id = Id;
-            OctarineWindowS = oc;
+            chatController = ch;
             NameSrachingUser.Text = Name;
             if (Status == "В друзьях")
             {
@@ -88,20 +89,14 @@ namespace Octarine_Core.Resource.UsersIntefeces
         private void Chat_Btn_Click(object sender, RoutedEventArgs e)
         {
             EnteredUserLite en = JWT.GetUserNameFromToken(Properties.Settings.Default.JwtToken);
-            Chats chat = new Chats();
             int id = en.GetIdUser();
             try
             {
-                chat.CreateChats(id, _id);
-
+                chatController.CreateChats(id, _id, NameSrachingUser.Text);
             }
             catch
             {
-                
-            }
-            finally 
-            {
-                OctarineWindowS.ShowUsersChat(this,_id);
+
             }
         }
     }

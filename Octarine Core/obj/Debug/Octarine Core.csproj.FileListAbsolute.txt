@@ -81,6 +81,7 @@ C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Auto
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Autorisation\OctarineWindow.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\ChatUpBur.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\MessageBrick.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\SearchingFriend.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\UsersBrick.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\App.g.cs
@@ -92,6 +93,7 @@ C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Auto
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Autorisation\OctarineWindow.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\ChatUpBur.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendBrick.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\MessageBrick.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\SearchingFriend.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\UsersBrick.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.g.resources

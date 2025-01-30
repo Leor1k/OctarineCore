@@ -1,6 +1,7 @@
 ﻿
 using System.Text.Json.Serialization;
 using Octarine_Core.Autorisation;
+using Octarine_Core.Classic;
 using Octarine_Core.Resource.UsersIntefeces;
 
 namespace Octarine_Core.Models
@@ -15,12 +16,7 @@ namespace Octarine_Core.Models
 
         [JsonPropertyName("friendStatus")]
         public string FriendStatus { get; set; }
-        public  FriendBrick CreateFriendBrick()
-        {
-            FriendBrick friendBrick = new FriendBrick(FriendName,FriendStatus);
-            return friendBrick;
-        }
-        public SearchingFriend CreateSearchBrick(OctarineWindow oc)
+        public SearchingFriend CreateSearchBrick(ChatController oc)
         {
             SearchingFriend sf = new SearchingFriend(oc,FriendId, FriendName, "В друзьях");
             return sf;

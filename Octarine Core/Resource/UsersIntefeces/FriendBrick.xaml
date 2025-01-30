@@ -1,11 +1,12 @@
-﻿<UserControl x:Class="Octarine_Core.Resource.UsersIntefeces.FriendBrick"
+﻿<UserControl x:Name="MainControl" x:Class="Octarine_Core.Resource.UsersIntefeces.FriendBrick"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Octarine_Core.Resource.UsersIntefeces"
              mc:Ignorable="d" 
-             d:DesignHeight="75" d:DesignWidth="275" Margin="5,5,5,5">
+             d:DesignHeight="75" d:DesignWidth="275" Margin="5,5,5,5"
+             MouseLeftButtonDown="UserControl_MouseLeftButtonDown">
     <Grid>
         <Rectangle x:Name="BackGround" Stroke="{DynamicResource Lime}" Fill="{DynamicResource MainGray}" RadiusX="15" RadiusY="15"/>
 

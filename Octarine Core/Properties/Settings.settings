@@ -32,8 +32,17 @@
     <Setting Name="GetUsersRuquests" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://147.45.175.135:5000/api/friends/friend-requests?userId=</Value>
     </Setting>
-    <Setting Name="CreatePrivateChate" Type="System.String" Scope="User">
+    <Setting Name="CreatePrivateChate" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://147.45.175.135:5000/api/Chats/create-private-chat</Value>
+    </Setting>
+    <Setting Name="GetMessagies" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/Chats/get-messages</Value>
+    </Setting>
+    <Setting Name="GetChats" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/Chats/get-chats/</Value>
+    </Setting>
+    <Setting Name="UserID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

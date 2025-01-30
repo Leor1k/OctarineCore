@@ -14,6 +14,8 @@ namespace Octarine_Core.Autorisation
     {
         private EnteredUserLite EnteredUserData;
         private FormConroller formc;
+        private ChatController _chatController;
+        
         public OctarineWindow()
         {
             InitializeComponent();
@@ -22,11 +24,15 @@ namespace Octarine_Core.Autorisation
             FormConroller ff = new FormConroller(MainGrid);
             formc = ff;
             formc.SwitchOctarineBorder(InfoBorder);
+            _chatController = new ChatController(MainChatStack, this);
+            MessageBox.Show("Грузанулось");
         }
         private async void LoadUserData()
         {
             EnteredUserData = JWT.GetUserNameFromToken(Properties.Settings.Default.JwtToken.ToString());
             EnteredUserData.LoadUserBrick(UsersEnteredBrick);
+            Properties.Settings.Default.UserID = EnteredUserData.GetIdUser();
+            await LoadLastChats();
             await LoadUsersFriendRequests();
             await LoadUesrsFriends();
 
@@ -39,7 +45,7 @@ namespace Octarine_Core.Autorisation
             {
                 foreach (var friend in friends)
                 {
-                    FriendsAllStack.Children.Add(friend.CreateAcceptBrick(this));
+                    FriendsAllStack.Children.Add(friend.CreateAcceptBrick(_chatController));
                 }
             }
         }
@@ -51,10 +57,27 @@ namespace Octarine_Core.Autorisation
             {
                 foreach (var friend in friends)
                 {
-                    FriendsStack.Children.Add(friend.CreateFriendBrick());
-                    FriendsAllStack.Children.Add(friend.CreateSearchBrick(this));
+                    FriendsAllStack.Children.Add(friend.CreateSearchBrick(_chatController));
                 }
             }   
+        }
+        private async Task LoadLastChats()
+        {
+            ApiRequests ap = new ApiRequests();
+            var Chats = await ap.GetAsync<ChatDto>(Properties.Settings.Default.GetChats + EnteredUserData.GetIdUser());
+            if (Chats != null)
+            {
+                foreach (var chat in Chats)
+                {
+                    FriendBrick brick = chat.CreateChatBrick();
+                    brick.ChatClicked += (sender, e) =>
+                    {
+                        MessageBox.Show("Это в main");
+                        _chatController.OnChatClick(sender, e);
+                    };
+                    ChatStack.Children.Add(brick);
+                }
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -106,7 +129,7 @@ namespace Octarine_Core.Autorisation
             foreach (var friend in friends)
             {
                 SearchStack.Children.Clear();
-                SearchStack.Children.Add(friend.CreateSearchBrick(this));
+                SearchStack.Children.Add(friend.CreateSearchBrick(_chatController));
             }
         }
         private void NumberOnlyImput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -129,12 +152,13 @@ namespace Octarine_Core.Autorisation
             SearchFriendGrd.Visibility = Visibility.Visible;
             AllFriendsGrid.Visibility = Visibility.Hidden;
         }
-        public void ShowUsersChat(SearchingFriend sf, int friendID)
+        public async Task ShowUsersChat(string FriendName, int friendID)
         {
             formc.SwitchOctarineBorder(ChatWindow);
             MainChatStack.Children.Clear();
-            ChatUpBur cb = new ChatUpBur(sf.NameSrachingUser.Text,friendID);
+            ChatUpBur cb = new ChatUpBur(FriendName,friendID);
             MainChatStack.Children.Add(cb);
+            await _chatController.LoadChat(EnteredUserData.GetIdUser(), friendID);
         }
     }
 }

@@ -105,17 +105,23 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Apis\JWT.cs" />
+    <Compile Include="Classic\ChatController.cs" />
     <Compile Include="Classic\FormConroller.cs" />
-    <Compile Include="Models\Chats.cs" />
+    <Compile Include="Models\ChatDto.cs" />
     <Compile Include="Models\EnteredUserLite.cs" />
     <Compile Include="Models\FriendDto.cs" />
     <Compile Include="Models\Friends.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\UserDto.cs" />
     <Compile Include="Models\WhantsBeFriend.cs" />
     <Compile Include="Resource\UsersIntefeces\ChatUpBur.xaml.cs">
       <DependentUpon>ChatUpBur.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resource\UsersIntefeces\FriendBrick.xaml.cs">
       <DependentUpon>FriendBrick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\UsersIntefeces\MessageBrick.xaml.cs">
+      <DependentUpon>MessageBrick.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resource\UsersIntefeces\SearchingFriend.xaml.cs">
       <DependentUpon>SearchingFriend.xaml</DependentUpon>
@@ -157,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\UsersIntefeces\FriendBrick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\UsersIntefeces\MessageBrick.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

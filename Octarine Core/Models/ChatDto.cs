@@ -21,14 +21,21 @@ namespace Octarine_Core.Models
             {
                 _participants = value;
                 ChatName = string.Empty; // Очищаем имя чата перед обновлением
-                foreach (var item in value)
+
+                // Удаляем текущего пользователя из списка участников
+                for (int i = _participants.Count - 1; i >= 0; i--)
                 {
-                    if (item.UserId != Properties.Settings.Default.UserID)
+                    if (_participants[i].UserId == Properties.Settings.Default.UserID)
                     {
-                        ChatName += item.UserName + " ";
+                        _participants.RemoveAt(i);
+                    }
+                    else
+                    {
+                        ChatName += _participants[i].UserName + " ";
                         Console.WriteLine(ChatName);
                     }
                 }
+
                 ChatName = ChatName.Trim(); // Убираем лишний пробел в конце
             }
         }

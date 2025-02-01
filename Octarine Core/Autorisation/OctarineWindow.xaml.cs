@@ -14,6 +14,7 @@ namespace Octarine_Core.Autorisation
     {
         private EnteredUserLite EnteredUserData;
         private FormConroller formc;
+
         private ChatController _chatController;
         
         public OctarineWindow()
@@ -67,8 +68,9 @@ namespace Octarine_Core.Autorisation
             var Chats = await ap.GetAsync<ChatDto>(Properties.Settings.Default.GetChats + EnteredUserData.GetIdUser());
             if (Chats != null)
             {
-                foreach (var chat in Chats)
+                foreach (ChatDto chat in Chats)
                 {
+                    MessageBox.Show(chat.ChatName + chat.Participants[0].UserId);
                     FriendBrick brick = chat.CreateChatBrick();
                     brick.ChatClicked += (sender, e) =>
                     {

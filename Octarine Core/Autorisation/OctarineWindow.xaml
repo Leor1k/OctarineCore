@@ -119,7 +119,12 @@
         </Border>
         <Border x:Name="ChatWindow" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}">
             <Grid x:Name="ChatGrid">
-                <StackPanel x:Name="MainChatStack" Margin="0,0,0,100"/>
+                <!-- Оберните StackPanel в ScrollViewer -->
+                <Grid x:Name="IngoGrid" Margin="0,0,0,868"/>
+                <!-- Оберните StackPanel в ScrollViewer -->
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="25,180,25,105">
+                    <StackPanel x:Name="MainChatStack" Margin="0,0,0,100" SizeChanged="MainChatStack_SizeChanged"/>
+                </ScrollViewer>
                 <Grid x:Name="TextBoxGrid" Height="100" VerticalAlignment="Bottom">
                     <Rectangle RadiusX="30" RadiusY="30" Fill="{DynamicResource MainGray}" Margin="15,0,15,30"/>
                     <Button HorizontalAlignment="Right" Height="60" Width="60" Margin="0,0,40,30" BorderBrush="{x:Null}">

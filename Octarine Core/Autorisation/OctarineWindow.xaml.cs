@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Shell;
 using Octarine_Core.Apis;
 using Octarine_Core.Classic;
@@ -14,19 +16,24 @@ namespace Octarine_Core.Autorisation
     {
         private EnteredUserLite EnteredUserData;
         private FormConroller formc;
-
         private ChatController _chatController;
-        
+        private ChatHub _chatHub;
         public OctarineWindow()
         {
             InitializeComponent();
             WindowChrome.SetWindowChrome(this, new WindowChrome());
             LoadUserData();
+            InitializeChatHub();
             FormConroller ff = new FormConroller(MainGrid);
             formc = ff;
             formc.SwitchOctarineBorder(InfoBorder);
             _chatController = new ChatController(MainChatStack, this);
-            MessageBox.Show("Грузанулось");
+            MainChatStack.SizeChanged += MainChatStack_SizeChanged;
+        }
+        private async void InitializeChatHub()
+        {
+            _chatHub = new ChatHub(MainChatStack);
+            await _chatHub.StartConnectionAsync(); 
         }
         private async void LoadUserData()
         {
@@ -74,7 +81,6 @@ namespace Octarine_Core.Autorisation
                     FriendBrick brick = chat.CreateChatBrick();
                     brick.ChatClicked += (sender, e) =>
                     {
-                        MessageBox.Show("Это в main");
                         _chatController.OnChatClick(sender, e);
                     };
                     ChatStack.Children.Add(brick);
@@ -159,8 +165,36 @@ namespace Octarine_Core.Autorisation
             formc.SwitchOctarineBorder(ChatWindow);
             MainChatStack.Children.Clear();
             ChatUpBur cb = new ChatUpBur(FriendName,friendID);
-            MainChatStack.Children.Add(cb);
+            IngoGrid.Children.Add(cb);
             await _chatController.LoadChat(EnteredUserData.GetIdUser(), friendID);
+        }
+        private void MainChatStack_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // Прокручиваем ScrollViewer вниз
+            var scrollViewer = FindVisualChild<ScrollViewer>(MainChatStack);
+            if (scrollViewer != null)
+            {
+                scrollViewer.ScrollToEnd();
+            }
+        }
+
+        // Вспомогательный метод для поиска ScrollViewer
+        private static T FindVisualChild<T>(DependencyObject obj) where T : DependencyObject
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
+            {
+                var child = VisualTreeHelper.GetChild(obj, i);
+                if (child is T result)
+                {
+                    return result;
+                }
+                var childResult = FindVisualChild<T>(child);
+                if (childResult != null)
+                {
+                    return childResult;
+                }
+            }
+            return null;
         }
     }
 }

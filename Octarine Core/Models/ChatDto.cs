@@ -20,9 +20,8 @@ namespace Octarine_Core.Models
             set
             {
                 _participants = value;
-                ChatName = string.Empty; // Очищаем имя чата перед обновлением
+                ChatName = string.Empty;
 
-                // Удаляем текущего пользователя из списка участников
                 for (int i = _participants.Count - 1; i >= 0; i--)
                 {
                     if (_participants[i].UserId == Properties.Settings.Default.UserID)
@@ -36,7 +35,7 @@ namespace Octarine_Core.Models
                     }
                 }
 
-                ChatName = ChatName.Trim(); // Убираем лишний пробел в конце
+                ChatName = ChatName.Trim();
             }
         }
         public FriendBrick CreateChatBrick ()

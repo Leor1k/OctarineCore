@@ -40,10 +40,11 @@ namespace Octarine_Core.Classic
                     {
                         mb.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                     }
-
                     stackPanel.Children.Add(mb);
+                    Properties.Settings.Default.IdActiveChat = message.ChatId;
                 }
             }
+            
         }
         public async void OnChatClick(object sender, EventArgs e)
         {

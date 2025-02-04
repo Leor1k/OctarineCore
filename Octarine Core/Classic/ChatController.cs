@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Common;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,7 +13,7 @@ namespace Octarine_Core.Classic
     public class ChatController
     {
         private StackPanel stackPanel;
-        public OctarineWindow OcWi;
+        private OctarineWindow OcWi;
         public ChatController(StackPanel _stackPanel, OctarineWindow oc)
         {
             stackPanel = _stackPanel;
@@ -74,6 +75,27 @@ namespace Octarine_Core.Classic
             {
                 await OcWi.ShowUsersChat(FriendName,IdFriend);
             }
+        }
+        public async Task SendMessageAsync(int FriendId, string Conent)
+        {
+            try
+            {
+                ApiRequests ap = new ApiRequests();
+                var MessageRuqest = new
+                {
+                    ChatId = Properties.Settings.Default.IdActiveChat,
+                    SenderId = Properties.Settings.Default.UserID,
+                    ReceiverId = FriendId,
+                    Content = Conent
+                };
+                await ap.PostAsync<object>(Properties.Settings.Default.PostApi, MessageRuqest);
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
         }
     }
 }

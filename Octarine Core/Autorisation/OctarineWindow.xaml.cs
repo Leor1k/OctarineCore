@@ -167,18 +167,17 @@ namespace Octarine_Core.Autorisation
             ChatUpBur cb = new ChatUpBur(FriendName,friendID);
             IngoGrid.Children.Add(cb);
             await _chatController.LoadChat(EnteredUserData.GetIdUser(), friendID);
+            Properties.Settings.Default.FriendId = friendID;
+            Scr.ScrollToEnd();
         }
         private void MainChatStack_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            // Прокручиваем ScrollViewer вниз
             var scrollViewer = FindVisualChild<ScrollViewer>(MainChatStack);
             if (scrollViewer != null)
             {
                 scrollViewer.ScrollToEnd();
             }
         }
-
-        // Вспомогательный метод для поиска ScrollViewer
         private static T FindVisualChild<T>(DependencyObject obj) where T : DependencyObject
         {
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
@@ -195,6 +194,26 @@ namespace Octarine_Core.Autorisation
                 }
             }
             return null;
+        }
+
+        private async void SendMessageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (SendedMesageTb.Text.Trim().Length != 0)
+            {
+                try
+                {
+                    await _chatController.SendMessageAsync(Properties.Settings.Default.FriendId, SendedMesageTb.Text.Trim());
+                    MessageBrick newMes = new MessageBrick(SendedMesageTb.Text, false);
+                    newMes.HorizontalAlignment = HorizontalAlignment.Right;
+                    MainChatStack.Children.Add(newMes);
+                    SendedMesageTb.Clear();
+                    Scr.ScrollToEnd();
+                }
+                catch
+                {
+                    
+                }
+            }
         }
     }
 }

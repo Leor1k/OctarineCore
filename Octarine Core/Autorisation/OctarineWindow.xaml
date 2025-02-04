@@ -122,17 +122,17 @@
                 <!-- Оберните StackPanel в ScrollViewer -->
                 <Grid x:Name="IngoGrid" Margin="0,0,0,868"/>
                 <!-- Оберните StackPanel в ScrollViewer -->
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="25,180,25,105">
+                <ScrollViewer x:Name="Scr" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="25,180,25,105">
                     <StackPanel x:Name="MainChatStack" Margin="0,0,0,100" SizeChanged="MainChatStack_SizeChanged"/>
                 </ScrollViewer>
                 <Grid x:Name="TextBoxGrid" Height="100" VerticalAlignment="Bottom">
                     <Rectangle RadiusX="30" RadiusY="30" Fill="{DynamicResource MainGray}" Margin="15,0,15,30"/>
-                    <Button HorizontalAlignment="Right" Height="60" Width="60" Margin="0,0,40,30" BorderBrush="{x:Null}">
+                    <Button x:Name="SendMessageBtn" HorizontalAlignment="Right" Height="60" Width="60" Margin="0,0,40,30" BorderBrush="{x:Null}" Click="SendMessageBtn_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="/Resource/Icons/Send.png"/>
                         </Button.Background>
                     </Button>
-                    <TextBox TextWrapping="Wrap" Margin="39,12,105,42" FontSize="22" Height="45"/>
+                    <TextBox x:Name="SendedMesageTb" TextWrapping="Wrap" Margin="39,12,105,42" FontSize="22" Height="45"/>
                 </Grid>
             </Grid>
         </Border>

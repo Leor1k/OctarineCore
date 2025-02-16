@@ -15,7 +15,7 @@ namespace Octarine_Core
         {
             InitializeComponent();
             //Properties.Settings.Default.JwtToken = null;
-            CheckAutorisation();
+            //CheckAutorisation();
             this.Width = SystemParameters.PrimaryScreenWidth;
             this.Height = SystemParameters.PrimaryScreenHeight;
             RegistrationBrd.Visibility = Visibility.Hidden;

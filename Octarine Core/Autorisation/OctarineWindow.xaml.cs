@@ -18,6 +18,7 @@ namespace Octarine_Core.Autorisation
         private FormConroller formc;
         private ChatController _chatController;
         private ChatHub _chatHub;
+        private CallingController _callingController;
         public OctarineWindow()
         {
             InitializeComponent();
@@ -29,11 +30,14 @@ namespace Octarine_Core.Autorisation
             formc.SwitchOctarineBorder(InfoBorder);
             _chatController = new ChatController(MainChatStack, this);
             MainChatStack.SizeChanged += MainChatStack_SizeChanged;
+            
         }
         private async void InitializeChatHub()
         {
             _chatHub = new ChatHub(MainChatStack);
-            await _chatHub.StartConnectionAsync(); 
+            await _chatHub.StartConnectionAsync();
+            _callingController = new CallingController(this); //эту
+            await _callingController.StartConnectionAsync();//и эту
         }
         private async void LoadUserData()
         {
@@ -77,7 +81,6 @@ namespace Octarine_Core.Autorisation
             {
                 foreach (ChatDto chat in Chats)
                 {
-                    MessageBox.Show(chat.ChatName + chat.Participants[0].UserId);
                     FriendBrick brick = chat.CreateChatBrick();
                     brick.ChatClicked += (sender, e) =>
                     {
@@ -164,7 +167,15 @@ namespace Octarine_Core.Autorisation
         {
             formc.SwitchOctarineBorder(ChatWindow);
             MainChatStack.Children.Clear();
-            ChatUpBur cb = new ChatUpBur(FriendName,friendID);
+            FriendBrick dd = new FriendBrick(0,string.Empty, string.Empty, null);
+            foreach (FriendBrick fb in ChatStack.Children)
+            {
+                if (fb.FriendName == FriendName)
+                {
+                    dd = fb;
+                }
+            }
+            ChatUpBur cb = new ChatUpBur(FriendName,friendID, _callingController,dd);
             IngoGrid.Children.Add(cb);
             await _chatController.LoadChat(EnteredUserData.GetIdUser(), friendID);
             Properties.Settings.Default.FriendId = friendID;

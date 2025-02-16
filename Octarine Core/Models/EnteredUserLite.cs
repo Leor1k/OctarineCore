@@ -20,6 +20,7 @@ namespace Octarine_Core.Models
             ub.UserName = name;
             ub.Status = status;
             ub.IdUser = id;
+            Properties.Settings.Default.UserName = name;
         }
         public string GetPersonalApi()
         {

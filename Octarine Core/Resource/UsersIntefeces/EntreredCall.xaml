@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Octarine_Core.Resource.UsersIntefeces.EntreredCall"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Octarine_Core.Resource.UsersIntefeces"
+             mc:Ignorable="d" 
+             MaxHeight="350" MaxWidth="300">
+    <Grid>
+        <Rectangle Fill="{DynamicResource MainGray}" RadiusX="54.667" RadiusY="54.667"/>
+        <Image 
+            Source="/Resource/Icons/IconUser.png" Margin="118,45,118,240" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+            <Image.Clip>
+                <EllipseGeometry Center="32.5,32.5" RadiusX="32.5" RadiusY="32.5"/>
+            </Image.Clip>
+        </Image>
+        <TextBlock x:Name="NameUser" HorizontalAlignment="Center" Margin="0,123,0,0" TextWrapping="Wrap" Text="Nik" VerticalAlignment="Top" FontSize="24" TextAlignment="Center"/>
+        <Button x:Name="AcceptCallBt" Content="" Margin="84,238,166,62" BorderBrush="{x:Null}" Width="50" Height="50" Click="AcceptCallBt_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resource/Icons/PhoneButtob.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="DeniedCallBtn" Content="" Margin="176,238,74,62" BorderBrush="{x:Null}" Width="50" Height="50" Click="DeniedCallBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resource/Icons/PhoneEndButtob.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</UserControl>

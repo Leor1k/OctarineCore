@@ -120,7 +120,7 @@
         <Border x:Name="ChatWindow" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}">
             <Grid x:Name="ChatGrid">
                 <!-- Оберните StackPanel в ScrollViewer -->
-                <Grid x:Name="IngoGrid" Margin="0,0,0,868"/>
+                <Grid x:Name="IngoGrid" Margin="0,0,0,794"/>
                 <!-- Оберните StackPanel в ScrollViewer -->
                 <ScrollViewer x:Name="Scr" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="25,180,25,105">
                     <StackPanel x:Name="MainChatStack" Margin="0,0,0,100" SizeChanged="MainChatStack_SizeChanged"/>

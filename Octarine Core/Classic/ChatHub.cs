@@ -15,7 +15,6 @@ namespace Octarine_Core.Classic
 
         public ChatHub(StackPanel stackPanel)
         {
-            MessageBox.Show($"UserID для подключения: {Properties.Settings.Default.UserID}");
             _stackPanel = stackPanel;
             _connection = new HubConnectionBuilder()
      .WithUrl($"http://147.45.175.135:5000/chatHub?userId={Properties.Settings.Default.UserID}")
@@ -24,7 +23,6 @@ namespace Octarine_Core.Classic
             // Подписываемся на метод "ReceiveMessage"
             _connection.On<MessagesDTO>("ReceiveMessage", (message) =>
             {
-                MessageBox.Show($"Получено сообщение: {message.Content}");
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     if (message.ChatId == Properties.Settings.Default.IdActiveChat)
@@ -35,7 +33,6 @@ namespace Octarine_Core.Classic
                     }
                     else
                     {
-                        MessageBox.Show($"В другой диалог прилетело{message.Content}");
                     }
                     
                 });
@@ -47,7 +44,6 @@ namespace Octarine_Core.Classic
             try
             {
                 await _connection.StartAsync();
-                MessageBox.Show($"Подключение к SignalR установлено.{Properties.Settings.Default.UserID}");
             }
             catch (Exception ex)
             {
@@ -61,7 +57,6 @@ namespace Octarine_Core.Classic
             try
             {
                 await _connection.InvokeAsync("SendMessageToUser", userId, message);
-                MessageBox.Show("Сообщение отправлено через SignalR.");
             }
             catch (Exception ex)
             {

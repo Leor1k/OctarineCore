@@ -30,7 +30,8 @@ namespace Octarine_Core.Autorisation
             formc.SwitchOctarineBorder(InfoBorder);
             _chatController = new ChatController(MainChatStack, this);
             MainChatStack.SizeChanged += MainChatStack_SizeChanged;
-            
+            Properties.Settings.Default.InColling = false;
+
         }
         private async void InitializeChatHub()
         {
@@ -175,8 +176,12 @@ namespace Octarine_Core.Autorisation
                     dd = fb;
                 }
             }
-            ChatUpBur cb = new ChatUpBur(FriendName,friendID, _callingController,dd);
-            IngoGrid.Children.Add(cb);
+            if (Properties.Settings.Default.InColling == false)
+            {
+                IngoGrid.Children.Clear();
+                ChatUpBur cb = new ChatUpBur(FriendName, friendID, _callingController, dd);
+                IngoGrid.Children.Add(cb);
+            }
             await _chatController.LoadChat(EnteredUserData.GetIdUser(), friendID);
             Properties.Settings.Default.FriendId = friendID;
             Scr.ScrollToEnd();

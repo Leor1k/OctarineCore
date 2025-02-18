@@ -141,3 +141,23 @@ C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octa
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine.E0A7653C.Up2Date
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.exe
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.Asio.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.Core.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.Midi.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.Wasapi.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.WinForms.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.WinMM.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.Asio.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.Core.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.Midi.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.Wasapi.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.WinForms.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\NAudio.WinMM.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\bin\Debug\System.Security.Principal.Windows.xml

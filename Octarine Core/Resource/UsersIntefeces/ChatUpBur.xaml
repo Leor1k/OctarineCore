@@ -7,7 +7,7 @@
              mc:Ignorable="d" Style="{x:Null}" Width="1500" Height="150" Foreground="{x:Null}"
              BorderBrush="Transparent" BorderThickness="0" Margin="0,25,0,0">
     <Grid>
-        <Grid x:Name="StandartGrid" Height="77" VerticalAlignment="Center" d:IsHidden="True">
+        <Grid x:Name="StandartGrid" Height="77" VerticalAlignment="Center">
             <Rectangle RadiusX="30" RadiusY="30" Fill="{DynamicResource MainGray}"/>
             <StackPanel x:Name="MainChatStack" Orientation="Horizontal">
                 <Image Height="65" Width="65" 

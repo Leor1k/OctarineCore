@@ -199,5 +199,17 @@ namespace Octarine_Core.Properties {
                 this["UserName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool InColling {
+            get {
+                return ((bool)(this["InColling"]));
+            }
+            set {
+                this["InColling"] = value;
+            }
+        }
     }
 }

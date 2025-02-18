@@ -35,12 +35,13 @@ namespace Octarine_Core.Resource.UsersIntefeces
         private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
 
-            MessageBox.Show($"Друзья {string.Join(", ", FriendsList)}");
+            //MessageBox.Show($"Друзья {string.Join(", ", FriendsList)}");
             StandartGrid.Visibility = System.Windows.Visibility.Hidden;
             CallGrid.Visibility = System.Windows.Visibility.Visible;
             t1.Text = Properties.Settings.Default.UserName;
             t2.Text = FriendName;
             await Controller.StartCallAsync(ChatId,Properties.Settings.Default.UserID.ToString(), FriendsList);
+            Properties.Settings.Default.InColling = true;
 
         }
 
@@ -48,6 +49,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
         {
             StandartGrid.Visibility = System.Windows.Visibility.Visible;
             CallGrid.Visibility = System.Windows.Visibility.Hidden;
+            Properties.Settings.Default.InColling = false;
         }
     }
 }

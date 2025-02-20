@@ -71,16 +71,16 @@ namespace Octarine_Core.Classic
         {
             //MessageBox.Show($"Полетела в StartCall с : ID{roomID}, {callerId} и { participantIds}");
             await _connection.SendAsync("StartCall", roomID, callerId, participantIds);
-            _voiceClient.StartRecording();
             await Task.Run(() => _voiceReceiver.StartListening()); 
+            _voiceClient.StartRecording();
         }
 
         public async Task AcceptCallAsync(string userId, string roomId)
         {
             //MessageBox.Show("В методе");
             await _connection.SendAsync("AcceptCall", userId, roomId);
-            _voiceClient.StartRecording();
             await Task.Run(() => _voiceReceiver.StartListening()); 
+            _voiceClient.StartRecording();
         }
 
         public async Task RejectCallAsync(string userId, string roomId)

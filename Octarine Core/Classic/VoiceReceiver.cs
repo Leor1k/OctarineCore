@@ -33,6 +33,7 @@ namespace Octarine_Core.Classic
                 Console.WriteLine($"[CLIENT] Получено {result.Buffer.Length} байт аудиоданных.");
                 _waveProvider.AddSamples(result.Buffer, 0, result.Buffer.Length);
                 Console.WriteLine($"[CLIENT] Добавлено в буфер {result.Buffer.Length} байт аудиоданных.");
+                Console.WriteLine($"[CLIENT] WaveOutEvent состояние: {_waveOut.PlaybackState}");
             }
         }
     }

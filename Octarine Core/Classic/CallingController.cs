@@ -5,6 +5,8 @@ using System;
 using System.Windows;
 using Octarine_Core.Resource.UsersIntefeces;
 using Octarine_Core.Autorisation;
+using System.Net.Sockets;
+using System.Text;
 
 namespace Octarine_Core.Classic
 {
@@ -19,7 +21,7 @@ namespace Octarine_Core.Classic
         {
             _voiceReceiver = new VoiceReceiver();
             _voiceClient = new VoiceClient();
-            _octarine = octarineWindow;
+            _octarine  = octarineWindow;
 
             _connection = new HubConnectionBuilder()
                 .WithUrl($"http://147.45.175.135:5000/voiceHub?userId={Properties.Settings.Default.UserID}")

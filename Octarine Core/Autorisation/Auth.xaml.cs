@@ -15,7 +15,7 @@ namespace Octarine_Core
         {
             InitializeComponent();
             //Properties.Settings.Default.JwtToken = null;
-            //CheckAutorisation();
+            CheckAutorisation();
             this.Width = SystemParameters.PrimaryScreenWidth;
             this.Height = SystemParameters.PrimaryScreenHeight;
             RegistrationBrd.Visibility = Visibility.Hidden;
@@ -208,9 +208,9 @@ namespace Octarine_Core
             AuthBrd.Visibility = Visibility.Hidden;
             RegistrationBrd.Visibility = Visibility.Visible;
             ErrorBorder.Visibility = Visibility.Hidden;
-            Window window = new OctarineWindow();
-            window.Show();
-            this.Close();
+            //Window window = new OctarineWindow();
+            //window.Show();
+            //this.Close();
         }
         private void RegBtn_Копировать_Click(object sender, RoutedEventArgs e)
         {

@@ -36,7 +36,6 @@ namespace Octarine_Core.Resource.UsersIntefeces
             {
                 //MessageBox.Show("Из метода");
                 //MessageBox.Show(RoomId);
-                await Controller.AcceptCallAsync(Properties.Settings.Default.UserID.ToString(), RoomId);
                 //MessageBox.Show("Отправлено!");
 
                 _timer?.Dispose();
@@ -59,6 +58,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
                     }
                 });
                 Properties.Settings.Default.InColling = true;
+                await Controller.AcceptCallAsync(Properties.Settings.Default.UserID.ToString(), RoomId);
             }
             catch (Exception ex)
             {

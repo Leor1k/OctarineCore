@@ -59,11 +59,11 @@ namespace Octarine_Core.Classic
             try
             {
                 await _connection.StartAsync();
-                //MessageBox.Show($"Подключение к Voice установлено.{Properties.Settings.Default.UserID}");
+                MessageBox.Show($"Подключение к Voice установлено.{Properties.Settings.Default.UserID}");
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Ошибка подключения к Voice: {ex.Message}");
+                MessageBox.Show($"Ошибка подключения к Voice: {ex.Message}");
             }
         }
 

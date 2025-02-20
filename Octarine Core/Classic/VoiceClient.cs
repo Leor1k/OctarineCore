@@ -27,6 +27,7 @@ namespace Octarine_Core.Classic
        
         private async void OnAudioData(object sender, WaveInEventArgs e)
         {
+            Console.WriteLine($"[CLIENT] Записано {e.BytesRecorded} байт аудиоданных.");
             await Task.Run(() =>
             {
                 _udpClient.Send(e.Buffer, e.Buffer.Length, _serverEndPoint);

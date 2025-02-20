@@ -1,4 +1,5 @@
-﻿using System.Net.Sockets;
+﻿using System;
+using System.Net.Sockets;
 using System.Threading.Tasks;
 using NAudio.Wave;
 
@@ -29,7 +30,9 @@ namespace Octarine_Core.Classic
             while (true)
             {
                 UdpReceiveResult result = await _udpClient.ReceiveAsync();
+                Console.WriteLine($"[CLIENT] Получено {result.Buffer.Length} байт аудиоданных.");
                 _waveProvider.AddSamples(result.Buffer, 0, result.Buffer.Length);
+                Console.WriteLine($"[CLIENT] Добавлено в буфер {result.Buffer.Length} байт аудиоданных.");
             }
         }
     }

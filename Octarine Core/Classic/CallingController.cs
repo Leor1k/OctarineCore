@@ -16,6 +16,7 @@ namespace Octarine_Core.Classic
         public OctarineWindow _octarine;
         private VoiceReceiver _voiceReceiver;
         private VoiceClient _voiceClient;
+        private Log l = new Log();
 
         public CallingController(OctarineWindow octarineWindow)
         {
@@ -40,7 +41,7 @@ namespace Octarine_Core.Classic
                             break;
                         }
                     }
-                    Console.WriteLine($"[CALL] Входящий звонок от {callerId} в комнате {roomId}");
+                    l.log($"[CallingController] Входящий звонок от {callerId} в комнате {roomId}");
                     EntreredCall ec = new EntreredCall(FriendName, roomId, this);
                     _octarine.MainGrid.Children.Add(ec);
                 });
@@ -48,12 +49,12 @@ namespace Octarine_Core.Classic
 
             _connection.On<string, List<string>>("CallAccepted", (roomId, participants) =>
             {
-                Console.WriteLine($"[CALL] Звонок принят. Комната: {roomId}, участники: {string.Join(", ", participants)}");
+                l.log($"[CallingController] Звонок принят. Комната: {roomId}, участники: {string.Join(", ", participants)}");
             });
 
             _connection.On<string>("Error", message =>
             {
-                Console.WriteLine($"[ERROR] {message}");
+                l.log($"[ERROR] {message}");
             });
         }
 
@@ -62,17 +63,17 @@ namespace Octarine_Core.Classic
             try
             {
                 await _connection.StartAsync();
-                Console.WriteLine($"[SIGNALR] Подключение установлено. UserID: {Properties.Settings.Default.UserID}");
+                l.log($"[CallingController] Подключение установлено. UserID: {Properties.Settings.Default.UserID}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[ERROR] Ошибка подключения: {ex.Message}");
+                l.log($"[CallingController] Ошибка подключения: {ex.Message}");
             }
         }
 
         public async Task StartCallAsync(string roomID, string callerId, List<string> participantIds)
         {
-            Console.WriteLine($"[CALL] Начало вызова. Комната: {roomID}, Caller: {callerId}, Участники: {string.Join(", ", participantIds)}");
+            l.log($"[CallingController] Начало вызова. Комната: {roomID}, Caller: {callerId}, Участники: {string.Join(", ", participantIds)}");
             await _connection.SendAsync("StartCall", roomID, callerId, participantIds);
 
             await _voiceReceiver.StartListening();
@@ -81,7 +82,7 @@ namespace Octarine_Core.Classic
 
         public async Task AcceptCallAsync(string userId, string roomId)
         {
-            Console.WriteLine($"[CALL] Принят вызов. User: {userId}, Комната: {roomId}");
+            l.log($"[CallingController] Принят вызов. User: {userId}, Комната: {roomId}");
             await _connection.SendAsync("AcceptCall", userId, roomId);
 
             await _voiceReceiver.StartListening();
@@ -90,7 +91,7 @@ namespace Octarine_Core.Classic
 
         public async Task RejectCallAsync(string userId, string roomId)
         {
-            Console.WriteLine($"[CALL] Отклонён вызов. User: {userId}, Комната: {roomId}");
+            l.log($"[CallingController] Отклонён вызов. User: {userId}, Комната: {roomId}");
             await _connection.SendAsync("RejectCall", userId, roomId);
             _voiceClient.StopRecording();
         }

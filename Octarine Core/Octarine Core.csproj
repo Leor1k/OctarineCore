@@ -242,6 +242,7 @@
     <Compile Include="Classic\ChatController.cs" />
     <Compile Include="Classic\ChatHub.cs" />
     <Compile Include="Classic\FormConroller.cs" />
+    <Compile Include="Classic\Log.cs" />
     <Compile Include="Classic\VoiceClient.cs" />
     <Compile Include="Classic\VoiceReceiver.cs" />
     <Compile Include="Models\ChatDto.cs" />

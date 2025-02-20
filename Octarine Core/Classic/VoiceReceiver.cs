@@ -15,14 +15,15 @@ namespace Octarine_Core.Classic
         private string _serverIp = "147.45.175.135"; // Серверный IP
         private WaveOutEvent _waveOut;
         private BufferedWaveProvider _waveProvider;
-        private readonly string _logFilePath = "client_logs.txt"; // Файл для логов
+        private Log l= new Log();
+
 
         public VoiceReceiver()
         {
             try
             {
                 _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, _port));
-                Log($"[CLIENT] Слушаем на 0.0.0.0:{_port}");
+                l.log($"[VoiceReceiver] Слушаем на 0.0.0.0:{_port}");
                 _udpClient.Client.ReceiveBufferSize = 65536; // 64 KB
 
 
@@ -37,13 +38,13 @@ namespace Octarine_Core.Classic
             }
             catch (Exception ex)
             {
-                Log($"[CLIENT] Ошибка при инициализации UdpClient: {ex.Message}");
+                l.log($"[VoiceReceiver] Ошибка при инициализации UdpClient: {ex.Message}");
             }
         }
 
         public async Task StartListening()
         {
-            Log("[CLIENT] Ожидание голосовых данных...");
+            l.log("[VoiceReceiver] Ожидание голосовых данных...");
             while (true)
             {
                 try
@@ -51,14 +52,14 @@ namespace Octarine_Core.Classic
                     UdpReceiveResult result = await _udpClient.ReceiveAsync();
                     byte[] receivedData = result.Buffer;
                     string message = Encoding.UTF8.GetString(receivedData);
-                    Log($"[CLIENT] Получено {result.Buffer.Length} байт от {result.RemoteEndPoint} (мб это: {message})");
-                    Log($"[CLIENT] Пакет от {result.RemoteEndPoint} отклонён.");
+                    l.log($"[VoiceReceiver] Получено {result.Buffer.Length} байт от {result.RemoteEndPoint} (мб это: {message})");
+                    l.log($"[VoiceReceiver] Пакет от {result.RemoteEndPoint} отклонён.");
                     _waveProvider.AddSamples(result.Buffer, 0, result.Buffer.Length);
-                    Log($"[CLIENT] Добавлено в буфер {result.Buffer.Length} байт аудиоданных.");
+                    l.log($"[VoiceReceiver] Добавлено в буфер {result.Buffer.Length} байт аудиоданных.");
                 }
                 catch (Exception ex)
                 {
-                    Log($"[CLIENT] Ошибка приёма данных: {ex.Message}");
+                    l.log($"[VoiceReceiver] Ошибка приёма данных: {ex.Message}");
                 }
             }
         }
@@ -69,26 +70,11 @@ namespace Octarine_Core.Classic
             {
                 byte[] dummyData = new byte[1] { 0x00 };
                 await _udpClient.SendAsync(dummyData, dummyData.Length, new IPEndPoint(IPAddress.Parse(_serverIp), _port));
-                Log("[CLIENT] Отправлен тестовый пакет на сервер.");
+                l.log("[VoiceReceiver] Отправлен тестовый пакет на сервер.");
             }
             catch (Exception ex)
             {
-                Log($"[CLIENT] Ошибка при отправке NAT-пакета: {ex.Message}");
-            }
-        }
-
-        private void Log(string message)
-        {
-            string logMessage = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}";
-            Console.WriteLine(logMessage);
-
-            try
-            {
-                File.AppendAllText(_logFilePath, logMessage + Environment.NewLine);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"❌ Ошибка записи в лог-файл: {ex.Message}");
+                l.log($"[VoiceReceiver] Ошибка при отправке NAT-пакета: {ex.Message}");
             }
         }
     }

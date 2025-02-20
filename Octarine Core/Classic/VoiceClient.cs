@@ -13,6 +13,7 @@ namespace Octarine_Core.Classic
         private int _port = 5005;
         private IPEndPoint _serverEndPoint;
         private WaveInEvent _waveIn;
+        private Log l = new Log();
 
         public VoiceClient()
         {
@@ -28,17 +29,17 @@ namespace Octarine_Core.Classic
 
         private async void OnAudioData(object sender, WaveInEventArgs e)
         {
-            Console.WriteLine($"[CLIENT] Записано {e.BytesRecorded} байт аудиоданных.");
+            l.log($"[VoiceClient] Записано {e.BytesRecorded} байт аудиоданных.");
             if (e.BytesRecorded > 0)
             {
                 await Task.Run(() => _udpClient.Send(e.Buffer, e.Buffer.Length, _serverEndPoint));
-                Console.WriteLine("[CLIENT] Отправка аудиоданных...");
+                l.log("[VoiceClient] Отправка аудиоданных...");
             }
         }
 
         public void StartRecording()
         {
-            Console.WriteLine("[CLIENT] Начата запись голоса.");
+            l.log("[VoiceClient] Начата запись голоса.");
             _waveIn.StartRecording();
         }
 

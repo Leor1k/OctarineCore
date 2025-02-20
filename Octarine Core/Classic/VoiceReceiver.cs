@@ -23,9 +23,11 @@ namespace Octarine_Core.Classic
             {
                 _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, _port));
                 Log($"[CLIENT] Слушаем на 0.0.0.0:{_port}");
+                _udpClient.Client.ReceiveBufferSize = 65536; // 64 KB
+
 
                 _waveOut = new WaveOutEvent();
-                _waveProvider = new BufferedWaveProvider(new WaveFormat(8000, 16, 1))
+                _waveProvider = new BufferedWaveProvider(new WaveFormat(8000, 16, 1)) // 8kHz, 16 бит, моно
                 {
                     BufferLength = 8192,
                     DiscardOnBufferOverflow = true
@@ -50,13 +52,7 @@ namespace Octarine_Core.Classic
                     byte[] receivedData = result.Buffer;
                     string message = Encoding.UTF8.GetString(receivedData);
                     Log($"[CLIENT] Получено {result.Buffer.Length} байт от {result.RemoteEndPoint} (мб это: {message})");
-
-                    if (result.RemoteEndPoint.Address.ToString() != _serverIp)
-                    {
-                        Log($"[CLIENT] Пакет от {result.RemoteEndPoint} отклонён.");
-                        continue;
-                    }
-
+                    Log($"[CLIENT] Пакет от {result.RemoteEndPoint} отклонён.");
                     _waveProvider.AddSamples(result.Buffer, 0, result.Buffer.Length);
                     Log($"[CLIENT] Добавлено в буфер {result.Buffer.Length} байт аудиоданных.");
                 }

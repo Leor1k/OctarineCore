@@ -21,7 +21,7 @@ namespace Octarine_Core.Classic
         {
             _voiceReceiver = new VoiceReceiver();
             _voiceClient = new VoiceClient();
-            _octarine  = octarineWindow;
+            _octarine = octarineWindow;
 
             _connection = new HubConnectionBuilder()
                 .WithUrl($"http://147.45.175.135:5000/voiceHub?userId={Properties.Settings.Default.UserID}")

@@ -59,5 +59,11 @@
     <Setting Name="InColling" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="StartCallAPI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5001/voice/start-call</Value>
+    </Setting>
+    <Setting Name="ConfirmCallAPI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5001/voice/confirm-call</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -32,8 +32,9 @@ namespace Octarine_Core.Classic
             l.log($"[VoiceClient] Записано {e.BytesRecorded} байт аудиоданных.");
             if (e.BytesRecorded > 0)
             {
-                await Task.Run(() => _udpClient.Send(e.Buffer, e.Buffer.Length, _serverEndPoint));
                 l.log("[VoiceClient] Отправка аудиоданных...");
+                await Task.Run(() => _udpClient.SendAsync(e.Buffer, e.Buffer.Length, _serverEndPoint));
+                l.log("[VoiceClient] Пакет отпрален");
             }
         }
 

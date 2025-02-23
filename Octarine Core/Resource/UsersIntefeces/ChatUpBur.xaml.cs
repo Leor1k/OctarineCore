@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Win32;
 using Octarine_Core.Classic;
+using Octarine_Core.Models;
 
 namespace Octarine_Core.Resource.UsersIntefeces
 {
@@ -40,7 +41,8 @@ namespace Octarine_Core.Resource.UsersIntefeces
             CallGrid.Visibility = System.Windows.Visibility.Visible;
             t1.Text = Properties.Settings.Default.UserName;
             t2.Text = FriendName;
-            await Controller.StartCallAsync(ChatId,Properties.Settings.Default.UserID.ToString(), FriendsList);
+            CallRequest req = new CallRequest(ChatId, Properties.Settings.Default.UserID.ToString(), FriendsList);
+            await Controller.StartCallAsync(req);
             Properties.Settings.Default.InColling = true;
 
         }

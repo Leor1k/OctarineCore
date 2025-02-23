@@ -211,5 +211,23 @@ namespace Octarine_Core.Properties {
                 this["InColling"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5001/voice/start-call")]
+        public string StartCallAPI {
+            get {
+                return ((string)(this["StartCallAPI"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5001/voice/confirm-call")]
+        public string ConfirmCallAPI {
+            get {
+                return ((string)(this["ConfirmCallAPI"]));
+            }
+        }
     }
 }

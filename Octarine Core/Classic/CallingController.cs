@@ -7,6 +7,8 @@ using Octarine_Core.Resource.UsersIntefeces;
 using Octarine_Core.Autorisation;
 using System.Net.Sockets;
 using System.Text;
+using Octarine_Core.Apis;
+using Octarine_Core.Models;
 
 namespace Octarine_Core.Classic
 {
@@ -17,15 +19,17 @@ namespace Octarine_Core.Classic
         private VoiceReceiver _voiceReceiver;
         private VoiceClient _voiceClient;
         private Log l = new Log();
+        ApiRequests apir;
 
         public CallingController(OctarineWindow octarineWindow)
         {
             _voiceReceiver = new VoiceReceiver();
             _voiceClient = new VoiceClient();
             _octarine = octarineWindow;
+            apir = new ApiRequests();
 
             _connection = new HubConnectionBuilder()
-                .WithUrl($"http://147.45.175.135:5000/voiceHub?userId={Properties.Settings.Default.UserID}")
+                .WithUrl($"http://147.45.175.135:5001/voiceHub?userId={Properties.Settings.Default.UserID}")
                 .Build();
 
             _connection.On<string, string>("IncomingCall", (roomId, callerId) =>
@@ -71,10 +75,18 @@ namespace Octarine_Core.Classic
             }
         }
 
-        public async Task StartCallAsync(string roomID, string callerId, List<string> participantIds)
+        public async Task StartCallAsync(CallRequest request)
         {
-            l.log($"[CallingController] Начало вызова. Комната: {roomID}, Caller: {callerId}, Участники: {string.Join(", ", participantIds)}");
-            await _connection.SendAsync("StartCall", roomID, callerId, participantIds);
+            l.log($"[StartCallAsync] Начало вызова. Комната: {request.RoomId}, Caller: {request.CallerId}, Участники: {string.Join(", ", request.ParticipantIds)}");
+            try
+            {
+                var message = await apir.PostAsync<object>(Properties.Settings.Default.StartCallAPI, request);
+                l.log($"[StartCallAsync] Отправил в start-call");
+            }
+            catch (Exception ex)
+            {
+                l.log($"[StartCallAsync] Возникла ошибка: {ex.Message}");
+            }
 
             await _voiceReceiver.StartListening();
             _voiceClient.StartRecording();
@@ -83,8 +95,20 @@ namespace Octarine_Core.Classic
         public async Task AcceptCallAsync(string userId, string roomId)
         {
             l.log($"[CallingController] Принят вызов. User: {userId}, Комната: {roomId}");
-            await _connection.SendAsync("AcceptCall", userId, roomId);
-
+            var CallConfirmation = new 
+            {
+                RoomId = roomId,
+                UserId = userId
+            }; 
+            try
+            {
+                var message = await apir.PostAsync<object>(Properties.Settings.Default.ConfirmCallAPI, CallConfirmation);
+                l.log($"[StartCallAsync] Отправил в confirm-call");
+            }
+            catch (Exception ex)
+            {
+                l.log($"[StartCallAsync] Возникла ошибка: {ex.Message}");
+            }
             await _voiceReceiver.StartListening();
             _voiceClient.StartRecording();
         }

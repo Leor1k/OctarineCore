@@ -245,6 +245,7 @@
     <Compile Include="Classic\Log.cs" />
     <Compile Include="Classic\VoiceClient.cs" />
     <Compile Include="Classic\VoiceReceiver.cs" />
+    <Compile Include="Models\CallRequest.cs" />
     <Compile Include="Models\ChatDto.cs" />
     <Compile Include="Models\EnteredUserLite.cs" />
     <Compile Include="Models\FriendDto.cs" />

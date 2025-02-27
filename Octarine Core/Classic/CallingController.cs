@@ -96,15 +96,15 @@ namespace Octarine_Core.Classic
         public async Task AcceptCallAsync(string userId, string roomId)
         {
             l.log($"[CallingController] Принят вызов. User: {userId}, Комната: {roomId}");
-            var clientPort = ((IPEndPoint)_voiceClient._udpClient.Client.LocalEndPoint).Port;
             var CallConfirmation = new 
             {
                 RoomId = roomId,
                 UserId = userId,
-                ClientPort=clientPort
+                _voiceClient.localendpoint
             }; 
             try
             {
+                l.log($"[CallingController] Отпрален запрос с  RoomId: {roomId}, UserId: {userId} и localendpoint {_voiceClient.localendpoint} ");
                 var message = await apir.PostAsync<object>(Properties.Settings.Default.ConfirmCallAPI, CallConfirmation);
                 l.log($"[StartCallAsync] Отправил в confirm-call");
             }

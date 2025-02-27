@@ -9,12 +9,14 @@ namespace Octarine_Core.Classic
 {
     public class VoiceClient
     {
-        public UdpClient _udpClient;
+        private UdpClient _udpClient;
         private string _serverIp = "147.45.175.135"; // IP сервера
         private int _serverPort = 5005; // Серверный порт
         private IPEndPoint _serverEndPoint;
         private WaveInEvent _waveIn;
         private Log l = new Log();
+        public string localendpoint;
+
 
         public VoiceClient()
         {
@@ -23,6 +25,7 @@ namespace Octarine_Core.Classic
             _udpClient.Client.SendBufferSize = 65536; // 64 KB
 
             var localEndPoint = (IPEndPoint)_udpClient.Client.LocalEndPoint;
+            localendpoint = localEndPoint.ToString();
             l.log($"[VoiceClient] Клиент запущен на порту {localEndPoint.Port}");
 
             _waveIn = new WaveInEvent

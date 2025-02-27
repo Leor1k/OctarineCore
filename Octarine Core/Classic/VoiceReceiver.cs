@@ -10,7 +10,7 @@ namespace Octarine_Core.Classic
     public class VoiceReceiver
     {
         private UdpClient _udpClient;
-        private int _port = 5005; // Порт для приёма данных
+        private int _port = 5005;
         private WaveOutEvent _waveOut;
         private BufferedWaveProvider _waveProvider;
         private Log l = new Log();
@@ -21,11 +21,11 @@ namespace Octarine_Core.Classic
             try
             {
                 _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, _port));
-                _udpClient.Client.ReceiveBufferSize = 65536; // 64 KB
+                _udpClient.Client.ReceiveBufferSize = 65536;
                 l.log($"[VoiceReceiver] Клиент слушает на порту {_port}");
 
                 _waveOut = new WaveOutEvent();
-                _waveProvider = new BufferedWaveProvider(new WaveFormat(16000, 16, 1)) // Улучшенное качество: 16kHz, 16 бит, моно
+                _waveProvider = new BufferedWaveProvider(new WaveFormat(44100, 16, 1)) 
                 {
                     BufferDuration = TimeSpan.FromSeconds(10),
                     DiscardOnBufferOverflow = true

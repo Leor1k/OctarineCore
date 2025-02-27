@@ -29,11 +29,16 @@ namespace Octarine_Core.Classic
                 var localEndPoint = (IPEndPoint)_udpClient.Client.LocalEndPoint;
                 localendpoint = localEndPoint.Port;
                 l.log($"[VoiceClient] Клиент запущен на порту {localEndPoint.Port} и слушает с {_serverIp}:{_serverPort}");
+                for (int i = 0; i < WaveIn.DeviceCount; i++)
+                {
+                    var capabilities = WaveIn.GetCapabilities(i);
+                    l.log($"Микрофон {i}: {capabilities.ProductName}, Каналов: {capabilities.Channels}");
+                }
 
                 _waveIn = new WaveInEvent
                 {
                     DeviceNumber = 0,
-                    WaveFormat = new WaveFormat(16000,1),
+                    WaveFormat = new WaveFormat(44100, 16, 1),
                     BufferMilliseconds = 100
                 };
 
@@ -49,46 +54,34 @@ namespace Octarine_Core.Classic
 
         private async void OnAudioData(object sender, WaveInEventArgs e)
         {
+            l.log($"[OnAudioData] байтов 0 {e.BytesRecorded} приелетело");
             if (e.BytesRecorded > 0)
             {
                 try
                 {
+                    l.log($"[OnAudioData] попытка отправить{e.BytesRecorded} в {_serverEndPoint}");
                     int bytesToSend = Math.Min(e.BytesRecorded, BufferSize);
                     await _udpClient.SendAsync(e.Buffer, bytesToSend, _serverEndPoint);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error sending audio: {ex.Message}");
+                    l.log($"Error sending audio: {ex.Message}");
                 }
             }
         }
-
-        public async Task PunchHole()
-        {
-            try
-            {
-                byte[] dummyData = Encoding.UTF8.GetBytes("NAT_HOLE");
-                await _udpClient.SendAsync(dummyData, dummyData.Length, _serverEndPoint);
-                l.log($"[VoiceClient] NAT-пакет отправлен.");
-            }
-            catch (Exception ex)
-            {
-                l.log($"[VoiceClient] Ошибка при отправке NAT-пакета: {ex.Message}");
-            }
-        }
-
         public void StartRecording()
         {
             try
             {
                 _waveIn.StartRecording();
-                l.log("[VoiceClient] Запись успешно начата.");
+                l.log($"[VoiceClient] Запись успешно начата. Формат: {_waveIn.WaveFormat.SampleRate} Гц, {_waveIn.WaveFormat.BitsPerSample} бит, каналов: {_waveIn.WaveFormat.Channels}");
             }
             catch (Exception ex)
             {
                 l.log($"[VoiceClient] Ошибка при запуске записи: {ex.Message}");
             }
         }
+
 
         public void StopRecording()
         {

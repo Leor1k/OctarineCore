@@ -81,8 +81,9 @@ namespace Octarine_Core.Classic
             l.log($"[StartCallAsync] Начало вызова. Комната: {request.RoomId}, Caller: {request.CallerId}, Участники: {string.Join(", ", request.ParticipantIds)}");
             try
             {
+                request.ClientPort = _voiceClient.localendpoint;
                 var message = await apir.PostAsync<object>(Properties.Settings.Default.StartCallAPI, request);
-                l.log($"[StartCallAsync] Отправил в start-call");
+                l.log($"[StartCallAsync] Отправил в start-call c портом:{request.ClientPort}");
             }
             catch (Exception ex)
             {

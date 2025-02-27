@@ -10,30 +10,24 @@ namespace Octarine_Core.Classic
     public class VoiceClient
     {
         private UdpClient _udpClient;
-        private string _serverIp = "147.45.175.135"; 
-        private int _serverPort = 5005; 
+        private readonly string _serverIp = "147.45.175.135";
+        private readonly int _serverPort = 5005;
         private IPEndPoint _serverEndPoint;
         private WaveInEvent _waveIn;
         private Log l = new Log();
-        public int localendpoint;
-        private int BufferSize = 2048;
+        public int LocalPort { get; private set; }
+        private const int BufferSize = 2048;
 
         public VoiceClient()
         {
             try
             {
-                _udpClient = new UdpClient(0); 
+                _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));
+                LocalPort = ((IPEndPoint)_udpClient.Client.LocalEndPoint).Port;
                 _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
-                _udpClient.Client.SendBufferSize = 65536; 
+                _udpClient.Client.SendBufferSize = 65536;
 
-                var localEndPoint = (IPEndPoint)_udpClient.Client.LocalEndPoint;
-                localendpoint = localEndPoint.Port;
-                l.log($"[VoiceClient] Клиент запущен на порту {localEndPoint.Port} и слушает с {_serverIp}:{_serverPort}");
-                for (int i = 0; i < WaveIn.DeviceCount; i++)
-                {
-                    var capabilities = WaveIn.GetCapabilities(i);
-                    l.log($"Микрофон {i}: {capabilities.ProductName}, Каналов: {capabilities.Channels}");
-                }
+                l.log($"[VoiceClient] Клиент запущен на порту {LocalPort}, отправляет на {_serverIp}:{_serverPort}");
 
                 _waveIn = new WaveInEvent
                 {
@@ -43,13 +37,6 @@ namespace Octarine_Core.Classic
                 };
 
                 _waveIn.DataAvailable += OnAudioData;
-
-                _waveIn.DataAvailable += (sender, e) =>
-                {
-                    l.log($"[VoiceClient] DataAvailable сработал! Получено {e.BytesRecorded} байт");
-                };
-
-
             }
             catch (Exception ex)
             {
@@ -59,37 +46,44 @@ namespace Octarine_Core.Classic
 
         private async void OnAudioData(object sender, WaveInEventArgs e)
         {
-            l.log($"[OnAudioData] байтов 0 {e.BytesRecorded} приелетело");
             if (e.BytesRecorded > 0)
             {
                 try
                 {
-                    l.log($"[OnAudioData] попытка отправить{e.BytesRecorded} в {_serverEndPoint}");
-                    int bytesToSend = Math.Min(e.BytesRecorded, BufferSize);
-                    await _udpClient.SendAsync(e.Buffer, bytesToSend, _serverEndPoint);
+                    int roomId = Properties.Settings.Default.IdActiveChat; 
+
+                    byte[] roomIdBytes = BitConverter.GetBytes(roomId);
+                    byte[] packet = new byte[roomIdBytes.Length + e.BytesRecorded];
+
+                    Buffer.BlockCopy(roomIdBytes, 0, packet, 0, roomIdBytes.Length);
+                    Buffer.BlockCopy(e.Buffer, 0, packet, roomIdBytes.Length, e.BytesRecorded);
+
+                    l.log($"[OnAudioData] Отправка {packet.Length} байт с RoomID {roomId} на {_serverEndPoint}");
+
+                    await _udpClient.SendAsync(packet, packet.Length, _serverEndPoint);
                 }
                 catch (Exception ex)
                 {
-                    l.log($"Error sending audio: {ex.Message}");
+                    l.log($"[OnAudioData] Ошибка при отправке: {ex.Message}");
                 }
             }
         }
+
+
+
         public void StartRecording()
         {
             try
             {
-                l.log("[StartRecording] Попытка начать запись...");
+                l.log("[StartRecording] Запуск записи...");
                 _waveIn.StartRecording();
-                l.log("[StartRecording] Запись успешно начата!");
+                l.log("[StartRecording] Запись началась!");
             }
             catch (Exception ex)
             {
-                l.log($"[StartRecording] Ошибка при запуске записи: {ex.Message}");
+                l.log($"[StartRecording] Ошибка: {ex.Message}");
             }
         }
-
-
-
 
         public void StopRecording()
         {
@@ -100,7 +94,7 @@ namespace Octarine_Core.Classic
             }
             catch (Exception ex)
             {
-                l.log($"[VoiceClient] Ошибка при остановке записи: {ex.Message}");
+                l.log($"[VoiceClient] Ошибка при остановке: {ex.Message}");
             }
         }
     }

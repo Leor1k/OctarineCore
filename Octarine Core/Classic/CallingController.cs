@@ -85,22 +85,24 @@ namespace Octarine_Core.Classic
         public async Task StartCallAsync(CallRequest request)
         {
             l.log($"[StartCallAsync] Начало вызова. Комната: {request.RoomId}, Caller: {request.CallerId}, Участники: {string.Join(", ", request.ParticipantIds)}");
+
             try
             {
-                request.CallerPoort = _voiceClient.localendpoint;
+                request.CallerPoort = _voiceClient.LocalPort;
                 var message = await apir.PostAsync<object>(Properties.Settings.Default.StartCallAPI, request);
-                l.log($"[StartCallAsync] Отправил в start-call c портом:{request.CallerPoort}");
+                l.log($"[StartCallAsync] Отправил запрос на сервер с портом {request.CallerPoort}");
             }
             catch (Exception ex)
             {
-                l.log($"[StartCallAsync] Возникла ошибка: {ex.Message}");
+                l.log($"[StartCallAsync] Ошибка: {ex.Message}");
             }
 
             _ = Task.Run(() => _voiceReceiver.StartListening());
-            l.log("[VoiceClient] Вызов StartRecording()...");
+            l.log("[VoiceClient] Запуск записи...");
             _voiceClient.StartRecording();
-            l.log("[VoiceClient-start]  Вызвался успешёно StartRecording()...");
+            l.log("[VoiceClient] Запись запущена.");
         }
+
 
         public async Task AcceptCallAsync(string userId, string roomId)
         {
@@ -109,11 +111,11 @@ namespace Octarine_Core.Classic
             {
                 RoomId = roomId,
                 UserId = userId,
-                ClientPort = _voiceClient.localendpoint
+                ClientPort = _voiceClient.LocalPort
             }; 
             try
             {
-                l.log($"[CallingController] Отпрален запрос с  RoomId: {roomId}, UserId: {userId} и localendpoint {_voiceClient.localendpoint} ");
+                l.log($"[CallingController] Отпрален запрос с  RoomId: {roomId}, UserId: {userId} и localendpoint {_voiceClient.LocalPort} ");
                 var message = await apir.PostAsync<object>(Properties.Settings.Default.ConfirmCallAPI, CallConfirmation);
                 l.log($"[StartCallAsync] Отправил в confirm-call");
             }

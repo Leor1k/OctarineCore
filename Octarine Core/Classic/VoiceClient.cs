@@ -38,13 +38,18 @@ namespace Octarine_Core.Classic
                 _waveIn = new WaveInEvent
                 {
                     DeviceNumber = 0,
-                    WaveFormat = new WaveFormat(44100, 16, 1),
+                    WaveFormat = new WaveFormat(16000, 16, 2),
                     BufferMilliseconds = 100
                 };
 
                 _waveIn.DataAvailable += OnAudioData;
 
-                l.log("[VoiceClient] Обработчик DataAvailable привязан.");
+                _waveIn.DataAvailable += (sender, e) =>
+                {
+                    l.log($"[VoiceClient] DataAvailable сработал! Получено {e.BytesRecorded} байт");
+                };
+
+
             }
             catch (Exception ex)
             {
@@ -73,14 +78,17 @@ namespace Octarine_Core.Classic
         {
             try
             {
+                l.log("[StartRecording] Попытка начать запись...");
                 _waveIn.StartRecording();
-                l.log($"[VoiceClient] Запись успешно начата. Формат: {_waveIn.WaveFormat.SampleRate} Гц, {_waveIn.WaveFormat.BitsPerSample} бит, каналов: {_waveIn.WaveFormat.Channels}");
+                l.log("[StartRecording] Запись успешно начата!");
             }
             catch (Exception ex)
             {
-                l.log($"[VoiceClient] Ошибка при запуске записи: {ex.Message}");
+                l.log($"[StartRecording] Ошибка при запуске записи: {ex.Message}");
             }
         }
+
+
 
 
         public void StopRecording()

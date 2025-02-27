@@ -25,7 +25,7 @@ namespace Octarine_Core.Classic
                 l.log($"[VoiceReceiver] Клиент слушает на порту {_port}");
 
                 _waveOut = new WaveOutEvent();
-                _waveProvider = new BufferedWaveProvider(new WaveFormat(44100, 16, 1)) 
+                _waveProvider = new BufferedWaveProvider(new WaveFormat(16000, 16, 2)) 
                 {
                     BufferDuration = TimeSpan.FromSeconds(10),
                     DiscardOnBufferOverflow = true

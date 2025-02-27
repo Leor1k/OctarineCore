@@ -96,11 +96,10 @@ namespace Octarine_Core.Classic
                 l.log($"[StartCallAsync] Возникла ошибка: {ex.Message}");
             }
 
-            await _voiceReceiver.StartListening();
-            Console.WriteLine("[VoiceClient] Вызов StartRecording()...");
+            _ = Task.Run(() => _voiceReceiver.StartListening());
             l.log("[VoiceClient] Вызов StartRecording()...");
             _voiceClient.StartRecording();
-            l.log("[VoiceClient]  Вызвался успешно StartRecording()...");
+            l.log("[VoiceClient-start]  Вызвался успешёно StartRecording()...");
         }
 
         public async Task AcceptCallAsync(string userId, string roomId)
@@ -122,8 +121,7 @@ namespace Octarine_Core.Classic
             {
                 l.log($"[StartCallAsync] Возникла ошибка: {ex.Message}");
             }
-            await _voiceReceiver.StartListening();
-            Console.WriteLine("[VoiceClient] Вызов StartRecording()...");
+            _ = Task.Run(() => _voiceReceiver.StartListening());
             l.log("[VoiceClient] Вызов StartRecording()...");
             _voiceClient.StartRecording();
             l.log("[VoiceClient] Вызвался успешно StartRecording()...");

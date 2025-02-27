@@ -14,7 +14,7 @@ namespace Octarine_Core
         public MainWindow()
         {
             InitializeComponent();
-            //Properties.Settings.Default.JwtToken = null;
+            Properties.Settings.Default.JwtToken = null;
             CheckAutorisation();
             this.Width = SystemParameters.PrimaryScreenWidth;
             this.Height = SystemParameters.PrimaryScreenHeight;

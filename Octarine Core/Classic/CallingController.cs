@@ -9,6 +9,7 @@ using System.Net.Sockets;
 using System.Text;
 using Octarine_Core.Apis;
 using Octarine_Core.Models;
+using System.Net;
 
 namespace Octarine_Core.Classic
 {
@@ -95,10 +96,12 @@ namespace Octarine_Core.Classic
         public async Task AcceptCallAsync(string userId, string roomId)
         {
             l.log($"[CallingController] Принят вызов. User: {userId}, Комната: {roomId}");
+            var clientPort = ((IPEndPoint)_voiceClient._udpClient.Client.LocalEndPoint).Port;
             var CallConfirmation = new 
             {
                 RoomId = roomId,
-                UserId = userId
+                UserId = userId,
+                ClientPort=clientPort
             }; 
             try
             {

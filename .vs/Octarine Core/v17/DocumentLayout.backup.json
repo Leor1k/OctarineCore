@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\classic\\callingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\callingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\autorisation\\auth.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\autorisation\\auth.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\classic\\voiceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\classic\\voiceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\voiceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\classic\\voicereceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\voicereceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\classic\\callingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\callingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Auth.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\Auth.xaml.cs",
+              "RelativeDocumentMoniker": "Octarine Core\\Autorisation\\Auth.xaml.cs",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\Auth.xaml.cs",
+              "RelativeToolTip": "Octarine Core\\Autorisation\\Auth.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T13:16:51.792Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -32,10 +49,9 @@
               "RelativeDocumentMoniker": "Octarine Core\\Classic\\VoiceReceiver.cs",
               "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\VoiceReceiver.cs",
               "RelativeToolTip": "Octarine Core\\Classic\\VoiceReceiver.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAwwFEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAwwFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T14:28:08.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-23T14:28:08.742Z"
             },
             {
               "$type": "Document",
@@ -45,23 +61,21 @@
               "RelativeDocumentMoniker": "Octarine Core\\Classic\\VoiceClient.cs",
               "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\VoiceClient.cs",
               "RelativeToolTip": "Octarine Core\\Classic\\VoiceClient.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T14:06:10.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-23T14:06:10.302Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "CallingController.cs",
               "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\CallingController.cs",
               "RelativeDocumentMoniker": "Octarine Core\\Classic\\CallingController.cs",
               "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\CallingController.cs",
               "RelativeToolTip": "Octarine Core\\Classic\\CallingController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAApwBIAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAMwCgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T12:48:49.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-23T12:48:49.48Z"
             }
           ]
         }

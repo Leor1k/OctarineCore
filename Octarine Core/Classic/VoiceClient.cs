@@ -9,7 +9,7 @@ namespace Octarine_Core.Classic
 {
     public class VoiceClient
     {
-        private UdpClient _udpClient;
+        public UdpClient _udpClient;
         private string _serverIp = "147.45.175.135"; // IP сервера
         private int _serverPort = 5005; // Серверный порт
         private IPEndPoint _serverEndPoint;

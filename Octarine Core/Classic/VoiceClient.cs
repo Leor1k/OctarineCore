@@ -25,7 +25,7 @@ namespace Octarine_Core.Classic
             _udpClient.Client.SendBufferSize = 65536; // 64 KB
 
             var localEndPoint = (IPEndPoint)_udpClient.Client.LocalEndPoint;
-            localendpoint = localEndPoint.ToString();
+            localendpoint = localEndPoint.Port.ToString();
             l.log($"[VoiceClient] Клиент запущен на порту {localEndPoint.Port}");
 
             _waveIn = new WaveInEvent

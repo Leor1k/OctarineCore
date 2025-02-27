@@ -10,6 +10,7 @@ using System.Text;
 using Octarine_Core.Apis;
 using Octarine_Core.Models;
 using System.Net;
+using NAudio.Wave;
 
 namespace Octarine_Core.Classic
 {
@@ -24,11 +25,16 @@ namespace Octarine_Core.Classic
 
         public CallingController(OctarineWindow octarineWindow)
         {
+            for (int i = 0; i < WaveIn.DeviceCount; i++)
+            {
+                var capabilities = WaveIn.GetCapabilities(i);
+                l.log($"Микрофон {i}: {capabilities.ProductName}");
+            }
             _voiceReceiver = new VoiceReceiver();
             _voiceClient = new VoiceClient();
             _octarine = octarineWindow;
             apir = new ApiRequests();
-
+            
             _connection = new HubConnectionBuilder()
                 .WithUrl($"http://147.45.175.135:5001/voiceHub?userId={Properties.Settings.Default.UserID}")
                 .Build();
@@ -91,7 +97,10 @@ namespace Octarine_Core.Classic
             }
 
             await _voiceReceiver.StartListening();
+            Console.WriteLine("[VoiceClient] Вызов StartRecording()...");
+            l.log("[VoiceClient] Вызов StartRecording()...");
             _voiceClient.StartRecording();
+            l.log("[VoiceClient]  Вызвался успешно StartRecording()...");
         }
 
         public async Task AcceptCallAsync(string userId, string roomId)
@@ -114,7 +123,10 @@ namespace Octarine_Core.Classic
                 l.log($"[StartCallAsync] Возникла ошибка: {ex.Message}");
             }
             await _voiceReceiver.StartListening();
+            Console.WriteLine("[VoiceClient] Вызов StartRecording()...");
+            l.log("[VoiceClient] Вызов StartRecording()...");
             _voiceClient.StartRecording();
+            l.log("[VoiceClient] Вызвался успешно StartRecording()...");
         }
 
         public async Task RejectCallAsync(string userId, string roomId)

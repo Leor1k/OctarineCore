@@ -17,30 +17,46 @@ namespace Octarine_Core.Classic
         private Log l = new Log();
         public int localendpoint;
 
-
         public VoiceClient()
         {
-            _udpClient = new UdpClient(0); // Используем динамический порт
-            _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
-            _udpClient.Client.SendBufferSize = 65536; // 64 KB
-
-            var localEndPoint = (IPEndPoint)_udpClient.Client.LocalEndPoint;
-            localendpoint = localEndPoint.Port;
-            l.log($"[VoiceClient] Клиент запущен на порту {localEndPoint.Port}");
-
-            _waveIn = new WaveInEvent
+            try
             {
-                WaveFormat = new WaveFormat(8000, 16, 1) // 8kHz, 16 бит, моно
-            };
-            _waveIn.DataAvailable += OnAudioData;
+                _udpClient = new UdpClient(0); // Используем динамический порт
+                _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
+                _udpClient.Client.SendBufferSize = 65536; // 64 KB
+
+                var localEndPoint = (IPEndPoint)_udpClient.Client.LocalEndPoint;
+                localendpoint = localEndPoint.Port;
+                l.log($"[VoiceClient] Клиент запущен на порту {localEndPoint.Port} и слушает с {_serverIp}:{_serverPort}");
+
+                _waveIn = new WaveInEvent
+                {
+                    WaveFormat = new WaveFormat(16000, 16, 1) // 16kHz, 16 бит, моно (лучшее качество)
+                };
+
+                _waveIn.DataAvailable += OnAudioData;
+
+                l.log("[VoiceClient] Обработчик DataAvailable привязан.");
+            }
+            catch (Exception ex)
+            {
+                l.log($"[VoiceClient] Ошибка инициализации: {ex.Message}");
+            }
         }
 
         private async void OnAudioData(object sender, WaveInEventArgs e)
         {
             if (e.BytesRecorded > 0)
             {
-                await _udpClient.SendAsync(e.Buffer, e.Buffer.Length, _serverEndPoint);
-                l.log($"[VoiceClient] Отправлено {e.BytesRecorded} байт на {_serverEndPoint}");
+                try
+                {
+                    await _udpClient.SendAsync(e.Buffer, e.BytesRecorded, _serverEndPoint);
+                    l.log($"[VoiceClient] Отправлено {e.BytesRecorded} байт на {_serverEndPoint}");
+                }
+                catch (Exception ex)
+                {
+                    l.log($"[VoiceClient] Ошибка отправки аудиоданных: {ex.Message}");
+                }
             }
         }
 
@@ -50,9 +66,7 @@ namespace Octarine_Core.Classic
             {
                 byte[] dummyData = Encoding.UTF8.GetBytes("NAT_HOLE");
                 await _udpClient.SendAsync(dummyData, dummyData.Length, _serverEndPoint);
-
-                var localEndPoint = (IPEndPoint)_udpClient.Client.LocalEndPoint;
-                l.log($"[VoiceClient] NAT-пакет отправлен с локального порта {localEndPoint.Port}.");
+                l.log($"[VoiceClient] NAT-пакет отправлен.");
             }
             catch (Exception ex)
             {
@@ -62,13 +76,28 @@ namespace Octarine_Core.Classic
 
         public void StartRecording()
         {
-            l.log("[VoiceClient] Начата запись голоса.");
-            _waveIn.StartRecording();
+            try
+            {
+                _waveIn.StartRecording();
+                l.log("[VoiceClient] Запись успешно начата.");
+            }
+            catch (Exception ex)
+            {
+                l.log($"[VoiceClient] Ошибка при запуске записи: {ex.Message}");
+            }
         }
 
         public void StopRecording()
         {
-            _waveIn.StopRecording();
+            try
+            {
+                _waveIn.StopRecording();
+                l.log("[VoiceClient] Запись остановлена.");
+            }
+            catch (Exception ex)
+            {
+                l.log($"[VoiceClient] Ошибка при остановке записи: {ex.Message}");
+            }
         }
     }
 }

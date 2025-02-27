@@ -7,8 +7,8 @@ namespace Octarine_Core.Models
     {
         public string CallerId { get; set; } = string.Empty;
         public string RoomId { get; set; } = string.Empty;
+        public int ClientPort { get; set; }
         public List<string> ParticipantIds { get; set; } = null;
-        public string ClientPort { get; set; }
         public CallRequest(string roomID,string callerId, List<string> participantIds)
         {
             CallerId = callerId;

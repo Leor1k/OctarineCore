@@ -27,7 +27,7 @@ namespace Octarine_Core.Classic
                 _waveOut = new WaveOutEvent();
                 _waveProvider = new BufferedWaveProvider(new WaveFormat(16000, 16, 1)) // Улучшенное качество: 16kHz, 16 бит, моно
                 {
-                    BufferLength = 8192,
+                    BufferDuration = TimeSpan.FromSeconds(10),
                     DiscardOnBufferOverflow = true
                 };
                 _waveOut.Init(_waveProvider);
@@ -57,7 +57,6 @@ namespace Octarine_Core.Classic
                         l.log($"[VoiceReceiver] Добавлен новый источник: {sender}");
                     }
 
-                    // Воспроизводим полученные данные
                     _waveProvider.AddSamples(receivedData, 0, receivedData.Length);
                     l.log($"[VoiceReceiver] Воспроизведено {receivedData.Length} байт от {sender}");
                 }

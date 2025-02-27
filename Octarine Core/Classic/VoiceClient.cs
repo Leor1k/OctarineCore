@@ -10,20 +10,21 @@ namespace Octarine_Core.Classic
     public class VoiceClient
     {
         private UdpClient _udpClient;
-        private string _serverIp = "147.45.175.135"; // IP сервера
-        private int _serverPort = 5005; // Серверный порт
+        private string _serverIp = "147.45.175.135"; 
+        private int _serverPort = 5005; 
         private IPEndPoint _serverEndPoint;
         private WaveInEvent _waveIn;
         private Log l = new Log();
         public int localendpoint;
+        private int BufferSize = 2048;
 
         public VoiceClient()
         {
             try
             {
-                _udpClient = new UdpClient(0); // Используем динамический порт
+                _udpClient = new UdpClient(0); 
                 _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
-                _udpClient.Client.SendBufferSize = 65536; // 64 KB
+                _udpClient.Client.SendBufferSize = 65536; 
 
                 var localEndPoint = (IPEndPoint)_udpClient.Client.LocalEndPoint;
                 localendpoint = localEndPoint.Port;
@@ -31,7 +32,9 @@ namespace Octarine_Core.Classic
 
                 _waveIn = new WaveInEvent
                 {
-                    WaveFormat = new WaveFormat(16000, 16, 1) // 16kHz, 16 бит, моно (лучшее качество)
+                    DeviceNumber = 0,
+                    WaveFormat = new WaveFormat(16000,1),
+                    BufferMilliseconds = 100
                 };
 
                 _waveIn.DataAvailable += OnAudioData;
@@ -50,12 +53,12 @@ namespace Octarine_Core.Classic
             {
                 try
                 {
-                    await _udpClient.SendAsync(e.Buffer, e.BytesRecorded, _serverEndPoint);
-                    l.log($"[VoiceClient] Отправлено {e.BytesRecorded} байт на {_serverEndPoint}");
+                    int bytesToSend = Math.Min(e.BytesRecorded, BufferSize);
+                    await _udpClient.SendAsync(e.Buffer, bytesToSend, _serverEndPoint);
                 }
                 catch (Exception ex)
                 {
-                    l.log($"[VoiceClient] Ошибка отправки аудиоданных: {ex.Message}");
+                    Console.WriteLine($"Error sending audio: {ex.Message}");
                 }
             }
         }

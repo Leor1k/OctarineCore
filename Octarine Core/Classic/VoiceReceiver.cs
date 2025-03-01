@@ -9,41 +9,46 @@ namespace Octarine_Core.Classic
     public class VoiceReceiver
     {
         private UdpClient _udpClient;
-        private int _port = 5005;
         private WaveOutEvent _waveOut;
         private BufferedWaveProvider _waveProvider;
         private Log l = new Log();
+        private TaskCompletionSource<int> _portTaskSource = new TaskCompletionSource<int>(); 
 
         public VoiceReceiver()
         {
-            try
+            _waveOut = new WaveOutEvent();
+            _waveProvider = new BufferedWaveProvider(new WaveFormat(16000, 16, 2))
             {
-                _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, _port));
-                _udpClient.Client.ReceiveBufferSize = 65536;
-                l.log1($"[VoiceReceiver] Клиент слушает на порту {_port}");
+                BufferDuration = TimeSpan.FromSeconds(10),
+                DiscardOnBufferOverflow = true
+            };
+            _waveOut.Init(_waveProvider);
+            _waveOut.Play();
+        }
 
-                _waveOut = new WaveOutEvent();
-                _waveProvider = new BufferedWaveProvider(new WaveFormat(16000, 16, 2)) 
-                {
-                    BufferDuration = TimeSpan.FromSeconds(10),
-                    DiscardOnBufferOverflow = true
-                };
-                _waveOut.Init(_waveProvider);
-                _waveOut.Play();
-            }
-            catch (Exception ex)
+        public void SetUdpPort(int udpPort)
+        {
+            if (!_portTaskSource.Task.IsCompleted) 
             {
-                l.log1($"[VoiceReceiver] Ошибка при инициализации: {ex.Message}");
+                _portTaskSource.SetResult(udpPort); 
             }
         }
 
         public async Task StartListening()
         {
-            l.log1("[VoiceReceiver] Ожидание голосовых данных...");
+            l.log1("[VoiceReceiver] Ожидание получения UDP-порта...");
 
-            while (true)
+            int port = await _portTaskSource.Task; 
+            l.log1($"[VoiceReceiver] Получен реальный порт: {port}");
+            Console.WriteLine($"[VoiceReceiver] Получен реальный порт: {port}");
+
+            try
             {
-                try
+                _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, port));
+                _udpClient.Client.ReceiveBufferSize = 65536;
+                l.log1($"[VoiceReceiver] Клиент слушает на порту {port}");
+
+                while (true)
                 {
                     UdpReceiveResult result = await _udpClient.ReceiveAsync();
                     byte[] receivedData = result.Buffer;
@@ -59,14 +64,12 @@ namespace Octarine_Core.Classic
                     Buffer.BlockCopy(receivedData, 4, audioData, 0, audioData.Length);
                     l.log1($"[VoiceReceiver] Получен аудиопакет для RoomID {roomId} от {sender}");
                     _waveProvider.AddSamples(audioData, 0, audioData.Length);
-                    l.log1($"[VoiceReceiver] Воспроизведено {audioData.Length} байт от {sender}");
-                }
-                catch (Exception ex)
-                {
-                    l.log1($"[VoiceReceiver] Ошибка приёма данных: {ex.Message}");
                 }
             }
+            catch (Exception ex)
+            {
+                l.log1($"[VoiceReceiver] Ошибка приёма данных: {ex.Message}");
+            }
         }
-
     }
 }

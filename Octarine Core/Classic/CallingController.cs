@@ -31,6 +31,7 @@ namespace Octarine_Core.Classic
             _voiceClient = new VoiceClient();
             _octarine = octarineWindow;
             apir = new ApiRequests();
+            Properties.Settings.Default.UserPort = 0;
             
             _connection = new HubConnectionBuilder()
                 .WithUrl($"http://147.45.175.135:5001/voiceHub?userId={Properties.Settings.Default.UserID}")
@@ -64,6 +65,13 @@ namespace Octarine_Core.Classic
             {
                 l.log($"[ERROR] {message}");
             });
+            _connection.On<int>("ReceiveUdpPort", (udpPort) =>
+            {
+                Console.WriteLine($"[VoiceReceiver] Получил свой реальный UDP-порт от сервера: {udpPort}");
+                _voiceReceiver.SetUdpPort(udpPort);
+            });
+
+
         }
 
         public async Task StartConnectionAsync()

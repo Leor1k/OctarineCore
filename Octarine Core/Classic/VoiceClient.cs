@@ -47,7 +47,7 @@ namespace Octarine_Core.Classic
             {
                 try
                 {
-                    int roomId = Properties.Settings.Default.IdActiveChat; 
+                    int roomId = Properties.Settings.Default.UserID; 
 
                     byte[] roomIdBytes = BitConverter.GetBytes(roomId);
                     byte[] packet = new byte[roomIdBytes.Length + e.BytesRecorded];

@@ -55,7 +55,7 @@ namespace Octarine_Core.Classic
                     Buffer.BlockCopy(roomIdBytes, 0, packet, 0, roomIdBytes.Length);
                     Buffer.BlockCopy(e.Buffer, 0, packet, roomIdBytes.Length, e.BytesRecorded);
 
-                    l.log($"[OnAudioData] Отправка {packet.Length} байт с RoomID {roomId} на {_serverEndPoint}");
+                    l.log($"[OnAudioData] Отправка {packet.Length} байт с Id {roomId} на {_serverEndPoint}");
 
                     await _udpClient.SendAsync(packet, packet.Length, _serverEndPoint);
                 }

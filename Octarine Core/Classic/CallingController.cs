@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
-using System.Windows;
 using Octarine_Core.Resource.UsersIntefeces;
 using Octarine_Core.Autorisation;
 using System.Net.Sockets;
-using System.Text;
 using Octarine_Core.Apis;
 using Octarine_Core.Models;
-using System.Net;
 using NAudio.Wave;
 
 namespace Octarine_Core.Classic
@@ -88,9 +85,7 @@ namespace Octarine_Core.Classic
 
             try
             {
-                request.CallerPoort = _voiceClient.LocalPort;
                 var message = await apir.PostAsync<object>(Properties.Settings.Default.StartCallAPI, request);
-                l.log($"[StartCallAsync] Отправил запрос на сервер с портом {request.CallerPoort}");
             }
             catch (Exception ex)
             {
@@ -111,7 +106,6 @@ namespace Octarine_Core.Classic
             {
                 RoomId = roomId,
                 UserId = userId,
-                ClientPort = _voiceClient.LocalPort
             }; 
             try
             {

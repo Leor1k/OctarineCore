@@ -3,7 +3,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using NAudio.Wave;
-using System.Collections.Generic;
 
 namespace Octarine_Core.Classic
 {
@@ -14,7 +13,6 @@ namespace Octarine_Core.Classic
         private WaveOutEvent _waveOut;
         private BufferedWaveProvider _waveProvider;
         private Log l = new Log();
-        private List<IPEndPoint> clients = new List<IPEndPoint>();
 
         public VoiceReceiver()
         {
@@ -22,7 +20,7 @@ namespace Octarine_Core.Classic
             {
                 _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, _port));
                 _udpClient.Client.ReceiveBufferSize = 65536;
-                l.log($"[VoiceReceiver] Клиент слушает на порту {_port}");
+                l.log1($"[VoiceReceiver] Клиент слушает на порту {_port}");
 
                 _waveOut = new WaveOutEvent();
                 _waveProvider = new BufferedWaveProvider(new WaveFormat(16000, 16, 2)) 
@@ -35,13 +33,13 @@ namespace Octarine_Core.Classic
             }
             catch (Exception ex)
             {
-                l.log($"[VoiceReceiver] Ошибка при инициализации: {ex.Message}");
+                l.log1($"[VoiceReceiver] Ошибка при инициализации: {ex.Message}");
             }
         }
 
         public async Task StartListening()
         {
-            l.log("[VoiceReceiver] Ожидание голосовых данных...");
+            l.log1("[VoiceReceiver] Ожидание голосовых данных...");
 
             while (true)
             {
@@ -51,20 +49,24 @@ namespace Octarine_Core.Classic
                     byte[] receivedData = result.Buffer;
                     IPEndPoint sender = result.RemoteEndPoint;
 
-                    if (!clients.Contains(sender))
+                    if (receivedData.Length < 4)
                     {
-                        clients.Add(sender);
-                        l.log($"[VoiceReceiver] Добавлен новый источник: {sender}");
+                        l.log1($"[VoiceReceiver] Ошибка: слишком короткий пакет от {sender}");
+                        continue;
                     }
-
-                    _waveProvider.AddSamples(receivedData, 0, receivedData.Length);
-                    l.log($"[VoiceReceiver] Воспроизведено {receivedData.Length} байт от {sender}");
+                    int roomId = BitConverter.ToInt32(receivedData, 0);
+                    byte[] audioData = new byte[receivedData.Length - 4];
+                    Buffer.BlockCopy(receivedData, 4, audioData, 0, audioData.Length);
+                    l.log1($"[VoiceReceiver] Получен аудиопакет для RoomID {roomId} от {sender}");
+                    _waveProvider.AddSamples(audioData, 0, audioData.Length);
+                    l.log1($"[VoiceReceiver] Воспроизведено {audioData.Length} байт от {sender}");
                 }
                 catch (Exception ex)
                 {
-                    l.log($"[VoiceReceiver] Ошибка приёма данных: {ex.Message}");
+                    l.log1($"[VoiceReceiver] Ошибка приёма данных: {ex.Message}");
                 }
             }
         }
+
     }
 }

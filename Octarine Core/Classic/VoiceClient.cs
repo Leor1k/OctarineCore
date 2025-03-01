@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using NAudio.Wave;
 
 namespace Octarine_Core.Classic
@@ -16,7 +14,6 @@ namespace Octarine_Core.Classic
         private WaveInEvent _waveIn;
         private Log l = new Log();
         public int LocalPort { get; private set; }
-        private const int BufferSize = 2048;
 
         public VoiceClient()
         {

@@ -34,10 +34,6 @@ namespace Octarine_Core.Resource.UsersIntefeces
         {
             try
             {
-                //MessageBox.Show("Из метода");
-                //MessageBox.Show(RoomId);
-                //MessageBox.Show("Отправлено!");
-
                 _timer?.Dispose();
                 foreach (FriendBrick fb in Controller._octarine.ChatStack.Children)
                 {
@@ -73,15 +69,14 @@ namespace Octarine_Core.Resource.UsersIntefeces
 
         private async Task DeniedCall()
         {
-            //MessageBox.Show("Биля телефона этого маму ебал");
             await Controller.RejectCallAsync(Properties.Settings.Default.UserID.ToString(), RoomId);
             Application.Current.Dispatcher.Invoke(() =>
             {
                 var parentContainer = VisualTreeHelper.GetParent(this) as Panel;
                 parentContainer?.Children.Remove(this);
             });
+            _timer?.Dispose();
 
-            _timer?.Dispose(); 
         }
     }
 }

@@ -241,5 +241,14 @@ namespace Octarine_Core.Properties {
                 this["UserPort"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5001/voice/reject-call")]
+        public string RejectCall {
+            get {
+                return ((string)(this["RejectCall"]));
+            }
+        }
     }
 }

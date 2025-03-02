@@ -8,6 +8,9 @@ using System.Net.Sockets;
 using Octarine_Core.Apis;
 using Octarine_Core.Models;
 using NAudio.Wave;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Octarine_Core.Classic
 {
@@ -67,8 +70,23 @@ namespace Octarine_Core.Classic
             });
             _connection.On<int>("ReceiveUdpPort", (udpPort) =>
             {
-                Console.WriteLine($"[VoiceReceiver] Получил свой реальный UDP-порт от сервера: {udpPort}");
+                l.log($"[VoiceReceiver] Получил свой реальный UDP-порт от сервера: {udpPort}");
                 _voiceReceiver.SetUdpPort(udpPort);
+            });
+            _connection.On<string, string>("RejectEndCall", (RoomId, UserId) =>
+            {
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                   foreach (var item in octarineWindow.MainGrid.Children)
+                   {
+                        if (item.GetType() == typeof(EntreredCall))
+                        {
+                            EntreredCall ec = item as EntreredCall;
+                            var parentContainer = VisualTreeHelper.GetParent(ec) as Panel;
+                            parentContainer?.Children.Remove(ec);
+                        }
+                   }
+                });
             });
 
 
@@ -79,11 +97,11 @@ namespace Octarine_Core.Classic
             try
             {
                 await _connection.StartAsync();
-                l.log($"[CallingController] Подключение установлено. UserID: {Properties.Settings.Default.UserID}");
+                l.log($"[StartConnectionAsync] Подключение установлено. UserID: {Properties.Settings.Default.UserID}");
             }
             catch (Exception ex)
             {
-                l.log($"[CallingController] Ошибка подключения: {ex.Message}");
+                l.Ex($"[StartConnectionAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
         }
 
@@ -97,7 +115,7 @@ namespace Octarine_Core.Classic
             }
             catch (Exception ex)
             {
-                l.log($"[StartCallAsync] Ошибка: {ex.Message}");
+                l.Ex($"[StartCallAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
 
             _ = Task.Run(() => _voiceReceiver.StartListening(_voiceClient._udpClient));
@@ -123,7 +141,7 @@ namespace Octarine_Core.Classic
             }
             catch (Exception ex)
             {
-                l.log($"[StartCallAsync] Возникла ошибка: {ex.Message}");
+                l.Ex($"[StartCallAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
             _ = Task.Run(() => _voiceReceiver.StartListening(_voiceClient._udpClient));
             l.log("[VoiceClient] Вызов StartRecording()...");
@@ -131,11 +149,25 @@ namespace Octarine_Core.Classic
             l.log("[VoiceClient] Вызвался успешно StartRecording()...");
         }
 
+
         public async Task RejectCallAsync(string userId, string roomId)
         {
-            l.log($"[CallingController] Отклонён вызов. User: {userId}, Комната: {roomId}");
-            await _connection.SendAsync("RejectCall", userId, roomId);
-            _voiceClient.StopRecording();
+            l.log($"[RejectCallAsync] Отклонён вызов. User: {userId}, Комната: {roomId}");
+            try
+            {
+                l.log($"[RejectCallAsync] Отпрален запрос с  RoomId: {roomId}, UserId: {userId}");
+                var CallEndRequest = new
+                {
+                    UserId = userId,
+                    RoomId = roomId,
+                };
+                await apir.PostAsync<object>(Properties.Settings.Default.RejectCall, CallEndRequest);
+
+            }
+            catch (Exception ex)
+            {
+                l.Ex($"[RejectCallAsync] Ошибка:{ex.Message} : {ex.Source}");
+            }
         }
     }
 }

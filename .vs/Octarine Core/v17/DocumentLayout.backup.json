@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\classic\\voicereceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\voicereceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\classic\\voiceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\voiceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\classic\\callingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\callingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\classic\\voicereceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\voicereceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,29 +22,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Settings.settings",
-              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Properties\\Settings.settings",
-              "RelativeDocumentMoniker": "Octarine Core\\Properties\\Settings.settings",
-              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Properties\\Settings.settings",
-              "RelativeToolTip": "Octarine Core\\Properties\\Settings.settings",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2025-03-01T13:12:32.434Z",
+              "DocumentIndex": 0,
+              "Title": "VoiceClient.cs",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\VoiceClient.cs",
+              "RelativeDocumentMoniker": "Octarine Core\\Classic\\VoiceClient.cs",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\VoiceClient.cs",
+              "RelativeToolTip": "Octarine Core\\Classic\\VoiceClient.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAADgvyQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T11:00:02.362Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "VoiceReceiver.cs",
               "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\VoiceReceiver.cs",
               "RelativeDocumentMoniker": "Octarine Core\\Classic\\VoiceReceiver.cs",
               "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\VoiceReceiver.cs",
               "RelativeToolTip": "Octarine Core\\Classic\\VoiceReceiver.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAkwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-01T11:47:44.056Z",
               "EditorCaption": ""
@@ -57,7 +58,7 @@
               "RelativeDocumentMoniker": "Octarine Core\\Classic\\CallingController.cs",
               "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\CallingController.cs",
               "RelativeToolTip": "Octarine Core\\Classic\\CallingController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAgwEgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-01T11:47:37.577Z",
               "EditorCaption": ""

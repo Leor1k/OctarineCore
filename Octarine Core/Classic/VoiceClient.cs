@@ -7,7 +7,7 @@ namespace Octarine_Core.Classic
 {
     public class VoiceClient
     {
-        private UdpClient _udpClient;
+        public UdpClient _udpClient;
         private readonly string _serverIp = "147.45.175.135";
         private readonly int _serverPort = 5005;
         private IPEndPoint _serverEndPoint;
@@ -19,19 +19,21 @@ namespace Octarine_Core.Classic
         {
             try
             {
-                _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));
-                LocalPort = ((IPEndPoint)_udpClient.Client.LocalEndPoint).Port;
-                _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
-                _udpClient.Client.SendBufferSize = 65536;
-
-                l.log($"[VoiceClient] Клиент запущен на порту {LocalPort}, отправляет на {_serverIp}:{_serverPort}");
-
                 _waveIn = new WaveInEvent
                 {
                     DeviceNumber = 0,
                     WaveFormat = new WaveFormat(16000, 16, 2),
                     BufferMilliseconds = 100
                 };
+                _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));
+                LocalPort = ((IPEndPoint)_udpClient.Client.LocalEndPoint).Port;
+                l.log1($"Создание UDP : {_udpClient.Client.LocalEndPoint}");
+                _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
+                _udpClient.Client.SendBufferSize = 65536;
+
+                l.log1($"[VoiceClient] Клиент запущен на порту {LocalPort}, отправляет на {_serverIp}:{_serverPort}");
+
+                
 
                 _waveIn.DataAvailable += OnAudioData;
             }

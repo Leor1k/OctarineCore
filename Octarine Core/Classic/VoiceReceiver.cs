@@ -34,29 +34,30 @@ namespace Octarine_Core.Classic
             }
         }
 
-        public async Task StartListening()
+        public async Task StartListening(UdpClient udpClient)
         {
-            l.log1("[VoiceReceiver] Ожидание получения UDP-порта...");
+            l.log1("[StartListening] Ожидание получения UDP-порта...");
 
-            int port = await _portTaskSource.Task; 
-            l.log1($"[VoiceReceiver] Получен реальный порт: {port}");
-            Console.WriteLine($"[VoiceReceiver] Получен реальный порт: {port}");
+            int port = await _portTaskSource.Task;
+            
+            Console.WriteLine($"[StartListening] Получен реальный UDP: {udpClient.Client.LocalEndPoint}");
 
             try
             {
-                _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, port));
-                _udpClient.Client.ReceiveBufferSize = 65536;
-                l.log1($"[VoiceReceiver] Клиент слушает на порту {port}");
+                _udpClient = udpClient;
+                _udpClient.Client.ReceiveBufferSize = 65536;;
+                l.log1($"[StartListening] Клиент слушает на порту {_udpClient.Client.LocalEndPoint}----");
 
                 while (true)
                 {
+                    l.log1($"[VoiceReceiver] Начало цикла");
                     UdpReceiveResult result = await _udpClient.ReceiveAsync();
                     byte[] receivedData = result.Buffer;
                     IPEndPoint sender = result.RemoteEndPoint;
 
                     if (receivedData.Length < 4)
                     {
-                        l.log1($"[VoiceReceiver] Ошибка: слишком короткий пакет от {sender}");
+                        l.log1($"[StartListening] Ошибка: слишком короткий пакет от {sender}");
                         continue;
                     }
                     int roomId = BitConverter.ToInt32(receivedData, 0);

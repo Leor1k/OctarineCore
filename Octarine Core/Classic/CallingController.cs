@@ -16,7 +16,7 @@ namespace Octarine_Core.Classic
         private HubConnection _connection;
         public OctarineWindow _octarine;
         private VoiceReceiver _voiceReceiver;
-        private VoiceClient _voiceClient;
+        public VoiceClient _voiceClient;
         private Log l = new Log();
         ApiRequests apir;
 
@@ -100,7 +100,7 @@ namespace Octarine_Core.Classic
                 l.log($"[StartCallAsync] Ошибка: {ex.Message}");
             }
 
-            _ = Task.Run(() => _voiceReceiver.StartListening());
+            _ = Task.Run(() => _voiceReceiver.StartListening(_voiceClient._udpClient));
             l.log("[VoiceClient] Запуск записи...");
             _voiceClient.StartRecording();
             l.log("[VoiceClient] Запись запущена.");
@@ -125,7 +125,7 @@ namespace Octarine_Core.Classic
             {
                 l.log($"[StartCallAsync] Возникла ошибка: {ex.Message}");
             }
-            _ = Task.Run(() => _voiceReceiver.StartListening());
+            _ = Task.Run(() => _voiceReceiver.StartListening(_voiceClient._udpClient));
             l.log("[VoiceClient] Вызов StartRecording()...");
             _voiceClient.StartRecording();
             l.log("[VoiceClient] Вызвался успешно StartRecording()...");

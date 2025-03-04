@@ -65,7 +65,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
             await EndCall();
         }
 
-        private async Task EndCall()
+        public async Task EndCall()
         {
             _callTimer.Stop();
             await Controller.EndCall(Properties.Settings.Default.UserID.ToString(), ChatId);

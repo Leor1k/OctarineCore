@@ -61,17 +61,19 @@ namespace Octarine_Core.Classic
 
             _connection.On<string, string>("UserJoinedCall", (RoomId, UserId) =>
             {
-                l.log($"[UserJoinedCall] User {UserId} подключился в комнату с {RoomId}");
-                foreach (var item in octarineWindow.IngoGrid.Children)
+                Application.Current.Dispatcher.Invoke(() =>
                 {
-                    if (item.GetType() == typeof(ChatUpBur))
+                    l.log($"[UserJoinedCall] User {UserId} подключился в комнату с {RoomId}");
+                    foreach (var item in octarineWindow.IngoGrid.Children)
                     {
-                        ChatUpBur cub = item as ChatUpBur;
-                        cub._callTimer.Stop();
-                        MessageBox.Show("Таймер остановлен");
+                        if (item.GetType() == typeof(ChatUpBur))
+                        {
+                            ChatUpBur cub = item as ChatUpBur;
+                            cub._callTimer.Stop();
+                            MessageBox.Show("Таймер остановлен");
+                        }
                     }
-                }
-
+                });
             });
             _connection.On<string, List<string>>("CallAccepted", (roomId, participants) =>
             {
@@ -100,6 +102,20 @@ namespace Octarine_Core.Classic
                             parentContainer?.Children.Remove(ec);
                         }
                    }
+                });
+            });
+            _connection.On<string, string>("UserLeftCall", (RoomId, UserId) =>
+            {
+                Application.Current.Dispatcher.Invoke(async () =>
+                {
+                    foreach (var item in octarineWindow.MainGrid.Children)
+                    {
+                        if (item.GetType() == typeof(ChatUpBur))
+                        {
+                            ChatUpBur cub = item as ChatUpBur;
+                            await cub.EndCall();
+                        }
+                    }
                 });
             });
 
@@ -176,7 +192,6 @@ namespace Octarine_Core.Classic
                     RoomId = roomId,
                 };
                 await apir.PostAsync<object>(Properties.Settings.Default.RejectCall, CallEndRequest);
-
             }
             catch (Exception ex)
             {

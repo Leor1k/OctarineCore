@@ -17,7 +17,7 @@
 
     <Grid x:Name="MainGrid" Background="{DynamicResource MainGray}">
         <!-- Ваш кастомный UpBar -->
-        <Border x:Name="UpBrd" BorderBrush="{DynamicResource MainWhite}" Tag="static" BorderThickness="2" CornerRadius="5" Padding="0" Margin="0,10,0,0" Width="1910" Height="44" VerticalAlignment="Top" Background="{DynamicResource SecondGreen}" MouseLeftButtonDown="UpBar_MouseLeftButtonDown">
+        <Border x:Name="UpBrd" BorderBrush="{DynamicResource MainWhite}" Tag="static" BorderThickness="0.3" CornerRadius="5" Padding="0" Margin="0,10,0,0" Width="1910" Height="44" VerticalAlignment="Top" Background="{DynamicResource SecondGreen}" MouseLeftButtonDown="UpBar_MouseLeftButtonDown">
             <DockPanel x:Name="UpBar" Height="40" VerticalAlignment="Top">
                 <Button x:Name="CloseBtn" Width="35" DockPanel.Dock="Right" Click="CloseBtn_Click" Height="35">
                     <Button.Background>
@@ -48,12 +48,12 @@
         </Border>
 
         <DockPanel x:Name="MainDock" LastChildFill="False" Margin="3,5,0,25" HorizontalAlignment="Left">
-            <Border BorderBrush="{DynamicResource LightGreen}" BorderThickness="2" CornerRadius="10" Padding="0" Margin="5,55,5,0" Background="{DynamicResource SecondGreen}">
+            <Border BorderBrush="{DynamicResource LightGreen}" BorderThickness="0.3" CornerRadius="10" Padding="0" Margin="5,55,5,0" Background="{DynamicResource SecondGreen}">
                 <StackPanel x:Name="LeftStack" Width="300">
                     <users:UsersBrick x:Name="UsersEnteredBrick" Margin="5,5,5,5"/>
                     <Border  Height="1" Background="{DynamicResource LightGreen}" Margin="0,0,0,5"/>
                     <StackPanel x:Name="ChatStack" Height="800" Margin="0,3,0,0"/>
-                    <Border BorderThickness="1" Height="82" BorderBrush="{DynamicResource MainWhite}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border BorderThickness="0.3" Height="82" BorderBrush="{DynamicResource MainWhite}" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel x:Name="SpeshialNatonsStack" Orientation="Horizontal" Width="299">
                             <Button x:Name="SearchFriendBtn" VerticalAlignment="Center" Height="55" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="10,0,0,0" Click="SearchFriendBtn_Click">
                                 <Button.Background>

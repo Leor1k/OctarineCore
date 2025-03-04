@@ -250,5 +250,14 @@ namespace Octarine_Core.Properties {
                 return ((string)(this["RejectCall"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5001/voice/end-call")]
+        public string EndCall {
+            get {
+                return ((string)(this["EndCall"]));
+            }
+        }
     }
 }

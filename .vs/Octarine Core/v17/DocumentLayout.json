@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\classic\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\resource\\usersintefeces\\chatupbur.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\resource\\usersintefeces\\chatupbur.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\resource\\usersintefeces\\entreredcall.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\resource\\usersintefeces\\entreredcall.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\resource\\usersintefeces\\chatupbur.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\resource\\usersintefeces\\chatupbur.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\resource\\usersintefeces\\entreredcall.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\resource\\usersintefeces\\entreredcall.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\octarine core\\classic\\callingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\classic\\callingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\callingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\autorisation\\octarinewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\autorisation\\octarinewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|c:\\users\\proroksamboy\\desktop\\testics\\octarine-core\\octarine core\\classic\\formconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F59ACF32-FF90-4531-A7DC-71950251BCB7}|Octarine Core\\Octarine Core.csproj|solutionrelative:octarine core\\classic\\formconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,82 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormConroller.cs",
-              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\FormConroller.cs",
-              "RelativeDocumentMoniker": "Octarine Core\\Classic\\FormConroller.cs",
-              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\FormConroller.cs",
-              "RelativeToolTip": "Octarine Core\\Classic\\FormConroller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAUwBEAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T13:46:09.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OctarineWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\OctarineWindow.xaml",
-              "RelativeDocumentMoniker": "Octarine Core\\Autorisation\\OctarineWindow.xaml",
-              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Autorisation\\OctarineWindow.xaml",
-              "RelativeToolTip": "Octarine Core\\Autorisation\\OctarineWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-02T13:44:18.456Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Log.cs",
-              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\Log.cs",
-              "RelativeDocumentMoniker": "Octarine Core\\Classic\\Log.cs",
-              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\Log.cs",
-              "RelativeToolTip": "Octarine Core\\Classic\\Log.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCMAAAANAAAAAAAAAA==",
+              "Title": "ChatUpBur.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\ChatUpBur.xaml.cs",
+              "RelativeDocumentMoniker": "Octarine Core\\Resource\\UsersIntefeces\\ChatUpBur.xaml.cs",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\ChatUpBur.xaml.cs",
+              "RelativeToolTip": "Octarine Core\\Resource\\UsersIntefeces\\ChatUpBur.xaml.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAADwv0EAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T13:33:22.478Z",
+              "WhenOpened": "2025-03-04T12:41:41.692Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EntreredCall.xaml",
-              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\EntreredCall.xaml",
-              "RelativeDocumentMoniker": "Octarine Core\\Resource\\UsersIntefeces\\EntreredCall.xaml",
-              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\EntreredCall.xaml",
-              "RelativeToolTip": "Octarine Core\\Resource\\UsersIntefeces\\EntreredCall.xaml",
+              "Title": "ChatUpBur.xaml",
+              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\ChatUpBur.xaml",
+              "RelativeDocumentMoniker": "Octarine Core\\Resource\\UsersIntefeces\\ChatUpBur.xaml",
+              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\ChatUpBur.xaml",
+              "RelativeToolTip": "Octarine Core\\Resource\\UsersIntefeces\\ChatUpBur.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-02T13:26:25.624Z",
+              "WhenOpened": "2025-03-04T12:41:39.112Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EntreredCall.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\EntreredCall.xaml.cs",
-              "RelativeDocumentMoniker": "Octarine Core\\Resource\\UsersIntefeces\\EntreredCall.xaml.cs",
-              "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Resource\\UsersIntefeces\\EntreredCall.xaml.cs",
-              "RelativeToolTip": "Octarine Core\\Resource\\UsersIntefeces\\EntreredCall.xaml.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAIwEsAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T13:25:52.261Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "CallingController.cs",
               "DocumentMoniker": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\CallingController.cs",
               "RelativeDocumentMoniker": "Octarine Core\\Classic\\CallingController.cs",
               "ToolTip": "C:\\Users\\ProrokSamBoy\\Desktop\\Testics\\Octarine-Core\\Octarine Core\\Classic\\CallingController.cs",
               "RelativeToolTip": "Octarine Core\\Classic\\CallingController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAIwFcAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAArwEEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:47:37.577Z",
+              "WhenOpened": "2025-03-04T12:12:57.184Z",
               "EditorCaption": ""
             }
           ]

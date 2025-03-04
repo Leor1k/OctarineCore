@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using Microsoft.Win32;
+using System.Windows.Threading;
 using Octarine_Core.Classic;
 using Octarine_Core.Models;
 
@@ -12,11 +14,14 @@ namespace Octarine_Core.Resource.UsersIntefeces
     /// </summary>
     public partial class ChatUpBur : UserControl
     {
-        string FriendName { get; set; } =string.Empty;
+        string FriendName { get; set; } = string.Empty;
         int FriendId { get; set; } = 0;
         CallingController Controller { get; set; }
         List<string> FriendsList { get; set; }
         public string ChatId { get; set; }
+
+        public DispatcherTimer _callTimer;
+
         public ChatUpBur(string friendName, int friendId, CallingController controller, FriendBrick friend)
         {
             InitializeComponent();
@@ -24,33 +29,48 @@ namespace Octarine_Core.Resource.UsersIntefeces
             FriendId = friendId;
             FriendNameTextBox.Text = friendName;
             Controller = controller;
-            List<string> friendsList = new List<string>();
+            FriendsList = new List<string>();
+
             foreach (var Users in friend.FriendIds)
             {
-                friendsList.Add(Users.ToString());
+                FriendsList.Add(Users.ToString());
             }
-            FriendsList = friendsList;
+
             ChatId = friend.ChatId.ToString();
+
+            _callTimer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(20)
+            };
+            _callTimer.Tick += (s, e) => EndCall();
         }
 
-        private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            //MessageBox.Show($"Друзья {string.Join(", ", FriendsList)}");
-            StandartGrid.Visibility = System.Windows.Visibility.Hidden;
-            CallGrid.Visibility = System.Windows.Visibility.Visible;
+            StandartGrid.Visibility = Visibility.Hidden;
+            CallGrid.Visibility = Visibility.Visible;
             t1.Text = Properties.Settings.Default.UserName;
             t2.Text = FriendName;
+
             CallRequest req = new CallRequest(ChatId, Properties.Settings.Default.UserID.ToString(), FriendsList);
             await Controller.StartCallAsync(req);
             Properties.Settings.Default.InColling = true;
 
+            _callTimer.Start();
+            
         }
 
-        private void EndCallBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void EndCallBtn_Click(object sender, RoutedEventArgs e)
         {
-            StandartGrid.Visibility = System.Windows.Visibility.Visible;
-            CallGrid.Visibility = System.Windows.Visibility.Hidden;
+            await EndCall();
+        }
+
+        private async Task EndCall()
+        {
+            _callTimer.Stop();
+            await Controller.EndCall(Properties.Settings.Default.UserID.ToString(), ChatId);
+            StandartGrid.Visibility = Visibility.Visible;
+            CallGrid.Visibility = Visibility.Hidden;
             Properties.Settings.Default.InColling = false;
         }
     }

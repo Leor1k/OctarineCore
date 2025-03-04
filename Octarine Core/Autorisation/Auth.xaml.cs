@@ -49,7 +49,7 @@ namespace Octarine_Core
             {
                 ErrorMessage($"Возникла ошибка: {ex.Message}");
             }
-        } //Готово
+        }
         private async void TryRegister()
         {
             ApiRequests apir = new ApiRequests();
@@ -70,7 +70,7 @@ namespace Octarine_Core
             {
                 ErrorMessage($"Возникла ошибка: {ex.Message}");
             }
-        } //ну так +-
+        } 
         private async void TryConfirm(string code)
         {
             ApiRequests apir = new ApiRequests();
@@ -208,9 +208,6 @@ namespace Octarine_Core
             AuthBrd.Visibility = Visibility.Hidden;
             RegistrationBrd.Visibility = Visibility.Visible;
             ErrorBorder.Visibility = Visibility.Hidden;
-            //Window window = new OctarineWindow();
-            //window.Show();
-            //this.Close();
         }
         private void RegBtn_Копировать_Click(object sender, RoutedEventArgs e)
         {

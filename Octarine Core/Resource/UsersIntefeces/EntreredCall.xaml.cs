@@ -76,6 +76,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 parentContainer?.Children.Remove(this);
             });
             _timer?.Dispose();
+            Properties.Settings.Default.InColling = false;
 
         }
     }

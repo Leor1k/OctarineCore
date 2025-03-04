@@ -59,6 +59,20 @@ namespace Octarine_Core.Classic
                 });
             });
 
+            _connection.On<string, string>("UserJoinedCall", (RoomId, UserId) =>
+            {
+                l.log($"[UserJoinedCall] User {UserId} подключился в комнату с {RoomId}");
+                foreach (var item in octarineWindow.IngoGrid.Children)
+                {
+                    if (item.GetType() == typeof(ChatUpBur))
+                    {
+                        ChatUpBur cub = item as ChatUpBur;
+                        cub._callTimer.Stop();
+                        MessageBox.Show("Таймер остановлен");
+                    }
+                }
+
+            });
             _connection.On<string, List<string>>("CallAccepted", (roomId, participants) =>
             {
                 l.log($"[CallingController] Звонок принят. Комната: {roomId}, участники: {string.Join(", ", participants)}");
@@ -169,5 +183,25 @@ namespace Octarine_Core.Classic
                 l.Ex($"[RejectCallAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
         }
+        public async Task EndCall (string userId, string roomId)
+        {
+            l.log($"[EndCall] Отмена. User: {userId}, Комната: {roomId}");
+            var CallEndRequest = new
+            {
+                RoomId = roomId,
+                UserId = userId,
+            };
+            try
+            {
+                var message = await apir.PostAsync<object>(Properties.Settings.Default.EndCall, CallEndRequest);
+                l.log($"[EndCall] Отправил в end-call");
+            }
+            catch (Exception ex)
+            {
+                l.Ex($"[EndCall] Ошибка:{ex.Message} : {ex.Source}");
+            }
+            _voiceClient.StopRecording();
+        }
+
     }
 }

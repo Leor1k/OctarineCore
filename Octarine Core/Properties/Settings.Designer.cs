@@ -259,5 +259,23 @@ namespace Octarine_Core.Properties {
                 return ((string)(this["EndCall"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/friends/getPrivateChat")]
+        public string GetChatID {
+            get {
+                return ((string)(this["GetChatID"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/UsersSettings/ChangeUserName")]
+        public string ChangeNameApi {
+            get {
+                return ((string)(this["ChangeNameApi"]));
+            }
+        }
     }
 }

@@ -31,6 +31,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
             Controller = controller;
             FriendsList = new List<string>();
 
+
             foreach (var Users in friend.FriendIds)
             {
                 FriendsList.Add(Users.ToString());

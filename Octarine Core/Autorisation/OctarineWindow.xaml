@@ -60,7 +60,7 @@
                                     <ImageBrush ImageSource="/Resource/Icons/IconUser.png" Stretch="Fill"/>
                                 </Button.Background>
                             </Button>
-                            <Button Height="55" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="10,0,0,0">
+                            <Button x:Name="OpenSettingsBtn" Height="55" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="10,0,0,0" Click="OpenSettingsBtn_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Resource/Icons/Zalupa.png"/>
                                 </Button.Background>
@@ -114,7 +114,7 @@
                 </Grid>
             </Grid>
         </Border>
-        <Border x:Name="ErrorAutbrd" Tag="dynamic" BorderBrush="{DynamicResource MainWhite}"  BorderThickness="1" Margin="538,945,242,51" Background="{DynamicResource MainGray}">
+        <Border x:Name="ErrorAutbrd" Tag="dynamic" BorderBrush="{DynamicResource MainWhite}"  BorderThickness="1" Margin="538,860,242,136" Background="{DynamicResource MainGray}">
             <TextBlock x:Name="ErrorOutTb" TextWrapping="Wrap" Text="TextBlock" FontSize="24" TextAlignment="Center" Margin="5,5,5,5"/>
         </Border>
         <Border x:Name="ChatWindow" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}">
@@ -132,9 +132,37 @@
                             <ImageBrush ImageSource="/Resource/Icons/Send.png"/>
                         </Button.Background>
                     </Button>
-                    <TextBox x:Name="SendedMesageTb" TextWrapping="Wrap" Margin="39,12,105,42" FontSize="22" Height="45"/>
+                    <TextBox x:Name="SendedMesageTb" TextWrapping="Wrap" Margin="39,12,105,42" FontSize="22" Height="45" KeyDown="SendedMesageTb_KeyDown"/>
                 </Grid>
             </Grid>
         </Border>
+        <Border x:Name="settingsBorder" BorderBrush="{DynamicResource MainWhite}" Tag ="dynamic"  BorderThickness="1" Margin="25,13,25,25" Background="{DynamicResource MainGray}" d:IsHidden="True">
+            <DockPanel x:Name="MainDockSettings" LastChildFill="False">
+                <StackPanel x:Name="ChapterStack" Width="254" Margin="2,0,0,0" Background="{DynamicResource SecondGreen}">
+                    <Button Content="Аккаунт" Height="62" Background="{DynamicResource MainGray}" Margin="0,5,0,0" FontSize="18" BorderThickness="0.3"  BorderBrush="{DynamicResource MainWhite}"/>
+                </StackPanel>
+                <Grid x:Name="AccauntSettingsGrid" Width="1610">
+                    <Rectangle HorizontalAlignment="Center" RadiusX="15" RadiusY="15" Height="966" Margin="0,31,0,0" VerticalAlignment="Top" Width="1544" Fill="{DynamicResource SecondGreen}"/>
+                    <TextBlock Margin="1064,64,55,0" TextWrapping="Wrap" Text="Настройки аккаунта" VerticalAlignment="Top" FontSize="48"/>
+                    <TextBox x:Name="ChangeNameTb" HorizontalAlignment="Left" Margin="214,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" Height="50" FontSize="36"/>
+                    <TextBlock Margin="90,220,1401,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" FontSize="36"/>
+                    <TextBlock Margin="684,220,684,0" TextWrapping="Wrap" Text="Фото профиля" VerticalAlignment="Top" FontSize="36"/>
+                    <Rectangle HorizontalAlignment="Left" RadiusX="12" RadiusY="12" Height="261" Margin="1178,133,0,0" VerticalAlignment="Top" Width="262" Fill="{DynamicResource MainGray}" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Image x:Name="UsersImageSettings" Margin="1202,156,194,654" Source="/OctarineLogo.ico"/>
+                    <Button x:Name="SaveChanges" Content="Сохранить " HorizontalAlignment="Left" Margin="1018,916,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource LightGreen}" FontSize="24" Click="SaveChanges_Click"/>
+                    <Button Content="Выйти" HorizontalAlignment="Left" Margin="1300,917,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource MainGray}" FontSize="24" Click="Button_Click"/>
+                </Grid>
+            </DockPanel>
+        </Border>
+        <Grid x:Name="FirstErorrGrid" Margin="321,54,25,967"/>
     </Grid>
 </Window>

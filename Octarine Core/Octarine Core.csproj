@@ -241,12 +241,16 @@
     <Compile Include="Classic\CallingController.cs" />
     <Compile Include="Classic\ChatController.cs" />
     <Compile Include="Classic\ChatHub.cs" />
+    <Compile Include="Classic\ErrorAutUIController.cs" />
     <Compile Include="Classic\FormConroller.cs" />
+    <Compile Include="Classic\FriendForSignalR.cs" />
     <Compile Include="Classic\Log.cs" />
+    <Compile Include="Classic\MinIO.cs" />
     <Compile Include="Classic\VoiceClient.cs" />
     <Compile Include="Classic\VoiceReceiver.cs" />
     <Compile Include="Models\CallRequest.cs" />
     <Compile Include="Models\ChatDto.cs" />
+    <Compile Include="Models\CreatedChatDTO.cs" />
     <Compile Include="Models\EnteredUserLite.cs" />
     <Compile Include="Models\FriendDto.cs" />
     <Compile Include="Models\Friends.cs" />
@@ -259,6 +263,9 @@
     </Compile>
     <Compile Include="Resource\UsersIntefeces\EntreredCall.xaml.cs">
       <DependentUpon>EntreredCall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\UsersIntefeces\ErorrShowing.xaml.cs">
+      <DependentUpon>ErorrShowing.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resource\UsersIntefeces\FriendBrick.xaml.cs">
       <DependentUpon>FriendBrick.xaml</DependentUpon>
@@ -306,6 +313,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\UsersIntefeces\EntreredCall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\UsersIntefeces\ErorrShowing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

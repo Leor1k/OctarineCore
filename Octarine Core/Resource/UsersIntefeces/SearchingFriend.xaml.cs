@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using Octarine_Core.Apis;
 using Octarine_Core.Autorisation;
 using Octarine_Core.Classic;
@@ -16,7 +17,8 @@ namespace Octarine_Core.Resource.UsersIntefeces
     {
         private int _id;
         public ChatController chatController { get; set; }
-        public SearchingFriend(ChatController ch,int Id, string Name, string Status)
+        public string PhotoName {  get; set; }
+        public SearchingFriend(ChatController ch,int Id, string Name, string Status, string _PhotoName)
         {
             InitializeComponent();
             _id = Id;
@@ -29,6 +31,20 @@ namespace Octarine_Core.Resource.UsersIntefeces
             }    
             StatusSearchingUser.Text = Status;
             StatysRequestTb.Visibility = Visibility.Hidden;
+            PhotoName = _PhotoName;
+            LoadUserIcon();
+        }
+        public async void LoadUserIcon()
+        {
+            if(PhotoName != null)
+            {
+                MinIO minIO = new MinIO();
+                BitmapImage UserBitMap = await minIO.LoadImageFromMinIO(PhotoName);
+                if (UserBitMap != null)
+                {
+                    FriendIcon.Source = UserBitMap;
+                }
+            }
         }
 
         private async void AddFriendBtn_Click(object sender, RoutedEventArgs e)
@@ -55,7 +71,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
             ApiRequests apir = new ApiRequests();
             try
             {
-                var tokenResponse = await apir.PostAsync<object>(Properties.Settings.Default.AcceptFriend, AddFriend);
+                await apir.PostAsync<object>(Properties.Settings.Default.AcceptFriend, AddFriend);
                 StatysRequestTb.Text = "Вы стали друзьями";
                 StatusSearchingUser.Text = "В друзьях";
                 AddFriendBtn.Visibility= Visibility.Hidden;

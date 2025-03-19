@@ -7,7 +7,7 @@ namespace Octarine_Core.Models
     {
         [JsonPropertyName("user_id")]
         public int UserId { get; set; }
-        [JsonPropertyName("users_name")]
+        [JsonPropertyName("username")]
         public string UserName { get; set; }
     }
 }

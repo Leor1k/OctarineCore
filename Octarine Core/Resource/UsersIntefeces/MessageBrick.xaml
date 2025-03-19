@@ -7,11 +7,44 @@
              mc:Ignorable="d" d:DesignWidth="500" Height="Auto" Background="{DynamicResource MainGray}" Margin="15,5,15,0">
     <Border BorderThickness="1" CornerRadius="10" Padding="10">
         <Grid>
-            <TextBlock x:Name="contetMessage" 
-                       TextWrapping="Wrap" 
-                       MaxWidth="500" 
-                       FontSize="16"
-                       HorizontalAlignment="Left"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <!-- Фото -->
+                <ColumnDefinition Width="*" />
+                <!-- Сообщение -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Фото пользователя -->
+            <Image x:Name="userPhoto"
+                   Width="40"
+                   Height="40"
+                   Margin="5"
+                   ClipToBounds="True"
+                   Stretch="UniformToFill"
+                   VerticalAlignment="Top" Source="/OctarineLogo.ico"/>
+
+            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                <!-- Имя пользователя -->
+                <TextBlock x:Name="userName"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="0,0,0,3"/>
+
+                <!-- Текст сообщения -->
+                <TextBlock x:Name="contetMessage"
+                           TextWrapping="Wrap"
+                           MaxWidth="500"
+                           FontSize="16"
+                           Foreground="White"/>
+
+                <!-- Дата и время -->
+                <TextBlock x:Name="messageTime"
+                           FontSize="12"
+                           Foreground="Gray"
+                           HorizontalAlignment="Right"
+                           Margin="0,5,0,0"/>
+            </StackPanel>
         </Grid>
     </Border>
 </UserControl>

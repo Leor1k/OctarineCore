@@ -6,3 +6,30 @@
 [2025-03-04 15:20:51] [EndCall] Ошибка:Ошибка NotFound:  : Octarine Core
 [2025-03-04 15:21:12] [EndCall] Ошибка:Ошибка InternalServerError:  : Octarine Core
 [2025-03-04 15:21:42] [EndCall] Ошибка:Ошибка InternalServerError:  : Octarine Core
+[2025-03-09 15:28:53] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-09 16:11:27] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-09 16:15:50] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-09 16:24:50] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-09 16:53:44] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-09 16:57:28] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-09 16:59:32] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 11:11:05] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 11:29:21] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 12:12:07] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 12:13:28] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 13:31:35] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 14:12:19] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 14:12:42] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 15:12:10] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 15:13:28] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 15:14:17] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 15:26:17] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-15 16:36:15] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-17 14:57:08] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-17 14:58:01] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-17 15:04:26] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-19 14:06:50] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-19 14:10:38] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-19 14:14:31] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-19 14:21:49] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib
+[2025-03-19 14:41:41] [StartConnectionAsync] Ошибка:Произошла ошибка при отправке запроса. : mscorlib

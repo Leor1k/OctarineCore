@@ -22,7 +22,10 @@ namespace Octarine_Core.Apis
             var claims = jwtToken.Claims;
             var userName = claims.FirstOrDefault(c => c.Type == "users_name")?.Value;
             var userId = claims.FirstOrDefault(i => i.Type == "users_id")?.Value;
-            EnteredUserLite es = new EnteredUserLite(Convert.ToInt32(userId), userName.ToString());
+            var userStatus = claims.FirstOrDefault(s => s.Type == "users_status")?.Value;
+            var PictureName = claims.FirstOrDefault(p => p.Type == "users_pictureName")?.Value;
+
+            EnteredUserLite es = new EnteredUserLite(Convert.ToInt32(userId), userName.ToString(),userStatus.ToString(),PictureName.ToString());
             return es;
         }
     }

@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
 using Octarine_Core.Models;
 
 namespace Octarine_Core.Apis
@@ -80,6 +81,38 @@ namespace Octarine_Core.Apis
                 }
             }
         }
-   
+        public async Task<object> GetAsyncNoList<T>(string apiUrl)
+        {
+            if (string.IsNullOrEmpty(apiUrl))
+                throw new ArgumentException("URL не может быть пустым.", nameof(apiUrl));
+
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(apiUrl);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return responseContent;
+                }
+                else
+                {
+                    try
+                    {
+                        var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
+                        if (responseData != null && responseData.ContainsKey("message"))
+                        {
+                            throw new Exception(responseData["message"]);
+                        }
+                        throw new Exception("Произошла непредвиденная ошибка сервера.");
+                    }
+                    catch
+                    {
+                        return null;
+                    }
+
+                }
+            }
+        }
     }
 }

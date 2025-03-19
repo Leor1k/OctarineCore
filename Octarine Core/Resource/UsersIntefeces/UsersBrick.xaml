@@ -14,7 +14,7 @@
                  Stroke="{DynamicResource LightGreen}" VerticalAlignment="Center" Width="65"/>
 
         <!-- Изображение с маской -->
-        <Image Height="65" Width="65" HorizontalAlignment="Left" Margin="11,5,0,5" 
+        <Image x:Name="UsersImage" Height="65" Width="65" HorizontalAlignment="Left" Margin="11,5,0,5" 
                Source="/Resource/Icons/IconUser.png">
             <Image.Clip>
                 <EllipseGeometry Center="32.5,32.5" RadiusX="32.5" RadiusY="32.5"/>

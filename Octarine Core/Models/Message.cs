@@ -16,8 +16,7 @@ namespace Octarine_Core.Models
 
         [JsonPropertyName("content")]
         public string Content { get; set; }
-
-       //[JsonPropertyName("messagetype")]
+        //[JsonPropertyName("messagetype")]
         //public string MessageType {  get; set; }
 
         [JsonPropertyName("createdat")]

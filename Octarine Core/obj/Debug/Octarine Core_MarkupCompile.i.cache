@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\App.xaml
-11-2075993712
+122138150357
 
-31841145962
+36-809653931
 163449921207
-Autorisation\Auth.xaml;Autorisation\OctarineWindow.xaml;Resource\Colors.xaml;Resource\Ojects.xaml;Resource\Texts.xaml;Resource\UsersIntefeces\ChatUpBur.xaml;Resource\UsersIntefeces\EntreredCall.xaml;Resource\UsersIntefeces\FriendBrick.xaml;Resource\UsersIntefeces\MessageBrick.xaml;Resource\UsersIntefeces\SearchingFriend.xaml;Resource\UsersIntefeces\UsersBrick.xaml;
+Autorisation\Auth.xaml;Autorisation\OctarineWindow.xaml;Resource\Colors.xaml;Resource\Ojects.xaml;Resource\Texts.xaml;Resource\UsersIntefeces\ChatUpBur.xaml;Resource\UsersIntefeces\EntreredCall.xaml;Resource\UsersIntefeces\ErorrShowing.xaml;Resource\UsersIntefeces\FriendBrick.xaml;Resource\UsersIntefeces\MessageBrick.xaml;Resource\UsersIntefeces\SearchingFriend.xaml;Resource\UsersIntefeces\UsersBrick.xaml;
 
-False
+True
 

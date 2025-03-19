@@ -1,8 +1,10 @@
-﻿using System;
+﻿
+using System;
 using System.Data.Common;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using Octarine_Core.Apis;
 using Octarine_Core.Autorisation;
 using Octarine_Core.Models;
@@ -21,6 +23,7 @@ namespace Octarine_Core.Classic
         }
         public async Task LoadChat(int userID,int friendID)
         {
+           
             ApiRequests ap = new ApiRequests();
             var messages = await ap.GetAsync<Message>($"{Properties.Settings.Default.GetMessagies}/{userID}/{friendID}");
             if (messages != null)
@@ -32,7 +35,9 @@ namespace Octarine_Core.Classic
                    {
                         Friend = true;
                    }
-                    MessageBrick mb = new MessageBrick(message.Content, Friend);
+                    DateTime datetime = Convert.ToDateTime(message.CreatedAt);
+                    MessageBrick mb = new MessageBrick(message.Content, Friend, datetime.ToString("H:mm dd/mm/yyyy"),message.SenderId);
+
                     if (Friend ==false)
                     {
                         mb.HorizontalAlignment = System.Windows.HorizontalAlignment.Right;
@@ -45,7 +50,6 @@ namespace Octarine_Core.Classic
                     Properties.Settings.Default.IdActiveChat = message.ChatId;
                 }
             }
-            
         }
         public async void OnChatClick(object sender, EventArgs e)
         {

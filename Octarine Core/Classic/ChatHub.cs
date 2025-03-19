@@ -12,10 +12,13 @@ namespace Octarine_Core.Classic
     {
         private HubConnection _connection;
         private StackPanel _stackPanel;
+        public StackPanel _stackPanelForNewRequestFriends;
+        private ChatController _chatController;
 
-        public ChatHub(StackPanel stackPanel)
+        public ChatHub(StackPanel stackPanel, ChatController chatController)
         {
             _stackPanel = stackPanel;
+            _chatController = chatController;
             _connection = new HubConnectionBuilder()
      .WithUrl($"http://147.45.175.135:5000/chatHub?userId={Properties.Settings.Default.UserID}")
      .Build();
@@ -27,7 +30,7 @@ namespace Octarine_Core.Classic
                 {
                     if (message.ChatId == Properties.Settings.Default.IdActiveChat)
                     {
-                        MessageBrick mb = new MessageBrick(message.Content, true);
+                        MessageBrick mb = new MessageBrick(message.Content, true, DateTime.Now.ToString("H:mm dd/mm/yyyy"), message.SenderId);
                         mb.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                         _stackPanel.Children.Add(mb);
                     }
@@ -35,6 +38,19 @@ namespace Octarine_Core.Classic
                     {
                     }
                     
+                });
+            });
+            _connection.On<FriendSignalR>("NewRequestOnFriend", (ForSendFriendRequest) =>
+            {
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    WhantsBeFriend whantsBeFriend = new WhantsBeFriend();
+                    whantsBeFriend.FriendId = ForSendFriendRequest.FriendId;
+                    whantsBeFriend.UserId = ForSendFriendRequest.UserId;
+                    whantsBeFriend.UserName = ForSendFriendRequest.UserName;
+                    whantsBeFriend.PhotoName = ForSendFriendRequest.PhotoName;
+                    _stackPanelForNewRequestFriends.Children.Add(whantsBeFriend.CreateAcceptBrick(_chatController));
+
                 });
             });
         }
@@ -51,7 +67,6 @@ namespace Octarine_Core.Classic
             }
         }
 
-        // Метод для отправки сообщения через SignalR
         public async Task SendMessageAsync(string userId, MessagesDTO message)
         {
             try

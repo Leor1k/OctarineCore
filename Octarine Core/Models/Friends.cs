@@ -16,9 +16,11 @@ namespace Octarine_Core.Models
 
         [JsonPropertyName("friendStatus")]
         public string FriendStatus { get; set; }
+        [JsonPropertyName("friendPhoto")]
+        public string  Foto {  get; set; }
         public SearchingFriend CreateSearchBrick(ChatController oc)
         {
-            SearchingFriend sf = new SearchingFriend(oc,FriendId, FriendName, "В друзьях");
+            SearchingFriend sf = new SearchingFriend(oc,FriendId, FriendName, "В друзьях", Foto );
             return sf;
         }
     }

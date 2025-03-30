@@ -80,5 +80,17 @@
     <Setting Name="ChangeNameApi" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://147.45.175.135:5000/api/UsersSettings/ChangeUserName</Value>
     </Setting>
+    <Setting Name="BorderForEror" Type="System.Windows.Controls.Grid" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ChatController" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CreateGroupChatId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/Chats/create-group</Value>
+    </Setting>
+    <Setting Name="LoadGroupChat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/Chats/get-messages-byIdChat/</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

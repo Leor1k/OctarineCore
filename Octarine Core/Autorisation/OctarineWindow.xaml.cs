@@ -25,15 +25,27 @@ namespace Octarine_Core.Autorisation
             InitializeComponent();
             WindowChrome.SetWindowChrome(this, new WindowChrome());
             LoadUserData();
-            _chatController = new ChatController(MainChatStack, this);
             InitializeChatHub();
+            LoadControllers();
+            MainChatStack.SizeChanged += MainChatStack_SizeChanged;
+            LoadProperiries();
+           
+
+        }
+        private void LoadControllers ()
+        {
+
             FormConroller ff = new FormConroller(MainGrid);
             formc = ff;
             formc.SwitchOctarineBorder(InfoBorder);
-            MainChatStack.SizeChanged += MainChatStack_SizeChanged;
-            Properties.Settings.Default.InColling = false;
+            _chatController = new ChatController(MainChatStack, this);
             _errorAutUIController = new ErrorAutUIController();
-
+        }
+        private void LoadProperiries ()
+        {
+            Properties.Settings.Default.InColling = false;
+            Properties.Settings.Default.BorderForEror = FirstErorrGrid;
+            Properties.Settings.Default.ChatController = _chatController;
         }
         private async void InitializeChatHub()
         {
@@ -202,7 +214,6 @@ namespace Octarine_Core.Autorisation
                 ApiRequests ap = new ApiRequests();
                 var chatID = await ap.GetAsyncNoList<int>($"{Properties.Settings.Default.GetChatID}/{Properties.Settings.Default.UserID}/{friendID}");
                 int ChatIdInt = Convert.ToInt32(chatID);
-                MessageBox.Show(ChatIdInt.ToString());
 
                 int[] chatParitkansId = { friendID, Properties.Settings.Default.UserID };
                 dd = new FriendBrick(ChatIdInt, FriendName, "В разработке", chatParitkansId);
@@ -221,6 +232,22 @@ namespace Octarine_Core.Autorisation
 
             await _chatController.LoadChat(EnteredUserData.GetIdUser(), friendID);
             Properties.Settings.Default.FriendId = friendID;
+            Scr.ScrollToEnd();
+        }
+        public async Task ShowGroupChat(string RoomName, int[] friendIDs, int chatID)
+        {
+            formc.SwitchOctarineBorder(ChatWindow);
+            MainChatStack.Children.Clear();
+
+            if (Properties.Settings.Default.InColling == false)
+            {
+                IngoGrid.Children.Clear();
+                ChatUpBur cb = new ChatUpBur(RoomName, friendIDs, _callingController, chatID);
+                IngoGrid.Children.Add(cb);
+            }
+
+            await _chatController.LoadChatGroup(chatID);
+            Properties.Settings.Default.FriendId = friendIDs[0];
             Scr.ScrollToEnd();
         }
 

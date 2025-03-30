@@ -277,5 +277,50 @@ namespace Octarine_Core.Properties {
                 return ((string)(this["ChangeNameApi"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Windows.Controls.Grid BorderForEror {
+            get {
+                return ((global::System.Windows.Controls.Grid)(this["BorderForEror"]));
+            }
+            set {
+                this["BorderForEror"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public Octarine_Core.Classic.ChatController ChatController
+        {
+            get {
+                return ((Octarine_Core.Classic.ChatController)(this["ChatController"]));
+            }
+            set {
+                this["ChatController"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/create-group")]
+        public string CreateGroupChatId {
+            get {
+                return ((string)(this["CreateGroupChatId"]));
+            }
+            set {
+                this["CreateGroupChatId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/get-messages-byIdChat/")]
+        public string LoadGroupChat {
+            get {
+                return ((string)(this["LoadGroupChat"]));
+            }
+        }
     }
 }

@@ -51,11 +51,50 @@ namespace Octarine_Core.Classic
                 }
             }
         }
+        public async Task LoadChatGroup(int ChatId)
+        {
+
+            ApiRequests ap = new ApiRequests();
+            string a = $"{Properties.Settings.Default.LoadGroupChat}{ChatId}";
+            var messages = await ap.GetAsync<Message>(a);
+            if (messages != null)
+            {
+                foreach (var message in messages)
+                {
+                    bool Friend = false;
+                    if (message.SenderId != Properties.Settings.Default.UserID)
+                    {
+                        Friend = true;
+                    }
+                    DateTime datetime = Convert.ToDateTime(message.CreatedAt);
+                    MessageBrick mb = new MessageBrick(message.Content, Friend, datetime.ToString("H:mm dd/mm/yyyy"), message.SenderId);
+
+                    if (Friend == false)
+                    {
+                        mb.HorizontalAlignment = System.Windows.HorizontalAlignment.Right;
+                    }
+                    else
+                    {
+                        mb.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+                    }
+                    stackPanel.Children.Add(mb);
+                    Properties.Settings.Default.IdActiveChat = message.ChatId;
+                }
+            }
+        }
+
         public async void OnChatClick(object sender, EventArgs e)
         {
             if (sender is FriendBrick brick)
             {
-                await OcWi.ShowUsersChat(brick.FriendName, brick.FriendIds[0]);
+                if(brick.FriendIds.Length >1)
+                {
+                    await OcWi.ShowGroupChat(brick.FriendName, brick.FriendIds, brick.ChatId);
+                }
+                else
+                {
+                    await OcWi.ShowUsersChat(brick.FriendName, brick.FriendIds[0]);
+                }
             }
         }
         public async void CreateChats(int IdUserm, int IdFriend, string FriendName)
@@ -69,15 +108,34 @@ namespace Octarine_Core.Classic
             {
                 ApiRequests api = new ApiRequests();
                 await api.PostAsync<object>(Properties.Settings.Default.CreatePrivateChate, CreateChatRequest);
-
+                await OcWi.ShowUsersChat(FriendName, IdFriend);
             }
             catch
             {
-
+                ErrorAutUIController errorAutUIController = new ErrorAutUIController();
+                errorAutUIController.ShowUserError("Произошла непредвиденная ошибка при создании чата.", Properties.Settings.Default.BorderForEror);
             }
-            finally
+        }
+        public async void CreateGroupChat (GroupChat chat)
+        {
+            var CreateChatRequest = new
             {
-                await OcWi.ShowUsersChat(FriendName,IdFriend);
+                CreatorID = chat.CreatorId,
+                UsersId = chat.Particals,
+                ChatName = chat.ChatName,
+            };
+            try
+            {
+                ApiRequests api = new ApiRequests();
+                CreatedGroupChatDTO response = await api.PostAsyncWithAnswer<object, CreatedGroupChatDTO>(Properties.Settings.Default.CreateGroupChatId, CreateChatRequest);
+                response.ShowChat();
+                MessageBox.Show($"А имя его: {chat.ChatName}"); 
+                //await OcWi.ShowUsersChat(FriendName, IdFriend);
+            }
+            catch
+            {
+                ErrorAutUIController errorAutUIController = new ErrorAutUIController();
+                errorAutUIController.ShowUserError("Произошла непредвиденная ошибка при создании чата.", Properties.Settings.Default.BorderForEror);
             }
         }
         public async Task SendMessageAsync(int FriendId, string Conent)

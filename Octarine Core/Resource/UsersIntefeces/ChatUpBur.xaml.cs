@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
         public string ChatId { get; set; }
 
         public DispatcherTimer _callTimer;
+        public readonly bool IsGroupChat;
 
         public ChatUpBur(string friendName, int friendId, CallingController controller, FriendBrick friend)
         {
@@ -30,13 +32,12 @@ namespace Octarine_Core.Resource.UsersIntefeces
             FriendNameTextBox.Text = friendName;
             Controller = controller;
             FriendsList = new List<string>();
-
-
+            ShowPartilalsBtn.Visibility = Visibility.Hidden;
+            IsGroupChat = false;
             foreach (var Users in friend.FriendIds)
             {
                 FriendsList.Add(Users.ToString());
             }
-
             ChatId = friend.ChatId.ToString();
 
             _callTimer = new DispatcherTimer
@@ -44,6 +45,26 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 Interval = TimeSpan.FromSeconds(20)
             };
             _callTimer.Tick += (s, e) => EndCall();
+        }
+        public ChatUpBur(string RoomaName, int[] friendIds, CallingController controller, int chatId)
+        {
+            InitializeComponent();
+            FriendName = RoomaName;
+            FriendNameTextBox.Text = RoomaName;
+            Controller = controller;
+            FriendsList = new List<string>();
+            IsGroupChat = true;
+            ShowPartilalsBtn.Visibility = Visibility.Visible;
+            foreach (int id in friendIds)
+            {
+                FriendsList.Add($"{id}");
+            }
+            ChatId = chatId.ToString();
+            _callTimer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(20)
+            };
+            _callTimer.Tick += (s, e) => EndCall();   
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -73,6 +94,11 @@ namespace Octarine_Core.Resource.UsersIntefeces
             StandartGrid.Visibility = Visibility.Visible;
             CallGrid.Visibility = Visibility.Hidden;
             Properties.Settings.Default.InColling = false;
+        }
+
+        private void AddUserInRoomBTN_Click(object sender, RoutedEventArgs e)
+        {
+            Controller._octarine.MainGrid.Children.Add(new FriendAddList(FriendsList, IsGroupChat));    
         }
     }
 }

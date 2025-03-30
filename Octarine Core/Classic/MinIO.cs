@@ -44,7 +44,6 @@ namespace Octarine_Core.Classic
                 }
                 else
                 {
-                    MessageBox.Show("Ошибка загрузки изображения");
                     return null;
                 }
             }

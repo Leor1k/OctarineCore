@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\
 Octarine_Core
 none
 false
 DEBUG;TRACE
-C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\App.xaml
-122138150357
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\App.xaml
+14924329107
 
-351272434687
-163449921207
-Autorisation\Auth.xaml;Autorisation\OctarineWindow.xaml;Resource\Colors.xaml;Resource\Ojects.xaml;Resource\Texts.xaml;Resource\UsersIntefeces\ChatUpBur.xaml;Resource\UsersIntefeces\EntreredCall.xaml;Resource\UsersIntefeces\ErorrShowing.xaml;Resource\UsersIntefeces\FriendBrick.xaml;Resource\UsersIntefeces\MessageBrick.xaml;Resource\UsersIntefeces\SearchingFriend.xaml;Resource\UsersIntefeces\UsersBrick.xaml;
+39-1893185327
+1632015421115
+Autorisation\Auth.xaml;Autorisation\OctarineWindow.xaml;Resource\Colors.xaml;Resource\Ojects.xaml;Resource\Texts.xaml;Resource\UsersIntefeces\AddUserToRoomBrick.xaml;Resource\UsersIntefeces\ChatUpBur.xaml;Resource\UsersIntefeces\EntreredCall.xaml;Resource\UsersIntefeces\ErorrShowing.xaml;Resource\UsersIntefeces\FriendAddList.xaml;Resource\UsersIntefeces\FriendBrick.xaml;Resource\UsersIntefeces\MessageBrick.xaml;Resource\UsersIntefeces\SearchingFriend.xaml;Resource\UsersIntefeces\UsersBrick.xaml;
 
 False
 

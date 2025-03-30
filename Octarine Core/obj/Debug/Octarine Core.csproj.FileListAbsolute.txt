@@ -163,3 +163,132 @@ C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octa
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.pdb
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\ErorrShowing.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\ErorrShowing.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Octarine Core.exe.config
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Octarine Core.exe
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.Memory.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.TimeProvider.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Features.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Asio.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Core.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Midi.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Wasapi.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.WinForms.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.WinMM.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Buffers.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Memory.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Net.ServerSentEvents.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Text.Json.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Threading.Channels.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.ValueTuple.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Connections.Abstractions.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Client.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Common.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Client.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Client.Core.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Common.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Protocols.Json.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.Memory.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.TimeProvider.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Features.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Asio.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Core.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Midi.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Wasapi.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.WinForms.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.WinMM.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Buffers.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Memory.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Net.ServerSentEvents.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Text.Json.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Threading.Channels.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.ValueTuple.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.csproj.AssemblyReference.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Colors.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Ojects.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Texts.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\Auth.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\OctarineWindow.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ChatUpBur.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\EntreredCall.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ErorrShowing.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\MessageBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\SearchingFriend.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UsersBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\App.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.lref
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\App.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\Auth.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\OctarineWindow.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ChatUpBur.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\EntreredCall.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ErorrShowing.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendBrick.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\MessageBrick.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\SearchingFriend.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UsersBrick.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.g.resources
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine_Core.Properties.Resources.resources
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.csproj.GenerateResource.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.csproj.CoreCompileInputs.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine.E0A7653C.Up2Date
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.exe
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendAddList.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendAddList.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\AddUserToRoomBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\AddUserToRoomBrick.baml

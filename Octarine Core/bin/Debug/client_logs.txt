@@ -3185,3 +3185,135 @@
 [2025-03-19 14:50:46] Микрофон 0: Microphone (Vault)
 [2025-03-19 15:05:49] Микрофон 0: Microphone (Vault)
 [2025-03-19 15:06:14] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:16:26] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:16:26] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:16:47] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:16:47] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:19:35] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:19:35] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:21:44] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:21:44] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:40:37] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:40:37] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:41:22] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:41:22] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:42:42] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:42:42] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:45:23] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:45:23] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:46:07] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:46:07] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:46:51] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:46:51] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:47:34] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:47:34] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:48:10] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:48:10] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:53:50] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:53:50] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 14:54:54] Микрофон 0: Microphone (Vault)
+[2025-03-29 14:54:54] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:19:11] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:19:11] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:20:12] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:20:12] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:21:46] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:21:46] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:23:30] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:23:30] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:24:10] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:24:11] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:25:34] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:25:34] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:26:47] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:26:47] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:27:31] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:27:31] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:28:13] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:28:13] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:29:05] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:29:05] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:30:20] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:30:20] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:30:43] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:30:43] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-03-29 15:31:09] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:31:10] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:40:13] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:40:13] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:54:15] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:54:15] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:54:57] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:54:57] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 15:55:59] Микрофон 0: Microphone (Vault)
+[2025-03-29 15:55:59] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 16:05:37] Микрофон 0: Microphone (Vault)
+[2025-03-29 16:05:37] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 16:13:32] Микрофон 0: Microphone (Vault)
+[2025-03-29 16:13:32] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 16:14:48] Микрофон 0: Microphone (Vault)
+[2025-03-29 16:14:48] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 16:16:21] Микрофон 0: Microphone (Vault)
+[2025-03-29 16:16:21] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 16:17:22] Микрофон 0: Microphone (Vault)
+[2025-03-29 16:17:22] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 16:27:43] Микрофон 0: Microphone (Vault)
+[2025-03-29 16:27:43] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 16:30:16] Микрофон 0: Microphone (Vault)
+[2025-03-29 16:30:16] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 17:03:39] Микрофон 0: Microphone (Vault)
+[2025-03-29 17:03:39] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 17:11:20] Микрофон 0: Microphone (Vault)
+[2025-03-29 17:11:20] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 17:11:47] Микрофон 0: Microphone (Vault)
+[2025-03-29 17:11:47] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 17:24:48] Микрофон 0: Microphone (Vault)
+[2025-03-29 17:24:48] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-29 17:25:10] Микрофон 0: Microphone (Vault)
+[2025-03-29 17:25:11] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 15:48:09] Микрофон 0: Microphone (Vault)
+[2025-03-30 15:48:09] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 15:57:29] Микрофон 0: Microphone (Vault)
+[2025-03-30 15:57:29] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:06:57] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:06:57] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:08:04] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:08:04] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:22:55] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:22:55] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:32:06] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:32:06] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:35:03] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:35:03] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:35:26] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:35:26] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:36:06] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:36:06] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:38:05] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:38:05] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:40:13] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:40:13] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 16:40:29] Микрофон 0: Microphone (Vault)
+[2025-03-30 16:40:29] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:16:10] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:16:10] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:16:43] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:16:43] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:18:17] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:18:17] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:18:46] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:18:46] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:19:00] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:19:01] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:27:38] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:27:39] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:28:03] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:28:03] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:28:47] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:28:47] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:41:18] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:41:18] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:47:43] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:47:43] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-03-30 17:53:26] Микрофон 0: Microphone (Vault)
+[2025-03-30 17:53:26] [StartConnectionAsync] Подключение установлено. UserID: 2

@@ -11,33 +11,54 @@ namespace Octarine_Core.Models
 
         [JsonPropertyName("chatId")]
         public int ChatId { get; set; }
+        [JsonPropertyName("chatType")]
+        public string ChatType { get; set; }
+        [JsonPropertyName("chatName")]
+        public string ChatName { get;  set; }
 
-        public string ChatName { get; private set; } = string.Empty;
         [JsonPropertyName("participants")]
         public List<UserDto> Participants
         {
             get => _participants;
             set
             {
-                _participants = value;
-                ChatName = string.Empty;
-
-                for (int i = _participants.Count - 1; i >= 0; i--)
+                if (ChatType == "private")
                 {
-                    if (_participants[i].UserId == Properties.Settings.Default.UserID)
+                    _participants = value;
+                    ChatName = string.Empty;
+
+                    for (int i = _participants.Count - 1; i >= 0; i--)
                     {
-                        _participants.RemoveAt(i);
+                        if (_participants[i].UserId == Properties.Settings.Default.UserID)
+                        {
+                            _participants.RemoveAt(i);
+                        }
+                        else
+                        {
+                            ChatName += _participants[i].UserName + " ";
+                            Console.WriteLine(ChatName);
+                        }
                     }
-                    else
+
+                    ChatName = ChatName.Trim();
+                }
+                else
+                {
+                    _participants = value;
+
+                    for (int i = _participants.Count - 1; i >= 0; i--)
                     {
-                        ChatName += _participants[i].UserName + " ";
-                        Console.WriteLine(ChatName);
+                        if (_participants[i].UserId == Properties.Settings.Default.UserID)
+                        {
+                            _participants.RemoveAt(i);
+                        }
                     }
                 }
-
-                ChatName = ChatName.Trim();
+               
             }
         }
+
+
         public FriendBrick CreateChatBrick ()
         {
             int[] FriendsId = new int[_participants.Count];

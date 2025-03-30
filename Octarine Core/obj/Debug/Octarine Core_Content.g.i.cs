@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("octarinelogo.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/icons/adduser.png")]
 
 

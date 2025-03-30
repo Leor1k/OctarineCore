@@ -238,6 +238,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Apis\JWT.cs" />
+    <Compile Include="Classic\AddFriendToRoomController.cs" />
     <Compile Include="Classic\CallingController.cs" />
     <Compile Include="Classic\ChatController.cs" />
     <Compile Include="Classic\ChatHub.cs" />
@@ -258,6 +259,9 @@
     <Compile Include="Models\MessagesDTO.cs" />
     <Compile Include="Models\UserDto.cs" />
     <Compile Include="Models\WhantsBeFriend.cs" />
+    <Compile Include="Resource\UsersIntefeces\AddUserToRoomBrick.xaml.cs">
+      <DependentUpon>AddUserToRoomBrick.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resource\UsersIntefeces\ChatUpBur.xaml.cs">
       <DependentUpon>ChatUpBur.xaml</DependentUpon>
     </Compile>
@@ -266,6 +270,9 @@
     </Compile>
     <Compile Include="Resource\UsersIntefeces\ErorrShowing.xaml.cs">
       <DependentUpon>ErorrShowing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\UsersIntefeces\FriendAddList.xaml.cs">
+      <DependentUpon>FriendAddList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resource\UsersIntefeces\FriendBrick.xaml.cs">
       <DependentUpon>FriendBrick.xaml</DependentUpon>
@@ -279,6 +286,7 @@
     <Compile Include="Resource\UsersIntefeces\UsersBrick.xaml.cs">
       <DependentUpon>UsersBrick.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Page Include="Autorisation\Auth.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -308,6 +316,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resource\UsersIntefeces\AddUserToRoomBrick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resource\UsersIntefeces\ChatUpBur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -317,6 +329,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\UsersIntefeces\ErorrShowing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\UsersIntefeces\FriendAddList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -411,6 +427,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="OctarineLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Icons\AddUser.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

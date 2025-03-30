@@ -23,5 +23,10 @@ namespace Octarine_Core.Models
             SearchingFriend sf = new SearchingFriend(oc,FriendId, FriendName, "В друзьях", Foto );
             return sf;
         }
+        public AddUserToRoomBrick CreateUserBrick (AddFriendToRoomController ac)
+        {
+            AddUserToRoomBrick ab = new AddUserToRoomBrick(FriendName, FriendId, ac);
+            return ab;
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 {
                     if (Convert.ToInt32(RoomId) == fb.ChatId)
                     {
-                        await Controller._octarine.ShowUsersChat(fb.FriendName, fb.FriendIds[0]);
+                        await Controller._octarine.ShowUsersChat(fb.FriendName, fb.FriendIds[0], fb);
                         break;
                     }
                 }
@@ -58,7 +58,8 @@ namespace Octarine_Core.Resource.UsersIntefeces
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка: {ex.Message}");
+                var eror = new ErrorAutUIController();
+                eror.ShowUserError($"Ошибка: {ex.Message}", Properties.Settings.Default.BorderForEror, false);
             }
         }
 

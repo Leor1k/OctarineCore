@@ -7,24 +7,28 @@
              mc:Ignorable="d"  Width="1500" Height="77" Foreground="{x:Null}" Margin="0,25,0,25">
     <Grid>
         <Rectangle Fill="{DynamicResource MainGray}" RadiusX="15" RadiusY="15"/>
-        <StackPanel Orientation="Horizontal">
-            <Image x:Name="FriendIcon" Height="65" Width="65" 
-                Source="/Resource/Icons/IconUser.png" Margin="25,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <DockPanel LastChildFill="False">
+            <Image x:Name="FriendIcon" 
+                Source="/Resource/Icons/IconUser.png" Width="65" HorizontalAlignment="Left" Margin="35,0,0,0">
                 <Image.Clip>
                     <EllipseGeometry Center="32.5,32.5" RadiusX="32.5" RadiusY="32.5"/>
                 </Image.Clip>
             </Image>
-            <TextBlock x:Name="NameSrachingUser" Text="NameHere" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,0" FontSize="24" TextAlignment="Center"/>
-            <TextBlock x:Name="StatusSearchingUser" Text="StatusHere" FontSize="20" Margin="25,0,0,0" FontFamily="Montserrat Light" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <TextBlock x:Name="StatysRequestTb" Text="StatusRequestHere" FontSize="20" FontFamily="Montserrat Light" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="500,0,0,0"/>
-            <StackPanel x:Name="ButtonsStack" Orientation="Horizontal">
-                <Button x:Name="Chat_Btn" Visibility="Hidden" FontSize="72" BorderBrush="{x:Null}" Height="70" Margin="15,0,0,0" Width="50" Click="Chat_Btn_Click">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Resource/Icons/Group 2.png" Stretch="Uniform"/>
-                    </Button.Background>
-                </Button>
-                <Button x:Name="AddFriendBtn" Content="+" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Click="AddFriendBtn_Click" Height="70" Margin="15,0,0,0" Width="50"/>
-            </StackPanel>
-        </StackPanel>
+            <TextBlock x:Name="NameSrachingUser" Text="NameHere" FontSize="24" TextAlignment="Center" Margin="35,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="StatusSearchingUser" Text="StatusHere" FontSize="20" FontFamily="Montserrat Light" Margin="65,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button x:Name="DeleteChatBTN" Visibility="Hidden" Padding="10,0" DockPanel.Dock="Right" HorizontalContentAlignment="Left" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,35,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="DeleteChatBTN_Click">
+                <Viewbox Margin="0,5,0,5" d:IsLocked="True">
+                    <Image Source="{StaticResource DeleteFriendShipMini}"
+                   RenderOptions.BitmapScalingMode="HighQuality"/>
+                </Viewbox>
+            </Button>
+            <Button x:Name="AddFriendBtn" Content="+" DockPanel.Dock="Right" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Click="AddFriendBtn_Click" Margin="0,0,35,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Button x:Name="Chat_Btn" Visibility="Hidden" DockPanel.Dock="Right" FontSize="72" BorderBrush="{x:Null}" Click="Chat_Btn_Click" Width="50" Margin="0,0,35,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resource/Icons/Group 2.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <TextBlock x:Name="StatysRequestTb" DockPanel.Dock="Right" Text="StatusRequestHere" FontSize="20" FontFamily="Montserrat Light" Margin="0,0,55,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        </DockPanel>
     </Grid>
 </UserControl>

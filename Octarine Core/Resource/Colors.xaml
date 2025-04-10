@@ -5,6 +5,8 @@
     <SolidColorBrush Color="#2C2C2C" x:Key="MainGray"/>
     <SolidColorBrush Color="#3C3C3C" x:Key="SecondGreen"/>
     <SolidColorBrush Color="#ADFF2F" x:Key="Lime"/>
+    <SolidColorBrush Color="#D33434" x:Key="ErrorCollar"/>
+
 
 
 </ResourceDictionary>

@@ -8,11 +8,12 @@ namespace Octarine_Core.Resource.UsersIntefeces
 {
     public partial class MessageBrick : UserControl
     {
-        public MessageBrick(string Text, bool ThisFriend, string dateTimesSender, int UserId)
+        public MessageBrick(string Text, string SenderName, string dateTimesSender, int UserId)
         {
             InitializeComponent();
             contetMessage.Text = Text;
             messageTime.Text = dateTimesSender;
+            userName.Text = SenderName;
             SerImageForMessage(UserId);
         }
         public async void SerImageForMessage(int UserId)

@@ -12,11 +12,19 @@
         <Image x:Name="UsersImage" Width="46" HorizontalAlignment="Left" Margin="10,4,0,10" 
             Source="/Resource/Icons/IconUser.png">
             <Image.Clip>
-                <EllipseGeometry Center="32.5,32.5" RadiusX="32.5" RadiusY="32.5"/>
+                <EllipseGeometry Center="23.5,32.5" RadiusX="32.5" RadiusY="32.5"/>
             </Image.Clip>
         </Image>
         <TextBlock x:Name="NameUser" HorizontalAlignment="Left" Margin="86,19,0,22" TextWrapping="Wrap" Text="Nikolai Sobolev" FontSize="18"/>
         <Button x:Name="AddToListBTN" Content="+" Margin="243,12,10,12" Background="{DynamicResource MainGray}" FontSize="24" Width="35" Height="35" Click="AddToListBTN_Click"/>
+        <Image x:Name="CrownImage" Visibility="Hidden" Width="20" HorizontalAlignment="Left" Margin="61,20,0,20" 
+            Source="/Resource/Icons/Crown.png">
+        </Image>
+        <Button x:Name="DeleteFromRoomBtn"  Visibility="Hidden" Margin="243,12,10,12" FontSize="24" Width="35" Height="35" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="DeleteFromRoomBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resource/Icons/miniDoor.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </UserControl>

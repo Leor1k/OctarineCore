@@ -23,14 +23,15 @@ namespace Octarine_Core.Classic
      .WithUrl($"http://147.45.175.135:5000/chatHub?userId={Properties.Settings.Default.UserID}")
      .Build();
 
-            // Подписываемся на метод "ReceiveMessage"
             _connection.On<MessagesDTO>("ReceiveMessage", (message) =>
             {
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     if (message.ChatId == Properties.Settings.Default.IdActiveChat)
                     {
-                        MessageBrick mb = new MessageBrick(message.Content, true, DateTime.Now.ToString("H:mm dd/mm/yyyy"), message.SenderId);
+
+                        ///ToDo тут надо в api signal r чуть подефать
+                        MessageBrick mb = new MessageBrick(message.Content, "Не забудь тут поправть", DateTime.Now.ToString("H:mm dd/mm/yyyy"), message.SenderId);
                         mb.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                         _stackPanel.Children.Add(mb);
                     }
@@ -63,7 +64,8 @@ namespace Octarine_Core.Classic
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка подключения к SignalR: {ex.Message}");
+                var eror = new ErrorAutUIController();
+                eror.ShowUserError($"Ошибка подключения к SignalR: {ex.Message}", Properties.Settings.Default.BorderForEror, false);
             }
         }
 
@@ -75,7 +77,8 @@ namespace Octarine_Core.Classic
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка отправки сообщения: {ex.Message}");
+                var eror = new ErrorAutUIController();
+                eror.ShowUserError("Не удалость отправить сообщение", Properties.Settings.Default.BorderForEror, false);
             }
         }
     }

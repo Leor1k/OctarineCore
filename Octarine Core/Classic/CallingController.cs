@@ -70,7 +70,6 @@ namespace Octarine_Core.Classic
                         {
                             ChatUpBur cub = item as ChatUpBur;
                             cub._callTimer.Stop();
-                            MessageBox.Show("Таймер остановлен");
                         }
                     }
                 });

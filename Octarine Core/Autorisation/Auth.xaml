@@ -57,7 +57,7 @@
                 <!-- Кнопки -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
                     <Button x:Name="EnterBtn" Content="{x:Static properties:Resources.Enter}" 
-                            Width="130" Height="34" Margin="10,0" Background="{DynamicResource LightGreen}" BorderBrush="{DynamicResource MainWhite}" Click="EnterBtn_Click" FontFamily="Montserrat Medium" FontSize="18" />
+                             Width="130" Height="34" Margin="10,0" Background="{DynamicResource LightGreen}" BorderBrush="{DynamicResource MainWhite}" Click="EnterBtn_Click" FontFamily="Montserrat Medium" FontSize="18" />
                     <Button x:Name="DontHaveAccBtn" Content="{x:Static properties:Resources.DontHaveAcc}" 
                             Width="130" Height="34" Margin="10,0" Background="{DynamicResource MainGray}" Click="DontHaveAccBtn_Click" FontFamily="Montserrat Medium" FontSize="18" />
                 </StackPanel>

@@ -292,8 +292,7 @@ namespace Octarine_Core.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public Octarine_Core.Classic.ChatController ChatController
-        {
+        public Octarine_Core.Classic.ChatController ChatController {
             get {
                 return ((Octarine_Core.Classic.ChatController)(this["ChatController"]));
             }
@@ -320,6 +319,60 @@ namespace Octarine_Core.Properties {
         public string LoadGroupChat {
             get {
                 return ((string)(this["LoadGroupChat"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/get-chat-participants/")]
+        public string LoadPartikals {
+            get {
+                return ((string)(this["LoadPartikals"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/add-users-to-chat")]
+        public string AddUserinChat {
+            get {
+                return ((string)(this["AddUserinChat"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/delete-chat/")]
+        public string DeleteChat {
+            get {
+                return ((string)(this["DeleteChat"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/get-creator-chat-ID/")]
+        public string GetCreatorId {
+            get {
+                return ((string)(this["GetCreatorId"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/Chats/delete-user-from-chat")]
+        public string DeleteUserFromChat {
+            get {
+                return ((string)(this["DeleteUserFromChat"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/friends/remove")]
+        public string DeleteFriendship {
+            get {
+                return ((string)(this["DeleteFriendship"]));
             }
         }
     }

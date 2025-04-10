@@ -6,22 +6,26 @@
              xmlns:local="clr-namespace:Octarine_Core.Resource.UsersIntefeces"
              mc:Ignorable="d" 
              d:DesignHeight="75" d:DesignWidth="275" Margin="5,5,5,5"
-             MouseLeftButtonDown="UserControl_MouseLeftButtonDown">
-    <Grid>
+             MouseLeftButtonDown="UserControl_MouseLeftButtonDown" RenderOptions.BitmapScalingMode="HighQuality"  UseLayoutRounding="True">
+    <Grid SnapsToDevicePixels="True">
         <Rectangle x:Name="BackGround" Stroke="{DynamicResource Lime}" Fill="{DynamicResource MainGray}" RadiusX="15" RadiusY="15"/>
 
         <!-- Круглая рамка -->
-        <Ellipse HorizontalAlignment="Left" Height="65" Margin="10,0,0,0" 
-                 Stroke="{DynamicResource LightGreen}" VerticalAlignment="Center" Width="65"/>
 
         <!-- Изображение с маской -->
-        <Image Height="65" Width="65" HorizontalAlignment="Left" Margin="11,5,0,5" 
-               Source="/Resource/Icons/IconUser.png">
+        <Image x:Name="UserICon" Height="65" RenderOptions.BitmapScalingMode="HighQuality" Width="65" HorizontalAlignment="Left" Margin="11,5,0,5" 
+               Source="/Resource/Icons/IconUser.png" d:IsHidden="True">
             <Image.Clip>
                 <EllipseGeometry Center="32.5,32.5" RadiusX="32.5" RadiusY="32.5"/>
             </Image.Clip>
         </Image>
         <TextBlock x:Name="UserNameTx" HorizontalAlignment="Left" Margin="123,14,0,0" TextWrapping="Wrap" Text="Deaf" VerticalAlignment="Top" FontFamily="Montserrat Light" FontSize="20"/>
         <TextBlock x:Name="StatusUserTx" HorizontalAlignment="Left" Margin="126,43,0,0" TextWrapping="Wrap" Text="Deaf" VerticalAlignment="Top" FontFamily="Montserrat Light"/>
+        <Image x:Name="GroupImage" Visibility="Hidden" Height="65" RenderOptions.BitmapScalingMode="HighQuality" Width="65" HorizontalAlignment="Left" Margin="11,5,0,5" 
+            Source="{StaticResource GroupIcon}">
+            <Image.Clip>
+                <EllipseGeometry Center="32.5,32.5" RadiusX="32.5" RadiusY="32.5"/>
+            </Image.Clip>
+        </Image>
     </Grid>
 </UserControl>

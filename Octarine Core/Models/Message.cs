@@ -14,6 +14,9 @@ namespace Octarine_Core.Models
         [JsonPropertyName("senderid")]
         public int SenderId {  get; set; }
 
+        [JsonPropertyName("senderName")]
+        public string SenderName { get; set; }
+
         [JsonPropertyName("content")]
         public string Content { get; set; }
         //[JsonPropertyName("messagetype")]

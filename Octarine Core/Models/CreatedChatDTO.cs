@@ -29,4 +29,9 @@ namespace Octarine_Core.Models
         public int[] Particals { get; set; }
         public string ChatName {  get; set; }
     }
+    public class AddUserInChat
+    {
+        public int ChatId { get; set; }
+        public int[] UsersId { get; set; }
+    }
 }

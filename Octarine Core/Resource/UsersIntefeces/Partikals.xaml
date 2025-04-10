@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Octarine_Core.Resource.UsersIntefeces.Partikals"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Octarine_Core.Resource.UsersIntefeces"
+             mc:Ignorable="d" 
+             d:MaxHeight="600" d:MaxWidth="400">
+    <Grid Height="600" Width="400">
+        <Rectangle RadiusX="15" RadiusY="15" Stroke="{DynamicResource MainWhite}" Fill="{DynamicResource MainGray}"/>
+        <TextBox Margin="40,8,40,0" Text="Участники" VerticalAlignment="Top" TextAlignment="Center" Height="24"/>
+        <StackPanel x:Name="StackPart" Margin="5,40,5,0"/>
+        <Button x:Name="Close" Content="x" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="16" Width="19" Margin="0,4,5,0" Height="23" Background="{DynamicResource MainGray}" Click="Close_Click"/>
+
+    </Grid>
+</UserControl>

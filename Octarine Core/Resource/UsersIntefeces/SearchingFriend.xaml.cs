@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Octarine_Core.Apis;
-using Octarine_Core.Autorisation;
 using Octarine_Core.Classic;
 using Octarine_Core.Models;
 
@@ -28,6 +28,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
             {
                 AddFriendBtn.Visibility = Visibility.Hidden;
                 Chat_Btn.Visibility = Visibility.Visible;
+                DeleteChatBTN.Visibility = Visibility.Visible;
             }    
             StatusSearchingUser.Text = Status;
             StatysRequestTb.Visibility = Visibility.Hidden;
@@ -39,7 +40,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
             if(PhotoName != null)
             {
                 MinIO minIO = new MinIO();
-                BitmapImage UserBitMap = await minIO.LoadImageFromMinIO(PhotoName);
+                BitmapImage UserBitMap = await minIO.LoadImageFromMinIO("IconUser" + _id + ".png");
                 if (UserBitMap != null)
                 {
                     FriendIcon.Source = UserBitMap;
@@ -52,6 +53,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
             if (StatusSearchingUser.Text != "Хочет дружить)")
             {
                 await TryAddFeind();
+                AddFriendBtn.Visibility = Visibility.Hidden;
                 
             }
             else
@@ -75,11 +77,12 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 StatysRequestTb.Text = "Вы стали друзьями";
                 StatusSearchingUser.Text = "В друзьях";
                 AddFriendBtn.Visibility= Visibility.Hidden;
-
+                DeleteChatBTN.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
             {
-                StatysRequestTb.Text = $"Возникла ошибочка :{ex.Message}";
+                var eror = new ErrorAutUIController();
+                eror.ShowUserError("Возникла непредвиденная ошибка", Properties.Settings.Default.BorderForEror, false);
             }
         }
         private async Task TryAddFeind()
@@ -94,14 +97,47 @@ namespace Octarine_Core.Resource.UsersIntefeces
             try
             {
                 var tokenResponse = await apir.PostAsync<object>(Properties.Settings.Default.ApiAddFriend, AddFriend);
-                StatysRequestTb.Text = "Запрос в друзя отправлен";
+                var eror = new ErrorAutUIController();
+                eror.ShowUserError("Запрос успешно отправлен", Properties.Settings.Default.BorderForEror, true);
             }
             catch (Exception ex)
             {
-               StatysRequestTb.Text = $"Возникла ошибочка :{ex.Message}";
+                var eror = new ErrorAutUIController();
+                eror.ShowUserError("Возникла непредвиденная ошибка", Properties.Settings.Default.BorderForEror, false);
             }
         }
-
+        public async void DeleteFriendShip()
+        {
+            var FriendsRequest = new
+            {
+                UserId = Properties.Settings.Default.UserID,
+                FriendId = _id
+            };
+            try
+            {
+                var api = new ApiRequests();
+                await api.PostAsync<object>(Properties.Settings.Default.DeleteFriendship, FriendsRequest);
+                var eror = new ErrorAutUIController();
+                eror.ShowUserError("Вы больше не друзья....", Properties.Settings.Default.BorderForEror, true);
+                chatController.DeteChatBtickByFriendIf(_id);
+                DeleteElement();
+            }
+            catch
+            {
+                var eror = new ErrorAutUIController();
+                eror.ShowUserError("Возникла непредвиденная ошибка", Properties.Settings.Default.BorderForEror, false);
+            }
+            
+        }
+        private void DeleteElement ()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var parentContainer = VisualTreeHelper.GetParent(this) as Panel;
+                parentContainer?.Children.Remove(this);
+            });
+        }
+///Todo тут работаем
         private void Chat_Btn_Click(object sender, RoutedEventArgs e)
         {
             EnteredUserLite en = JWT.GetUserNameFromToken(Properties.Settings.Default.JwtToken);
@@ -114,6 +150,13 @@ namespace Octarine_Core.Resource.UsersIntefeces
             {
 
             }
+        }
+
+        private void DeleteChatBTN_Click(object sender, RoutedEventArgs e)
+        {
+            var ui = new MoreUI(this);
+            var grid = chatController.ReturnMoreUiGrid();
+            grid.Children.Add(ui);
         }
     }
 }

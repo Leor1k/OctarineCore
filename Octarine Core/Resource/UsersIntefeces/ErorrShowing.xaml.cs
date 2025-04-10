@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 
 namespace Octarine_Core.Resource.UsersIntefeces
 {
@@ -15,10 +8,18 @@ namespace Octarine_Core.Resource.UsersIntefeces
     /// </summary>
     public partial class ErorrShowing : UserControl
     {
-        public ErorrShowing( string errorString)
+        public ErorrShowing( string errorString, bool IsSuccess)
         {
             InitializeComponent();
             ErorrTB.Text = errorString;
+            if (IsSuccess)
+            {
+                Sec.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                Err.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

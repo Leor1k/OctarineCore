@@ -8,7 +8,21 @@
              d:DesignHeight="40" d:DesignWidth="800">
     <Grid>
         <Rectangle Height="40" RadiusX="7" RadiusY="7" Stroke="{DynamicResource Lime}" Fill="{DynamicResource MainGray}" StrokeThickness="0.4"/>
-        <TextBox x:Name="ErorrTB" TextWrapping="Wrap" Margin="5,0,5,0"/>
+        <TextBox x:Name="ErorrTB" TextWrapping="Wrap" Margin="50,5,5,5" TextAlignment="Center" FontSize="14"/>
+        <Viewbox x:Name="Err"
+         UseLayoutRounding="True"
+         SnapsToDevicePixels="True" HorizontalAlignment="Left" Margin="10,4,0,4">
+            <Image Source="{StaticResource SeccsesMini}"
+           Stretch="Uniform"
+                RenderOptions.BitmapScalingMode="HighQuality" Height="55"/>
+        </Viewbox>
+        <Viewbox x:Name="Sec"
+            UseLayoutRounding="True"
+            SnapsToDevicePixels="True" HorizontalAlignment="Left" Margin="10,4,0,4">
+            <Image Source="{StaticResource ErrorMini}"
+                Stretch="Uniform"
+                RenderOptions.BitmapScalingMode="HighQuality" Height="55"/>
+        </Viewbox>
 
     </Grid>
 </UserControl>

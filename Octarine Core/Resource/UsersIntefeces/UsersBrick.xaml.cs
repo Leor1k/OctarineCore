@@ -23,7 +23,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
         public async void LoadUserIcon ()
         {
             MinIO minIO = new MinIO();
-            BitmapImage UserBitMap = await minIO.LoadImageFromMinIO(PhotoName);
+            BitmapImage UserBitMap = await minIO.LoadImageFromMinIO("IconUser" +IdUser+".png");
             if (UserBitMap != null)
             {
                 UsersImage.Source = UserBitMap;

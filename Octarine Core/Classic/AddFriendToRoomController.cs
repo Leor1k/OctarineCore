@@ -34,6 +34,12 @@ namespace Octarine_Core.Classic
             chatDto.Particals = UsersIdList.ToArray();
             return chatDto;
         }
+        public AddUserInChat ReturnNewParticants ()
+        {
+            var newParticants = new AddUserInChat();
+            newParticants.UsersId = UsersIdList.ToArray();
+            return newParticants;
+        }
         public bool ChangesUsersCaunt ()
         {
             if (UsersIdList.Count == UsersCaunt)
@@ -77,7 +83,6 @@ namespace Octarine_Core.Classic
             {
                 message += $"{id}, ";
             }
-            MessageBox.Show(message);   
         }
 
     }

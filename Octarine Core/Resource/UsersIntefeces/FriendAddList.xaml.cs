@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Media;
 using Octarine_Core.Classic;
 using Octarine_Core.Models;
@@ -11,23 +10,28 @@ namespace Octarine_Core.Resource.UsersIntefeces
 
     public partial class FriendAddList : UserControl
     {
-        AddFriendToRoomController controller;
-        bool IsGroupChat;
-        public FriendAddList(List<string> FriendsList, bool _isGroupChat)
+        private AddFriendToRoomController controller;
+        private bool IsGroupChat;
+        private readonly int chatId;
+
+        public FriendAddList(List<string> FriendsList)
         {
             InitializeComponent();
-            IsGroupChat = _isGroupChat;
+            IsGroupChat = false;
             controller = new AddFriendToRoomController();
             controller.LoadUsersFriend(MainStackPanel, FriendsList );
-            if (IsGroupChat == false)
-            {
-                ChatNameTb.Visibility = Visibility.Visible;
-                ChatNameTb.Text = $"Чат {Properties.Settings.Default.UserName}";
-            }
-            else
-            {
-                ChatNameTb.Visibility = Visibility.Hidden;
-            }
+            ChatNameTb.Text = $"Чат {Properties.Settings.Default.UserName}";
+
+        }
+        public FriendAddList(List<string> FriendsList, string RoomName, int IdChat)
+        {
+            InitializeComponent();
+            IsGroupChat = true;
+            controller = new AddFriendToRoomController();
+            controller.LoadUsersFriend(MainStackPanel, FriendsList);
+            ChatNameTb.Text = RoomName;
+            ChatNameTb.IsReadOnly = true;
+            chatId = IdChat;
         }
 
         private void CloseBTN_Click(object sender, RoutedEventArgs e)
@@ -49,20 +53,38 @@ namespace Octarine_Core.Resource.UsersIntefeces
             if (!controller.ChangesUsersCaunt())
             {
                 ErrorAutUIController er = new ErrorAutUIController();
-                er.ShowUserError("Список добавленных друзей пуст", Properties.Settings.Default.BorderForEror);
+                er.ShowUserError("Список добавленных друзей пуст", Properties.Settings.Default.BorderForEror, false);
             }
             else if (ChatNameTb.Text.Trim().Length ==0)
             {
                 ErrorAutUIController er = new ErrorAutUIController();
-                er.ShowUserError("У чата обязательно должно быть название", Properties.Settings.Default.BorderForEror);
+                er.ShowUserError("У чата обязательно должно быть название", Properties.Settings.Default.BorderForEror, false);
             }
             else
             {
-                CloseContol();
-                GroupChat newchat= controller.ReturnChat();
-                newchat.ChatName = ChatNameTb.Text;
-                Properties.Settings.Default.ChatController.CreateGroupChat(newchat);
-            }
+                if (IsGroupChat == false)
+                {
+                    CreateGroupChat();
+                }
+                else
+                {
+                    AddserToToom();
+                }
+            } 
+        }
+        private void AddserToToom ()
+        {
+            CloseContol();
+            var UsersList = controller.ReturnNewParticants();
+            UsersList.ChatId = chatId;
+            Properties.Settings.Default.ChatController.AddUsersInChat(UsersList);
+        }
+        private void CreateGroupChat ()
+        {
+            CloseContol();
+            GroupChat newchat = controller.ReturnChat();
+            newchat.ChatName = ChatNameTb.Text;
+            Properties.Settings.Default.ChatController.CreateGroupChat(newchat);
         }
     }
 }

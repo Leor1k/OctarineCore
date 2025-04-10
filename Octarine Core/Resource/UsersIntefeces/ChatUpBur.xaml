@@ -17,7 +17,12 @@
                     </Image.Clip>
                 </Image>
                 <TextBlock x:Name="FriendNameTextBox" DockPanel.Dock="Left" Text="UserName" TextAlignment="Center" FontSize="24" Margin="25,0,27,0" TextWrapping="WrapWithOverflow" VerticalAlignment="Center"/>
-                <Button x:Name="ShowPartilalsBtn" Content="  Участники  " DockPanel.Dock="Left" Width="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Background="{DynamicResource SecondGreen}" BorderThickness="1,1,1,1"/>
+                <Button x:Name="DeleteChat" BorderBrush="{x:Null}" DockPanel.Dock="Right" Width="80" Margin="0,0,25,0" Click="DeleteChat_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resource/Icons/Trash.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="ShowPartilalsBtn" Content="  Участники  " DockPanel.Dock="Left" Width="NaN" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Background="{DynamicResource SecondGreen}" BorderThickness="1,1,1,1" Click="ShowPartilalsBtn_Click"/>
                 <Button BorderBrush="{x:Null}" DockPanel.Dock="Right" Width="80" Margin="0,0,25,0">
                     <Button.Background>
                         <ImageBrush ImageSource="/Resource/Icons/PinBt.png" Stretch="Uniform"/>
@@ -33,6 +38,9 @@
                         <ImageBrush ImageSource="/Resource/Icons/PhoneButtob.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
+                <Image x:Name="CrownButton" Visibility="Hidden"
+                    Source="/Resource/Icons/Crown.png" Width="48" Margin="25,0,0,0" Height="57">
+                </Image>
             </DockPanel>
         </Grid>
         <Grid x:Name="CallGrid" Visibility="Hidden">

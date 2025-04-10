@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Octarine_Core.Classic;
+using System.Windows.Media.Imaging;
+using Octarine_Core.Models;
 
 
 namespace Octarine_Core.Resource.UsersIntefeces
@@ -26,6 +29,25 @@ namespace Octarine_Core.Resource.UsersIntefeces
             UserNameTx.Text = FriendName;
             StatusUserTx.Text = FriendStatus;
             FriendIds = friendsId;
+            LoadUserIcon();
+        }
+        public async void LoadUserIcon()
+        {
+            if (FriendIds.Length > 2)
+            {
+                GroupImage.Visibility = System.Windows.Visibility.Visible;
+                UserICon.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else
+            {
+                MinIO minIO = new MinIO();
+                BitmapImage UserBitMap = await minIO.LoadImageFromMinIO("IconUser" + FriendIds[0] + ".png");
+                if (UserBitMap != null)
+                {
+                    UserICon.Source = UserBitMap;
+                }
+            }
+            
         }
         private void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

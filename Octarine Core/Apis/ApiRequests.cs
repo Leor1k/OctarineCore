@@ -149,7 +149,77 @@ namespace Octarine_Core.Apis
                 }
             }
         }
+        public async Task<string> DeleteAsync<TRequest>(string apiUrl)
+        {
+            if (string.IsNullOrEmpty(apiUrl))
+                throw new ArgumentException("URL не может быть пустым.", nameof(apiUrl));
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.DeleteAsync(apiUrl);
+                var responseContent = await response.Content.ReadAsStringAsync();
 
+                if (response.IsSuccessStatusCode)
+                {
+                    return responseContent;
+                }
+                else
+                {
+                    try
+                    {
+                        var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
+                        if (responseData != null && responseData.ContainsKey("message"))
+                        {
+                            throw new Exception(responseData["message"]);
+                        }
+                    }
+                    catch (JsonException)
+                    {
+                    }
+                    throw new Exception($"Ошибка {response.StatusCode}: {responseContent}");
+                }
+            }
+        }
+        public async Task<string> DeleteAsyncWithRequest<TRequest>(string apiUrl, TRequest request)
+        {
+            if (string.IsNullOrEmpty(apiUrl))
+                throw new ArgumentException("URL не может быть пустым.", nameof(apiUrl));
+
+            using (var httpClient = new HttpClient())
+            {
+                var requestMessage = new HttpRequestMessage(HttpMethod.Delete, apiUrl)
+                {
+                    Content = new StringContent(
+                        JsonSerializer.Serialize(request),
+                        Encoding.UTF8,
+                        "application/json"
+                    )
+                };
+
+                var response = await httpClient.SendAsync(requestMessage);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return responseContent;
+                }
+                else
+                {
+                    try
+                    {
+                        var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
+                        if (responseData != null && responseData.ContainsKey("message"))
+                        {
+                            throw new Exception(responseData["message"]);
+                        }
+                    }
+                    catch (JsonException)
+                    {
+                        
+                    }
+                    throw new Exception($"Ошибка {response.StatusCode}: {responseContent}");
+                }
+            }
+        }
 
     }
 }

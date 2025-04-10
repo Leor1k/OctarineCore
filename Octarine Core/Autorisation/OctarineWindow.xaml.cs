@@ -20,6 +20,7 @@ namespace Octarine_Core.Autorisation
         private ChatHub _chatHub;
         private CallingController _callingController;
         private ErrorAutUIController _errorAutUIController;
+        private SettingController _settingController;
         public OctarineWindow()
         {
             InitializeComponent();
@@ -34,12 +35,12 @@ namespace Octarine_Core.Autorisation
         }
         private void LoadControllers ()
         {
-
             FormConroller ff = new FormConroller(MainGrid);
             formc = ff;
             formc.SwitchOctarineBorder(InfoBorder);
             _chatController = new ChatController(MainChatStack, this);
-            _errorAutUIController = new ErrorAutUIController();
+            _errorAutUIController = new ErrorAutUIController(FirstErorrGrid);
+            _settingController = new SettingController(this);
         }
         private void LoadProperiries ()
         {
@@ -58,8 +59,8 @@ namespace Octarine_Core.Autorisation
         private async void LoadUserData()
         {
             EnteredUserData = JWT.GetUserNameFromToken(Properties.Settings.Default.JwtToken.ToString());
-            EnteredUserData.LoadUserBrick(UsersEnteredBrick);
             Properties.Settings.Default.UserID = EnteredUserData.GetIdUser();
+            EnteredUserData.LoadUserBrick(UsersEnteredBrick);
             await LoadLastChats();
             await LoadUsersFriendRequests();
             await LoadUesrsFriends();
@@ -103,12 +104,15 @@ namespace Octarine_Core.Autorisation
             {
                 foreach (ChatDto chat in Chats)
                 {
-                    FriendBrick brick = chat.CreateChatBrick();
-                    brick.ChatClicked += (sender, e) =>
+                    if(chat.ChatName != string.Empty)
                     {
-                        _chatController.OnChatClick(sender, e);
-                    };
-                    ChatStack.Children.Add(brick);
+                        FriendBrick brick = chat.CreateChatBrick();
+                        brick.ChatClicked += (sender, e) =>
+                        {
+                            _chatController.OnChatClick(sender, e);
+                        };
+                        ChatStack.Children.Add(brick);
+                    }
                 }
             }
         }
@@ -169,7 +173,7 @@ namespace Octarine_Core.Autorisation
             }
             else
             {
-                _errorAutUIController.ShowUserError("Пользователей с таким ID не найдено", FirstErorrGrid);
+                _errorAutUIController.ShowUserError("Пользователей с таким ID не найдено", FirstErorrGrid, false);
             }
            
         }
@@ -193,7 +197,7 @@ namespace Octarine_Core.Autorisation
             SearchFriendGrd.Visibility = Visibility.Visible;
             AllFriendsGrid.Visibility = Visibility.Hidden;
         }
-        public async Task ShowUsersChat(string FriendName, int friendID)
+        public async Task ShowUsersChat(string FriendName, int friendID, FriendBrick brick)
         {
             formc.SwitchOctarineBorder(ChatWindow);
             MainChatStack.Children.Clear();
@@ -215,22 +219,37 @@ namespace Octarine_Core.Autorisation
                 var chatID = await ap.GetAsyncNoList<int>($"{Properties.Settings.Default.GetChatID}/{Properties.Settings.Default.UserID}/{friendID}");
                 int ChatIdInt = Convert.ToInt32(chatID);
 
-                int[] chatParitkansId = { friendID, Properties.Settings.Default.UserID };
+                int[] chatParitkansId = { friendID};
                 dd = new FriendBrick(ChatIdInt, FriendName, "В разработке", chatParitkansId);
 
                 Properties.Settings.Default.IdActiveChat = ChatIdInt;
-
-                ChatStack.Children.Add(dd); 
+                dd.ChatClicked += (sender, e) =>
+                {
+                    _chatController.OnChatClick(sender, e);
+                };
+                ChatStack.Children.Add(dd);
+                
             }
-
+            int id = 0;
             if (Properties.Settings.Default.InColling == false)
             {
                 IngoGrid.Children.Clear();
                 ChatUpBur cb = new ChatUpBur(FriendName, friendID, _callingController, dd);
+                id = Convert.ToInt32(cb.ChatId);
                 IngoGrid.Children.Add(cb);
             }
+            if (id == 0)
+            {
+                await _chatController.LoadChat(brick.ChatId);
+                Properties.Settings.Default.IdActiveChat = brick.ChatId;
+            }
+            else
+            {
+                await _chatController.LoadChat(id);
+                Properties.Settings.Default.IdActiveChat =id;
 
-            await _chatController.LoadChat(EnteredUserData.GetIdUser(), friendID);
+            }
+
             Properties.Settings.Default.FriendId = friendID;
             Scr.ScrollToEnd();
         }
@@ -238,16 +257,15 @@ namespace Octarine_Core.Autorisation
         {
             formc.SwitchOctarineBorder(ChatWindow);
             MainChatStack.Children.Clear();
-
             if (Properties.Settings.Default.InColling == false)
             {
                 IngoGrid.Children.Clear();
                 ChatUpBur cb = new ChatUpBur(RoomName, friendIDs, _callingController, chatID);
                 IngoGrid.Children.Add(cb);
             }
-
             await _chatController.LoadChatGroup(chatID);
             Properties.Settings.Default.FriendId = friendIDs[0];
+            Properties.Settings.Default.IdActiveChat = chatID;
             Scr.ScrollToEnd();
         }
 
@@ -285,7 +303,7 @@ namespace Octarine_Core.Autorisation
                 {
                     await _chatController.SendMessageAsync(Properties.Settings.Default.FriendId, SendedMesageTb.Text.Trim());
 
-                    MessageBrick newMes = new MessageBrick(SendedMesageTb.Text, false, DateTime.Now.ToString("H:mm dd/mm/yyyy"), Properties.Settings.Default.UserID);
+                    MessageBrick newMes = new MessageBrick(SendedMesageTb.Text, Properties.Settings.Default.UserName, DateTime.Now.ToString("H:mm dd/mm/yyyy"), Properties.Settings.Default.UserID);
                     newMes.HorizontalAlignment = HorizontalAlignment.Right;
                     MainChatStack.Children.Add(newMes);
                     SendedMesageTb.Clear();
@@ -319,25 +337,40 @@ namespace Octarine_Core.Autorisation
         {
             if (ChangeNameTb.Text != UsersEnteredBrick.UserName)
             {
-                ChangeUserName(ChangeNameTb.Text.Trim(), Properties.Settings.Default.UserID);
+                 _settingController.ChangeUserName(ChangeNameTb.Text.Trim(), Properties.Settings.Default.UserID);
             }
-        }
-        private async void ChangeUserName(string newUserName, int UserId)
-        {
-            ApiRequests ap = new ApiRequests();
-            var ChangeNameRequest = new
-            {
-                UserUd = UserId,
-                NewUserName = newUserName
-            };
-            var message = await ap.PostAsync<object>(Properties.Settings.Default.ChangeNameApi, ChangeNameRequest);
-            _errorAutUIController.ShowUserError(message, FirstErorrGrid);
-            UsersEnteredBrick.UserNameTx.Text = newUserName;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             settingsBorder.Visibility = Visibility.Hidden;
+        }
+        public void ShowInfoBorder()
+        {
+            formc.SwitchOctarineBorder(InfoBorder);
+        }
+
+        private async void ChanheImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MinIO minio = new MinIO();
+                await minio.UploadUserAvatar(EnteredUserData.GetIdUser().ToString());
+
+                var image = await minio.LoadImageFromMinIO($"IconUser{EnteredUserData.GetIdUser().ToString()}");
+                if (image != null)
+                {
+                    UsersEnteredBrick.UsersImage.Source = image;
+                    UsersImageSettings.Source = image;
+                }
+                _errorAutUIController.ShowUserError("Ваш аватар успешно изменён", true);
+            }
+            catch
+            {
+                _errorAutUIController.ShowUserError("Произошла непредвиденная ошибка", false);
+            }
+           
+                
         }
     }
 }

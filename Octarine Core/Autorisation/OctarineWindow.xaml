@@ -18,23 +18,26 @@
     <Grid x:Name="MainGrid" Background="{DynamicResource MainGray}">
         <!-- Ваш кастомный UpBar -->
         <Border x:Name="UpBrd" BorderBrush="{DynamicResource MainWhite}" Tag="static" BorderThickness="0.3" CornerRadius="5" Padding="0" Margin="0,10,0,0" Width="1910" Height="44" VerticalAlignment="Top" Background="{DynamicResource SecondGreen}" MouseLeftButtonDown="UpBar_MouseLeftButtonDown">
-            <DockPanel x:Name="UpBar" Height="40" VerticalAlignment="Top">
-                <Button x:Name="CloseBtn" Width="35" DockPanel.Dock="Right" Click="CloseBtn_Click" Height="35">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Resource/Icons/CloseIcon.png" Stretch="Uniform" />
-                    </Button.Background>
+            <DockPanel x:Name="UpBar" Height="44" VerticalAlignment="Center">
+                <Button x:Name="CloseBtn" Width="35" DockPanel.Dock="Right" Click="CloseBtn_Click" Height="35" Background="{x:Null}" Margin="0,0,15,0">
+                    <Viewbox>
+                        <Image Source="/Resource/Icons/CloseButton.png" 
+               RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </Viewbox>
                 </Button>
-                <Button x:Name="SizeBtn" Width="35" DockPanel.Dock="Right" Click="SizeBtn_Click" Height="35">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Resource/Icons/SizeButtonIcon.png" Stretch="Uniform" />
-                    </Button.Background>
+                <Button x:Name="SizeBtn" Width="35" DockPanel.Dock="Right" Click="SizeBtn_Click" Height="35" Margin="0,0,15,0" Background="{x:Null}">
+                    <Viewbox>
+                        <Image Source="/Resource/Icons/WindowFill.png" 
+RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </Viewbox>
                 </Button>
-                <Button x:Name="HideBtn" Width="35" DockPanel.Dock="Right" Click="HideBtn_Click" Height="35" HorizontalAlignment="Right">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Resource/Icons/DontShowIcon.png" Stretch="Uniform" TileMode="None" />
-                    </Button.Background>
+                <Button x:Name="HideBtn" Width="35" DockPanel.Dock="Right" Click="HideBtn_Click" Height="35" HorizontalAlignment="Right" Margin="0,0,15,0" Background="{x:Null}">
+                    <Viewbox Height="35">
+                        <Image Source="/Resource/Icons/Line 3.png" 
+RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </Viewbox>
                 </Button>
-                <Image Width="40" Source="/Resource/Icons/OctarineLogo.png" Margin="15,0,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left">
+                <Image Width="40" RenderOptions.BitmapScalingMode="HighQuality" Source="/Resource/Icons/OctarineLogo.png" Margin="15,0,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left">
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1"/>
@@ -46,8 +49,7 @@
                 </Image>
             </DockPanel>
         </Border>
-
-        <DockPanel x:Name="MainDock" LastChildFill="False" Margin="3,5,0,25" HorizontalAlignment="Left">
+        <DockPanel x:Name="MainDock" LastChildFill="False" Margin="3,5,0,25" HorizontalAlignment="Left" d:IsLocked="True">
             <Border BorderBrush="{DynamicResource LightGreen}" BorderThickness="0.3" CornerRadius="10" Padding="0" Margin="5,55,5,0" Background="{DynamicResource SecondGreen}">
                 <StackPanel x:Name="LeftStack" Width="300">
                     <users:UsersBrick x:Name="UsersEnteredBrick" Margin="5,5,5,5"/>
@@ -75,7 +77,7 @@
                 </StackPanel>
             </Border>
         </DockPanel>
-        <Border x:Name="InfoBorder" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}">
+        <Border x:Name="InfoBorder" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}" d:IsLocked="True">
             <StackPanel>
                 <Image Source="/Resource/Icons/OctarineLogo.png" Height="200" Margin="0,10,0,0"/>
                 <TextBlock Text="{x:Static properties:Resources.WhatsNew}" FontFamily="Montserrat Medium" FontSize="48" TextAlignment="Center" Margin="0,10,0,0"/>
@@ -84,7 +86,7 @@
                 </StackPanel>
             </StackPanel>
         </Border>
-        <Border x:Name="SearchFrindBrd" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}">
+        <Border x:Name="SearchFrindBrd" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}" d:IsLocked="True">
             <Grid x:Name="FriendsSystemGrid">
                 <StackPanel Orientation="Horizontal" Margin="40,6,40,923">
                     <Button x:Name="YourFriendBtn" Content="{x:Static properties:Resources.YourFriends}" FontFamily="Montserrat Medium" Background="{DynamicResource MainGray}" Width="120" Click="YourFriendBtn_Click"/>
@@ -114,10 +116,10 @@
                 </Grid>
             </Grid>
         </Border>
-        <Border x:Name="ErrorAutbrd" Tag="dynamic" BorderBrush="{DynamicResource MainWhite}"  BorderThickness="1" Margin="538,860,242,136" Background="{DynamicResource MainGray}">
+        <Border x:Name="ErrorAutbrd" Tag="dynamic" BorderBrush="{DynamicResource MainWhite}"  BorderThickness="1" Margin="538,860,242,136" Background="{DynamicResource MainGray}" d:IsHidden="True" d:IsLocked="True">
             <TextBlock x:Name="ErrorOutTb" TextWrapping="Wrap" Text="TextBlock" FontSize="24" TextAlignment="Center" Margin="5,5,5,5"/>
         </Border>
-        <Border x:Name="ChatWindow" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}">
+        <Border x:Name="ChatWindow" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}" d:IsHidden="True" d:IsLocked="True">
             <Grid x:Name="ChatGrid">
                 <!-- Оберните StackPanel в ScrollViewer -->
                 <Grid x:Name="IngoGrid" Margin="0,0,0,794"/>
@@ -136,17 +138,17 @@
                 </Grid>
             </Grid>
         </Border>
-        <Border x:Name="settingsBorder" BorderBrush="{DynamicResource MainWhite}" Tag ="dynamic"  BorderThickness="1" Margin="25,13,25,25" Background="{DynamicResource MainGray}" d:IsHidden="True">
+        <Border x:Name="settingsBorder" BorderBrush="{DynamicResource MainWhite}" Tag ="dynamic"  BorderThickness="1" Margin="25,13,25,25" Background="{DynamicResource MainGray}" d:IsHidden="True" d:IsLocked="True">
             <DockPanel x:Name="MainDockSettings" LastChildFill="False">
                 <StackPanel x:Name="ChapterStack" Width="254" Margin="2,0,0,0" Background="{DynamicResource SecondGreen}">
-                    <Button Content="Аккаунт" Height="62" Background="{DynamicResource MainGray}" Margin="0,5,0,0" FontSize="18" BorderThickness="0.3"  BorderBrush="{DynamicResource MainWhite}"/>
+                    <Button Content="Аккаунт" Height="62" Background="{DynamicResource MainGray}" Margin="10,5,10,0" FontSize="18" BorderThickness="0.7"  BorderBrush="{DynamicResource MainWhite}"/>
                 </StackPanel>
                 <Grid x:Name="AccauntSettingsGrid" Width="1610">
                     <Rectangle HorizontalAlignment="Center" RadiusX="15" RadiusY="15" Height="966" Margin="0,31,0,0" VerticalAlignment="Top" Width="1544" Fill="{DynamicResource SecondGreen}"/>
                     <TextBlock Margin="1064,64,55,0" TextWrapping="Wrap" Text="Настройки аккаунта" VerticalAlignment="Top" FontSize="48"/>
                     <TextBox x:Name="ChangeNameTb" HorizontalAlignment="Left" Margin="214,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" Height="50" FontSize="36"/>
                     <TextBlock Margin="90,220,1401,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" FontSize="36"/>
-                    <TextBlock Margin="684,220,684,0" TextWrapping="Wrap" Text="Фото профиля" VerticalAlignment="Top" FontSize="36"/>
+                    <TextBlock Margin="901,156,467,0" TextWrapping="Wrap" Text="Фото профиля" VerticalAlignment="Top" FontSize="36"/>
                     <Rectangle HorizontalAlignment="Left" RadiusX="12" RadiusY="12" Height="261" Margin="1178,133,0,0" VerticalAlignment="Top" Width="262" Fill="{DynamicResource MainGray}" RenderTransformOrigin="0.5,0.5">
                         <Rectangle.RenderTransform>
                             <TransformGroup>
@@ -157,12 +159,14 @@
                             </TransformGroup>
                         </Rectangle.RenderTransform>
                     </Rectangle>
-                    <Image x:Name="UsersImageSettings" Margin="1202,156,194,654" Source="/OctarineLogo.ico"/>
+                    <Image x:Name="UsersImageSettings" RenderOptions.BitmapScalingMode="HighQuality" Margin="1202,156,194,654" Source="/OctarineLogo.ico"/>
                     <Button x:Name="SaveChanges" Content="Сохранить " HorizontalAlignment="Left" Margin="1018,916,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource LightGreen}" FontSize="24" Click="SaveChanges_Click"/>
                     <Button Content="Выйти" HorizontalAlignment="Left" Margin="1300,917,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource MainGray}" FontSize="24" Click="Button_Click"/>
+                    <Button x:Name="ChanheImageBtn" Content="Выбрать" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,399,253,0" FontSize="24" Background="{DynamicResource MainGray}" Click="ChanheImageBtn_Click"/>
                 </Grid>
             </DockPanel>
         </Border>
         <Grid x:Name="FirstErorrGrid" Margin="321,54,25,967"/>
+        <Grid x:Name="OarticalsGrid" Margin="1339,204,57,204" d:IsLocked="True"/>
     </Grid>
 </Window>

@@ -375,5 +375,14 @@ namespace Octarine_Core.Properties {
                 return ((string)(this["DeleteFriendship"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://147.45.175.135:5000/api/auth/ping")]
+        public string PingApi {
+            get {
+                return ((string)(this["PingApi"]));
+            }
+        }
     }
 }

@@ -110,5 +110,8 @@
     <Setting Name="DeleteFriendship" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://147.45.175.135:5000/api/friends/remove</Value>
     </Setting>
+    <Setting Name="PingApi" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://147.45.175.135:5000/api/auth/ping</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

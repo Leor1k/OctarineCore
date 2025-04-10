@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -66,6 +68,23 @@ namespace Octarine_Core.Classic
             {
                 var eror = new ErrorAutUIController();
                 eror.ShowUserError($"Ошибка подключения к SignalR: {ex.Message}", Properties.Settings.Default.BorderForEror, false);
+            }
+        }
+        public async Task<long> PingApi()
+        {
+            var __connection = new HubConnectionBuilder()
+     .WithUrl($"http://147.45.175.135:5000/chatHub?userId=0")
+     .Build();
+            var stopwatch = Stopwatch.StartNew();
+            try
+            {
+                await __connection.StartAsync();
+                await __connection.StopAsync();
+                return stopwatch.ElapsedMilliseconds;
+            }
+            catch (Exception ex)
+            {
+                return -1;
             }
         }
 

@@ -14,8 +14,6 @@ namespace Octarine_Core
         public MainWindow()
         {
             InitializeComponent();
-            Properties.Settings.Default.JwtToken = null;
-            CheckAutorisation();
             this.Width = SystemParameters.PrimaryScreenWidth;
             this.Height = SystemParameters.PrimaryScreenHeight;
             RegistrationBrd.Visibility = Visibility.Hidden;
@@ -302,15 +300,6 @@ namespace Octarine_Core
         private void SendCodeAgainBtn_Click(object sender, RoutedEventArgs e)
         {
             TrySendCodeAgain();
-        }
-        private void CheckAutorisation()
-        {
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.JwtToken))
-            {
-                Window window = new OctarineWindow();
-                window.Show();
-                this.Close();
-            }
         }
     }
 }

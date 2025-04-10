@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using Minio.DataModel.Args;
+using System.Diagnostics;
 
 namespace Octarine_Core.Classic
 {
@@ -90,6 +91,25 @@ namespace Octarine_Core.Classic
                     .WithObject(objectName)
                     .WithFileName(filePath)
                     .WithContentType("image/png")); // или определять тип динамически
+            }
+        }
+        public async Task<long> PingMinioAsync()
+        {
+            var stopwatch = Stopwatch.StartNew();
+
+            try
+            {
+                var minio = new MinioClient()
+                    .WithEndpoint(endpoint)
+                    .WithCredentials(accessKey, secretKey)
+                    .Build();
+
+                await minio.ListBucketsAsync();
+                return stopwatch.ElapsedMilliseconds;
+            }
+            catch
+            {
+                return -1;
             }
         }
     }

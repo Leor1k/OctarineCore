@@ -325,3 +325,5 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Sharp
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Gdi.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Wpf.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Runtime.Wpf.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\CheckResponse.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\CheckResponse.baml

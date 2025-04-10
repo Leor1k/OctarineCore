@@ -1,0 +1,21 @@
+﻿<Window x:Class="Octarine_Core.Autorisation.CheckResponse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Octarine_Core.Autorisation"
+        mc:Ignorable="d"
+        Title="CheckResponse" Height="450" Width="350" WindowStyle="None" ResizeMode="CanResize" Background="{x:Null}"  >
+    <Grid>
+        <Rectangle Fill="{DynamicResource MainGray}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,287,0,0" TextWrapping="Wrap" Text="Api" VerticalAlignment="Top" TextAlignment="Center" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,311,0,0" TextWrapping="Wrap" Text="WebSocket" VerticalAlignment="Top" TextAlignment="Center" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,340,0,0" TextWrapping="Wrap" Text="MinIO" VerticalAlignment="Top" TextAlignment="Center" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,369,0,0" TextWrapping="Wrap" Text="Статус" VerticalAlignment="Top" TextAlignment="Center" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock x:Name="ApiTB" HorizontalAlignment="Left" Margin="224,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock x:Name="WebSocketTB" HorizontalAlignment="Left" Margin="224,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock x:Name="MinIoTB" HorizontalAlignment="Left" Margin="224,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock x:Name="StatusTB" HorizontalAlignment="Left" Margin="224,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
+
+    </Grid>
+</Window>

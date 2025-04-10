@@ -279,6 +279,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Apis\JWT.cs" />
+    <Compile Include="Autorisation\CheckResponse.xaml.cs">
+      <DependentUpon>CheckResponse.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Classic\AddFriendToRoomController.cs" />
     <Compile Include="Classic\CallingController.cs" />
     <Compile Include="Classic\ChatController.cs" />
@@ -348,6 +351,10 @@
       <DependentUpon>Auth.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Autorisation\CheckResponse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Autorisation\OctarineWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -7,120 +7,72 @@ namespace Octarine_Core.Classic
 {
     public class VoiceClient : IDisposable
     {
-        public UdpClient _udpClient;
-        private readonly string _serverIp = "147.45.175.135";
-        private readonly int _serverPort = 5005;
-        private IPEndPoint _serverEndPoint;
-        private WaveInEvent _waveIn;
-        private Log l = new Log();
+        private readonly UdpClient _udpClient;
+        private readonly IPEndPoint _serverEndPoint = new IPEndPoint(IPAddress.Parse("147.45.175.135"), 5005);
+        private readonly WaveInEvent _waveIn;
+        private readonly Log l = new Log();
         private bool _isDisposed;
-        public int LocalPort { get; private set; }
 
-        public VoiceClient()
+        public VoiceClient(UdpClient udpClient)
         {
-            try
+            _udpClient = udpClient;
+
+            _waveIn = new WaveInEvent
             {
-                _waveIn = new WaveInEvent
-                {
-                    DeviceNumber = 0,
-                    WaveFormat = new WaveFormat(16000, 16, 2),
-                    BufferMilliseconds = 100
-                };
-                _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));
-                LocalPort = ((IPEndPoint)_udpClient.Client.LocalEndPoint).Port;
-                l.log1($"Создание UDP : {_udpClient.Client.LocalEndPoint}");
-                _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
-                _udpClient.Client.SendBufferSize = 65536;
+                DeviceNumber = 0, // не менять
+                WaveFormat = new WaveFormat(16000, 16, 2),
+                BufferMilliseconds = 100
+            };
 
-                l.log1($"[VoiceClient] Клиент запущен на порту {LocalPort}, отправляет на {_serverIp}:{_serverPort}");
+            _waveIn.DataAvailable += OnAudioData;
 
-                
-
-                _waveIn.DataAvailable += OnAudioData;
-            }
-            catch (Exception ex)
-            {
-                l.log($"[VoiceClient] Ошибка инициализации: {ex.Message}");
-            }
+            l.log1($"[VoiceClient] Настроен UDP: {_udpClient.Client.LocalEndPoint}");
         }
 
         private async void OnAudioData(object sender, WaveInEventArgs e)
         {
-            if (e.BytesRecorded > 0)
+            if (e.BytesRecorded <= 0) return;
+
+            try
             {
-                try
-                {
-                    int roomId = Properties.Settings.Default.UserID; 
+                int roomId = Properties.Settings.Default.UserID;
+                byte[] roomBytes = BitConverter.GetBytes(roomId);
+                byte[] packet = new byte[roomBytes.Length + e.BytesRecorded];
 
-                    byte[] roomIdBytes = BitConverter.GetBytes(roomId);
-                    byte[] packet = new byte[roomIdBytes.Length + e.BytesRecorded];
+                Buffer.BlockCopy(roomBytes, 0, packet, 0, roomBytes.Length);
+                Buffer.BlockCopy(e.Buffer, 0, packet, roomBytes.Length, e.BytesRecorded);
 
-                    Buffer.BlockCopy(roomIdBytes, 0, packet, 0, roomIdBytes.Length);
-                    Buffer.BlockCopy(e.Buffer, 0, packet, roomIdBytes.Length, e.BytesRecorded);
-
-                    l.log($"[OnAudioData] Отправка {packet.Length} байт с Id {roomId} на {_serverEndPoint}");
-
-                    await _udpClient.SendAsync(packet, packet.Length, _serverEndPoint);
-                }
-                catch (Exception ex)
-                {
-                    l.log($"[OnAudioData] Ошибка при отправке: {ex.Message}");
-                }
+                await _udpClient.SendAsync(packet, packet.Length, _serverEndPoint);
+            }
+            catch (Exception ex)
+            {
+                l.log($"[VoiceClient] Ошибка при отправке: {ex.Message}");
             }
         }
-
-
 
         public void StartRecording()
         {
-            try
-            {
-                l.log("[StartRecording] Запуск записи...");
-                _waveIn.StartRecording();
-                l.log("[StartRecording] Запись началась!");
-            }
-            catch (Exception ex)
-            {
-                l.log($"[StartRecording] Ошибка: {ex.Message}");
-            }
-        }
-        public void StopRecording()
-        {
-            try
-            {
-                _waveIn.StopRecording();
-                l.log("[VoiceClient] Запись остановлена.");
-            }
-            catch (Exception ex)
-            {
-                l.log($"[VoiceClient] Ошибка при остановке: {ex.Message}");
-            }
-        }
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
+            _waveIn.StartRecording();
+            l.log("[VoiceClient] Запись началась");
         }
 
-        protected virtual void Dispose(bool disposing)
+        public void StopRecording()
+        {
+            _waveIn.StopRecording();
+            l.log("[VoiceClient] Запись остановлена");
+        }
+
+        public void Dispose()
         {
             if (_isDisposed) return;
 
-            if (disposing)
-            {
-                _waveIn?.StopRecording();
-                _waveIn?.Dispose();
-                _waveIn.DataAvailable -= OnAudioData;
-                _udpClient?.Close();
-                _udpClient?.Dispose();
-            }
+            _waveIn.StopRecording();
+            _waveIn.DataAvailable -= OnAudioData;
+            _waveIn.Dispose();
 
             _isDisposed = true;
         }
 
-        ~VoiceClient()
-        {
-            Dispose(false);
-        }
+        ~VoiceClient() => Dispose();
     }
 }

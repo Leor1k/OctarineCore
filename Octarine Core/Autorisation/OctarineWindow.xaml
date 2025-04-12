@@ -86,16 +86,17 @@ RenderOptions.BitmapScalingMode="HighQuality"/>
                 </StackPanel>
             </StackPanel>
         </Border>
-        <Border x:Name="SearchFrindBrd" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}" d:IsLocked="True">
+        <Border x:Name="SearchFrindBrd" Tag="dynamic" CornerRadius="70" Margin="321,70,25,25" Background="{DynamicResource SecondGreen}">
             <Grid x:Name="FriendsSystemGrid">
                 <StackPanel Orientation="Horizontal" Margin="40,6,40,923">
-                    <Button x:Name="YourFriendBtn" Content="{x:Static properties:Resources.YourFriends}" FontFamily="Montserrat Medium" Background="{DynamicResource MainGray}" Width="120" Click="YourFriendBtn_Click"/>
-                    <Button x:Name="SearchYourFriendBtn" Content="{x:Static properties:Resources.LetsSeachFriend}" FontFamily="Montserrat Light" Background="{DynamicResource MainGray}" Width="120" Margin="5,0,0,0" Click="SearchYourFriendBtn_Click"/>
+                    <Button x:Name="YourFriendBtn" Content="{x:Static properties:Resources.YourFriends}" FontFamily="Montserrat Medium" Background="{DynamicResource MainGray}" Width="120" Click="YourFriendBtn_Click" Margin="15,5,0,0"/>
+                    <Button x:Name="SearchYourFriendBtn" Content="{x:Static properties:Resources.LetsSeachFriend}" FontFamily="Montserrat Light" Background="{DynamicResource MainGray}" Width="120" Click="SearchYourFriendBtn_Click" Margin="15,5,0,0"/>
                 </StackPanel>
                 <Grid x:Name="SearchFriendGrd" Visibility="Hidden">
                     <StackPanel Margin="0,100,0,10">
                         <StackPanel x:Name="SearchfriendStack" Margin="5,0,5,0">
                             <TextBlock TextWrapping="Wrap" Text="{x:Static properties:Resources.WhoAreWeLookingFor}" VerticalAlignment="Top" TextAlignment="Center" FontSize="48" Background="{DynamicResource SecondGreen}"/>
+                    <TextBlock TextWrapping="Wrap" Text="Поиск осуществяется по уникальному ID, найти его можно в разделе &quot;Настройки&quot;" TextAlignment="Center" FontSize="16" Foreground="#FF828282"/>
                             <StackPanel Height="50" Orientation="Horizontal">
                                 <TextBox x:Name="SearchingUserIdTb" FontSize="36" Height="47" Width="1500" PreviewTextInput="NumberOnlyImput"/>
                                 <Button BorderBrush="{x:Null}" Width="45" Height="45" Margin="15,0,0,0" Click="SearchBt_Click">
@@ -108,7 +109,7 @@ RenderOptions.BitmapScalingMode="HighQuality"/>
                         <StackPanel x:Name="SearchStack" Height="674"/>
                     </StackPanel>
                 </Grid>
-                <Grid x:Name="AllFriendsGrid">
+                <Grid x:Name="AllFriendsGrid" d:IsHidden="True">
                     <StackPanel Margin="0,100,0,0">
                         <TextBlock TextWrapping="Wrap" Text="{x:Static properties:Resources.YourFriends}" TextAlignment="Center" FontSize="48"/>
                         <StackPanel x:Name="FriendsAllStack" Height="808"/>
@@ -138,7 +139,7 @@ RenderOptions.BitmapScalingMode="HighQuality"/>
                 </Grid>
             </Grid>
         </Border>
-        <Border x:Name="settingsBorder" BorderBrush="{DynamicResource MainWhite}" Tag ="dynamic"  BorderThickness="1" Margin="25,13,25,25" Background="{DynamicResource MainGray}" d:IsHidden="True" d:IsLocked="True">
+        <Border x:Name="settingsBorder" BorderBrush="{DynamicResource MainWhite}" Tag ="dynamic"  BorderThickness="1" Margin="25,13,25,25" Background="{DynamicResource MainGray}" d:IsLocked="True" d:IsHidden="True">
             <DockPanel x:Name="MainDockSettings" LastChildFill="False">
                 <StackPanel x:Name="ChapterStack" Width="254" Margin="2,0,0,0" Background="{DynamicResource SecondGreen}">
                     <Button Content="Аккаунт" Height="62" Background="{DynamicResource MainGray}" Margin="10,5,10,0" FontSize="18" BorderThickness="0.7"  BorderBrush="{DynamicResource MainWhite}"/>
@@ -163,10 +164,12 @@ RenderOptions.BitmapScalingMode="HighQuality"/>
                     <Button x:Name="SaveChanges" Content="Сохранить " HorizontalAlignment="Left" Margin="1018,916,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource LightGreen}" FontSize="24" Click="SaveChanges_Click"/>
                     <Button Content="Выйти" HorizontalAlignment="Left" Margin="1300,917,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource MainGray}" FontSize="24" Click="Button_Click"/>
                     <Button x:Name="ChanheImageBtn" Content="Выбрать" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,399,253,0" FontSize="24" Background="{DynamicResource MainGray}" Click="ChanheImageBtn_Click"/>
+                    <TextBlock Margin="152,292,986,0" TextWrapping="Wrap" Text="Ваш персональный ID" VerticalAlignment="Top" FontSize="36" TextAlignment="Center"/>
+                    <TextBox x:Name="IdTextSetting"  Margin="214,344,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" Height="50" FontSize="36" TextAlignment="Center" HorizontalAlignment="Left"/>
                 </Grid>
             </DockPanel>
         </Border>
-        <Grid x:Name="FirstErorrGrid" Margin="321,54,25,967"/>
+        <Grid x:Name="FirstErorrGrid" Margin="321,54,25,967" d:IsLocked="True"/>
         <Grid x:Name="OarticalsGrid" Margin="1339,204,57,204" d:IsLocked="True"/>
     </Grid>
 </Window>

@@ -12,10 +12,100 @@
         <TextBlock HorizontalAlignment="Left" Margin="31,311,0,0" TextWrapping="Wrap" Text="WebSocket" VerticalAlignment="Top" TextAlignment="Center" FontSize="16" Foreground="DarkGray"/>
         <TextBlock HorizontalAlignment="Left" Margin="31,340,0,0" TextWrapping="Wrap" Text="MinIO" VerticalAlignment="Top" TextAlignment="Center" FontSize="16" Foreground="DarkGray"/>
         <TextBlock HorizontalAlignment="Left" Margin="31,369,0,0" TextWrapping="Wrap" Text="Статус" VerticalAlignment="Top" TextAlignment="Center" FontSize="16" Foreground="DarkGray"/>
-        <TextBlock x:Name="ApiTB" HorizontalAlignment="Left" Margin="224,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
-        <TextBlock x:Name="WebSocketTB" HorizontalAlignment="Left" Margin="224,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
-        <TextBlock x:Name="MinIoTB" HorizontalAlignment="Left" Margin="224,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
-        <TextBlock x:Name="StatusTB" HorizontalAlignment="Left" Margin="224,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock x:Name="ApiTB" HorizontalAlignment="Left" Margin="207,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock x:Name="WebSocketTB" HorizontalAlignment="Left" Margin="207,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock x:Name="MinIoTB" HorizontalAlignment="Left" Margin="207,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray"/>
+        <TextBlock x:Name="StatusTB" HorizontalAlignment="Left" Margin="82,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="DarkGray" RenderTransformOrigin="0.5,0.5" Width="258" Height="71">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Viewbox Margin="100,70,100,225">
+            <Grid>
+                <!-- Эллипс для фонового свечения (опционально) -->
+                <Ellipse Width="70" Height="70" Opacity="0.3" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#0034D399" Offset="0.7"/>
+                            <GradientStop Color="#3434D399" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Effect>
+                        <BlurEffect Radius="10"/>
+                    </Ellipse.Effect>
+                    <Ellipse.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever">
+                                    <!-- Анимация прозрачности свечения -->
+                                    <DoubleAnimation
+                                Storyboard.TargetProperty="Opacity"
+                                From="0.2" To="0.5" Duration="0:0:2" 
+                                AutoReverse="True" />
+                                    <!-- Анимация размера (опционально) -->
+                                    <DoubleAnimation
+                                Storyboard.TargetProperty="(Ellipse.RenderTransform).(ScaleTransform.ScaleX)"
+                                From="0.9" To="1.1" Duration="0:0:2"
+                                AutoReverse="True"/>
+                                    <DoubleAnimation
+                                Storyboard.TargetProperty="(Ellipse.RenderTransform).(ScaleTransform.ScaleY)"
+                                From="0.9" To="1.1" Duration="0:0:2"
+                                AutoReverse="True"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Ellipse.Triggers>
+                </Ellipse>
+
+                <!-- Ваше изображение с вращением и свечением -->
+                <Image Source="{StaticResource LogoTime}" Stretch="Uniform" 
+               RenderOptions.BitmapScalingMode="HighQuality" Height="55">
+                    <Image.Effect>
+                        <DropShadowEffect 
+                    Color="#34D399" 
+                    Direction="0" 
+                    ShadowDepth="0" 
+                    BlurRadius="15" 
+                    Opacity="0.5"/>
+                    </Image.Effect>
+                    <Image.RenderTransform>
+                        <RotateTransform x:Name="rotateTransform" Angle="0" CenterX="27.5" CenterY="27.5"/>
+                    </Image.RenderTransform>
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <!-- Анимация вращения -->
+                                    <DoubleAnimation
+                                Storyboard.TargetName="rotateTransform"
+                                Storyboard.TargetProperty="Angle"
+                                From="0" To="360" Duration="0:0:10"
+                                RepeatBehavior="Forever"/>
+                                    <!-- Анимация свечения (пульсация BlurRadius) -->
+                                    <DoubleAnimation
+                                Storyboard.TargetProperty="(Image.Effect).(DropShadowEffect.BlurRadius)"
+                                From="10" To="20" Duration="0:0:2"
+                                AutoReverse="True" RepeatBehavior="Forever"/>
+                                    <!-- Анимация прозрачности свечения -->
+                                    <DoubleAnimation
+                                Storyboard.TargetProperty="(Image.Effect).(DropShadowEffect.Opacity)"
+                                From="0.3" To="0.7" Duration="0:0:2"
+                                AutoReverse="True" RepeatBehavior="Forever"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Image.Triggers>
+                </Image>
+            </Grid>
+        </Viewbox>
 
     </Grid>
 </Window>

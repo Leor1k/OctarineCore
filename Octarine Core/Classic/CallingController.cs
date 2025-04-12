@@ -14,12 +14,13 @@ using System.Windows.Media;
 
 namespace Octarine_Core.Classic
 {
-    public class CallingController
+    public class CallingController : IDisposable
     {
         private HubConnection _connection;
         public OctarineWindow _octarine;
         private VoiceReceiver _voiceReceiver;
         public VoiceClient _voiceClient;
+        private bool _isDisposed;
         private Log l = new Log();
         ApiRequests apir;
 
@@ -117,8 +118,6 @@ namespace Octarine_Core.Classic
                     }
                 });
             });
-
-
         }
 
         public async Task StartConnectionAsync()
@@ -136,46 +135,53 @@ namespace Octarine_Core.Classic
 
         public async Task StartCallAsync(CallRequest request)
         {
-            l.log($"[StartCallAsync] Начало вызова. Комната: {request.RoomId}, Caller: {request.CallerId}, Участники: {string.Join(", ", request.ParticipantIds)}");
+            l.log($"[StartCallAsync] Подготовка к вызову. Комната: {request.RoomId}");
+
+            await ResetForNewCall();
 
             try
             {
                 var message = await apir.PostAsync<object>(Properties.Settings.Default.StartCallAPI, request);
+
+                _ = Task.Run(() => _voiceReceiver.StartListening(_voiceClient._udpClient));
+                _voiceClient.StartRecording();
+
+                l.log("[StartCallAsync] Вызов успешно начат");
             }
             catch (Exception ex)
             {
-                l.Ex($"[StartCallAsync] Ошибка:{ex.Message} : {ex.Source}");
+                l.Ex($"[StartCallAsync] Ошибка:{ex.Message}");
+                throw;
             }
-
-            _ = Task.Run(() => _voiceReceiver.StartListening(_voiceClient._udpClient));
-            l.log("[VoiceClient] Запуск записи...");
-            _voiceClient.StartRecording();
-            l.log("[VoiceClient] Запись запущена.");
         }
-
 
         public async Task AcceptCallAsync(string userId, string roomId)
         {
-            l.log($"[CallingController] Принят вызов. User: {userId}, Комната: {roomId}");
-            var CallConfirmation = new 
-            {
-                RoomId = roomId,
-                UserId = userId,
-            }; 
+            l.log($"[AcceptCallAsync] Подготовка к принятию вызова...");
+
+            // Сбрасываем состояние перед принятием звонка
+            await ResetForNewCall();
+
             try
             {
-                l.log($"[CallingController] Отпрален запрос с  RoomId: {roomId}, UserId: {userId} и localendpoint {_voiceClient.LocalPort} ");
+                var CallConfirmation = new
+                {
+                    RoomId = roomId,
+                    UserId = userId,
+                };
+
                 var message = await apir.PostAsync<object>(Properties.Settings.Default.ConfirmCallAPI, CallConfirmation);
-                l.log($"[StartCallAsync] Отправил в confirm-call");
+
+                _ = Task.Run(() => _voiceReceiver.StartListening(_voiceClient._udpClient));
+                _voiceClient.StartRecording();
+
+                l.log("[AcceptCallAsync] Вызов успешно принят");
             }
             catch (Exception ex)
             {
-                l.Ex($"[StartCallAsync] Ошибка:{ex.Message} : {ex.Source}");
+                l.Ex($"[AcceptCallAsync] Ошибка: {ex.Message}");
+                throw;
             }
-            _ = Task.Run(() => _voiceReceiver.StartListening(_voiceClient._udpClient));
-            l.log("[VoiceClient] Вызов StartRecording()...");
-            _voiceClient.StartRecording();
-            l.log("[VoiceClient] Вызвался успешно StartRecording()...");
         }
 
 
@@ -215,7 +221,57 @@ namespace Octarine_Core.Classic
                 l.Ex($"[EndCall] Ошибка:{ex.Message} : {ex.Source}");
             }
             _voiceClient.StopRecording();
+
+        }
+        public async Task ResetForNewCall()
+        {
+            l.log("[ResetForNewCall] Сброс состояния для нового звонка...");
+
+            try
+            {
+                // Останавливаем текущую запись
+                if (_voiceClient != null)
+                {
+                    _voiceClient.StopRecording();
+                    await Task.Delay(200);
+                }
+
+                // Пересоздаем компоненты
+                ResetVoiceComponents();
+
+                // Переподключаем SignalR если соединение разорвано
+                if (_connection.State != HubConnectionState.Connected)
+                {
+                    await StartConnectionAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                l.Ex($"[ResetForNewCall] Ошибка: {ex.Message}");
+            }
         }
 
+        private void ResetVoiceComponents()
+        {
+            // Освобождаем старые ресурсы
+            _voiceReceiver?.Dispose();
+            _voiceClient?.Dispose();
+
+            // Создаем новые экземпляры
+            _voiceReceiver = new VoiceReceiver();
+            _voiceClient = new VoiceClient();
+        }
+        public void Dispose()
+        {
+            if (_isDisposed) return;
+
+            _voiceClient?.Dispose();
+            _voiceReceiver?.Dispose();
+            _connection?.DisposeAsync().GetAwaiter().GetResult();
+
+            _isDisposed = true;
+            GC.SuppressFinalize(this);
+        }
+        ~CallingController() => Dispose();
     }
 }

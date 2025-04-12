@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Octarine_Core.Apis;
+﻿using Octarine_Core.Apis;
 using Octarine_Core.Autorisation;
 
 namespace Octarine_Core.Classic
@@ -16,6 +11,7 @@ namespace Octarine_Core.Classic
         {
             this.octarine = octarine;
             ErrorUi = new ErrorAutUIController(Properties.Settings.Default.BorderForEror);
+            octarine.IdTextSetting.Text = octarine.UsersEnteredBrick.IdUser.ToString();
         }
         public async void  ChangeUserName(string newUserName, int UserId)
         {
@@ -35,7 +31,6 @@ namespace Octarine_Core.Classic
             {
                 ErrorUi.ShowUserError("Произошла ошибка при попытке изменить ник", false);
             }       
-          
         }
     }
 }

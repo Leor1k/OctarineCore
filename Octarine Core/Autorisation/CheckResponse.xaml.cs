@@ -36,6 +36,8 @@ namespace Octarine_Core.Autorisation
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Show();
             PingAll();
+
+            Properties.Settings.Default.JwtToken = null;
         }
 
         private async void PingAll()
@@ -56,7 +58,7 @@ namespace Octarine_Core.Autorisation
             }
             else
             {
-                MessageBox.Show("Некоторые сервисы недоступны после нескольких попыток");
+                StatusTB.Text = "Некоторые сервисы недоступны после нескольких попыток";
             }
         }
 
@@ -91,7 +93,7 @@ namespace Octarine_Core.Autorisation
 
             Window windowToShow;
 
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.JwtToken))
+            if (Properties.Settings.Default.JwtToken != null)
             {
                 StatusTB.Text = "Загрузка главного окна...";
                 windowToShow = new OctarineWindow();

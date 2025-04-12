@@ -169,6 +169,7 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resou
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Texts.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\IconsSVG.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\Auth.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\CheckResponse.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\OctarineWindow.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\AddUserToRoomBrick.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ChatUpBur.g.cs
@@ -188,6 +189,7 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octar
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Octarine Core.exe.config
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Octarine Core.exe
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\CommunityToolkit.HighPerformance.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Client.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Common.dll
@@ -196,6 +198,7 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Micro
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Common.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.HashCode.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.Memory.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.TimeProvider.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -210,6 +213,7 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Micro
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Logging.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Tokens.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Minio.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Asio.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Core.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.dll
@@ -217,13 +221,23 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudi
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Wasapi.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.WinForms.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.WinMM.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Converters.Wpf.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Core.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Css.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Dom.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Model.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Gdi.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Wpf.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Runtime.Wpf.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Buffers.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IO.Hashing.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IO.Pipelines.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Memory.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Net.ServerSentEvents.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Reactive.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Security.AccessControl.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Security.Principal.Windows.dll
@@ -232,6 +246,8 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Syste
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Threading.Channels.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.ValueTuple.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\CommunityToolkit.HighPerformance.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\CommunityToolkit.HighPerformance.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Connections.Abstractions.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Client.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Common.xml
@@ -240,6 +256,7 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Micro
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Common.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.SignalR.Protocols.Json.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.HashCode.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.Memory.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.TimeProvider.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
@@ -254,6 +271,8 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Micro
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Logging.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.IdentityModel.Tokens.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Minio.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Minio.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Asio.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Core.xml
@@ -261,13 +280,23 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudi
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.Wasapi.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.WinForms.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\NAudio.WinMM.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Converters.Wpf.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Core.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Css.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Dom.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Model.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Gdi.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Wpf.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Runtime.Wpf.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Buffers.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IO.Hashing.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IO.Pipelines.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Memory.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Net.ServerSentEvents.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Reactive.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Security.AccessControl.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Security.Principal.Windows.xml
@@ -278,6 +307,7 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Syste
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.ValueTuple.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\App.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\Auth.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\CheckResponse.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\OctarineWindow.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\AddUserToRoomBrick.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ChatUpBur.baml
@@ -297,33 +327,3 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octar
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine.E0A7653C.Up2Date
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.exe
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.pdb
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\CommunityToolkit.HighPerformance.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.HashCode.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Minio.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IO.Hashing.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Reactive.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\CommunityToolkit.HighPerformance.pdb
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\CommunityToolkit.HighPerformance.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.Bcl.HashCode.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Minio.pdb
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Minio.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.IO.Hashing.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Reactive.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Converters.Wpf.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Core.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Css.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Dom.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Model.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Gdi.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Wpf.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Runtime.Wpf.dll
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Converters.Wpf.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Core.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Css.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Dom.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Model.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Gdi.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Rendering.Wpf.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\SharpVectors.Runtime.Wpf.xml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\CheckResponse.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\CheckResponse.baml

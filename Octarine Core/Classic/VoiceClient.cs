@@ -5,7 +5,7 @@ using NAudio.Wave;
 
 namespace Octarine_Core.Classic
 {
-    public class VoiceClient
+    public class VoiceClient : IDisposable
     {
         public UdpClient _udpClient;
         private readonly string _serverIp = "147.45.175.135";
@@ -13,6 +13,7 @@ namespace Octarine_Core.Classic
         private IPEndPoint _serverEndPoint;
         private WaveInEvent _waveIn;
         private Log l = new Log();
+        private bool _isDisposed;
         public int LocalPort { get; private set; }
 
         public VoiceClient()
@@ -83,7 +84,6 @@ namespace Octarine_Core.Classic
                 l.log($"[StartRecording] Ошибка: {ex.Message}");
             }
         }
-
         public void StopRecording()
         {
             try
@@ -95,6 +95,32 @@ namespace Octarine_Core.Classic
             {
                 l.log($"[VoiceClient] Ошибка при остановке: {ex.Message}");
             }
+        }
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_isDisposed) return;
+
+            if (disposing)
+            {
+                _waveIn?.StopRecording();
+                _waveIn?.Dispose();
+                _waveIn.DataAvailable -= OnAudioData;
+                _udpClient?.Close();
+                _udpClient?.Dispose();
+            }
+
+            _isDisposed = true;
+        }
+
+        ~VoiceClient()
+        {
+            Dispose(false);
         }
     }
 }

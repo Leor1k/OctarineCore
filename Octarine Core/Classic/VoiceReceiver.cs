@@ -6,13 +6,14 @@ using NAudio.Wave;
 
 namespace Octarine_Core.Classic
 {
-    public class VoiceReceiver
+    public class VoiceReceiver : IDisposable
     {
         private UdpClient _udpClient;
         private WaveOutEvent _waveOut;
         private BufferedWaveProvider _waveProvider;
         private Log l = new Log();
-        private TaskCompletionSource<int> _portTaskSource = new TaskCompletionSource<int>(); 
+        private TaskCompletionSource<int> _portTaskSource = new TaskCompletionSource<int>();
+        private bool _isDisposed;
 
         public VoiceReceiver()
         {
@@ -71,6 +72,31 @@ namespace Octarine_Core.Classic
             {
                 l.log1($"[VoiceReceiver] Ошибка приёма данных: {ex.Message}");
             }
+        }
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_isDisposed) return;
+
+            if (disposing)
+            {
+                // Освобождаем управляемые ресурсы
+                _waveOut?.Stop();
+                _waveOut?.Dispose();
+                _udpClient?.Close();
+                _udpClient?.Dispose();
+            }
+
+            _isDisposed = true;
+        }
+
+        ~VoiceReceiver()
+        {
+            Dispose(false);
         }
     }
 }

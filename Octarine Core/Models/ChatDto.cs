@@ -36,7 +36,6 @@ namespace Octarine_Core.Models
                         else
                         {
                             ChatName += _participants[i].UserName + " ";
-                            Console.WriteLine(ChatName);
                         }
                     }
 

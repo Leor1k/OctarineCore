@@ -12,7 +12,6 @@ namespace Octarine_Core.Classic
         public void log(string message)
         {
             string logMessage = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}";
-            Console.WriteLine(logMessage);
             try
             {
                 File.AppendAllText(_logFilePath, logMessage + Environment.NewLine);
@@ -25,7 +24,6 @@ namespace Octarine_Core.Classic
         public void log1(string message)
         {
             string logMessage = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}";
-            Console.WriteLine(logMessage);
             try
             {
                 File.AppendAllText(_logFilePathport, logMessage + Environment.NewLine);
@@ -39,7 +37,6 @@ namespace Octarine_Core.Classic
         public void Ex(string message)
         {
             string logMessage = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}";
-            Console.WriteLine(logMessage);
             try
             {
                 File.AppendAllText(_logFilePathEx, logMessage + Environment.NewLine);

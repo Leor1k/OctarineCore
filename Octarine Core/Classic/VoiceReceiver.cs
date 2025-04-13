@@ -7,7 +7,7 @@ using System;
 
 public class VoiceReceiver
 {
-    private UdpClient _udpClient;
+    public UdpClient _udpClient;
     private WaveOutEvent _waveOut;
     private BufferedWaveProvider _waveProvider;
     private Log l = new Log();

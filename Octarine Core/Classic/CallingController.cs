@@ -25,7 +25,6 @@ namespace Octarine_Core.Classic
         ApiRequests apir;
         public UdpClient udpClient;
         
-
         public CallingController(OctarineWindow octarineWindow)
         {
             for (int i = 0; i < WaveIn.DeviceCount; i++)
@@ -123,18 +122,25 @@ namespace Octarine_Core.Classic
         {
             l.log1("[StopVoiceAndreciver] Начал очистку");
             l.log1($"[StopVoiceAndreciver] был порт {udpClient.Client.LocalEndPoint}");
-            udpClient.Close();
             l.log1("[StopVoiceAndreciver] закрыл клиент");
             _voiceClient.StopRecording();
             _voiceReceiver.StopListening();
+            udpClient.Close();
             CreateNewUdpPort();
+            UpdateUdpClients();
             l.log1($"[StopVoiceAndreciver] Пересоздал порт {udpClient.Client.LocalEndPoint}");
 
         }
         public void CreateNewUdpPort()
         {
-            udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));
+            udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));   
         }
+        public void UpdateUdpClients()
+        {
+            _voiceClient._udpClient = udpClient;
+            _voiceReceiver._udpClient = udpClient;
+        }
+
         public async Task StartConnectionAsync()
         {
             try

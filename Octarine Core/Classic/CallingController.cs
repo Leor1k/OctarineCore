@@ -10,6 +10,7 @@ using NAudio.Wave;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Threading;
 
 namespace Octarine_Core.Classic
 {
@@ -21,6 +22,7 @@ namespace Octarine_Core.Classic
         public VoiceClient _voiceClient;
         private Log l = new Log();
         ApiRequests apir;
+        
 
         public CallingController(OctarineWindow octarineWindow)
         {
@@ -84,7 +86,7 @@ namespace Octarine_Core.Classic
             });
             _connection.On<int>("ReceiveUdpPort", (udpPort) =>
             {
-                l.log($"[VoiceReceiver] Получил свой реальный UDP-порт от сервера: {udpPort}");
+                l.log($"[VoiceReceiver] Получил свой реальный UDP-порт от сервера: {udpPort} в ReceiveUdpPort");
                 _voiceReceiver.SetUdpPort(udpPort);
             });
             _connection.On<string, string>("RejectEndCall", (RoomId, UserId) =>
@@ -135,6 +137,7 @@ namespace Octarine_Core.Classic
 
         public async Task StartCallAsync(CallRequest request)
         {
+            l.log1("=============================Начаор звонка=============================");
             l.log($"[StartCallAsync] Начало вызова. Комната: {request.RoomId}, Caller: {request.CallerId}, Участники: {string.Join(", ", request.ParticipantIds)}");
 
             try
@@ -155,6 +158,7 @@ namespace Octarine_Core.Classic
 
         public async Task AcceptCallAsync(string userId, string roomId)
         {
+            l.log1("=============================Начаор звонка=============================");
             l.log($"[CallingController] Принят вызов. User: {userId}, Комната: {roomId}");
             var CallConfirmation = new
             {
@@ -198,6 +202,7 @@ namespace Octarine_Core.Classic
         }
         public async Task EndCall(string userId, string roomId)
         {
+            l.log1("=============================Конец звонка=============================");
             l.log($"[EndCall] Отмена. User: {userId}, Комната: {roomId}");
             var CallEndRequest = new
             {
@@ -214,6 +219,7 @@ namespace Octarine_Core.Classic
                 l.Ex($"[EndCall] Ошибка:{ex.Message} : {ex.Source}");
             }
             _voiceClient.StopRecording();
+            _voiceReceiver.StopListening();
         }
 
     }

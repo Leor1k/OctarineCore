@@ -137,7 +137,7 @@ namespace Octarine_Core.Classic
 
         public async Task StartCallAsync(CallRequest request)
         {
-            l.log1("=============================Начаор звонка=============================");
+            l.log1("=============================Начало звонка=============================");
             l.log($"[StartCallAsync] Начало вызова. Комната: {request.RoomId}, Caller: {request.CallerId}, Участники: {string.Join(", ", request.ParticipantIds)}");
 
             try
@@ -149,11 +149,14 @@ namespace Octarine_Core.Classic
                 l.Ex($"[StartCallAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
 
-            _voiceReceiver.StartListening(_voiceClient._udpClient); // <-- прямой вызов
-            l.log("[VoiceClient] Запуск записи...");
+            // Если прослушивание не было остановлено, то просто запустим заново
+            _voiceReceiver.StartListening(_voiceClient._udpClient);
+
+            l.log("[StartCallAsync] Запуск записи...");
             _voiceClient.StartRecording();
-            l.log("[VoiceClient] Запись запущена.");
+            l.log("[StartCallAsync] Запись запущена.");
         }
+
 
 
 

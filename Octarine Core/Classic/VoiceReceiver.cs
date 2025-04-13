@@ -3,7 +3,6 @@ using Octarine_Core.Classic;
 using System.Net.Sockets;
 using System.Net;
 using System.Threading.Tasks;
-using System.Threading;
 using System;
 
 public class VoiceReceiver
@@ -13,12 +12,11 @@ public class VoiceReceiver
     private BufferedWaveProvider _waveProvider;
     private Log l = new Log();
     private bool _isListening;
-    private CancellationTokenSource _cts;
     private Task _listeningTask;
-    private TaskCompletionSource<int> _portTaskSource = new TaskCompletionSource<int>();
 
-    public VoiceReceiver()
+    public VoiceReceiver(UdpClient udpClient)
     {
+        _udpClient = udpClient;
         _waveOut = new WaveOutEvent();
         _waveProvider = new BufferedWaveProvider(new WaveFormat(16000, 16, 2))
         {
@@ -29,15 +27,7 @@ public class VoiceReceiver
         _waveOut.Play();
     }
 
-    public void SetUdpPort(int udpPort)
-    {
-        if (!_portTaskSource.Task.IsCompleted)
-        {
-            _portTaskSource.SetResult(udpPort);
-        }
-    }
-
-    public void StartListening(UdpClient udpClient)
+    public void StartListening()
     {
         if (_isListening)
         {
@@ -47,15 +37,12 @@ public class VoiceReceiver
 
         l.log1("[StartListening] Запуск прослушивания...");
         _isListening = true;
-        _cts = new CancellationTokenSource();
-        _udpClient = udpClient;
         _udpClient.Client.ReceiveBufferSize = 65536;
 
-        // Перезапускаем слушание в новом потоке, не закрывая UDP-сокет
-        _listeningTask = Task.Run(() => ListenAsync(_cts.Token));
+        _listeningTask = Task.Run(() => ListenAsync());
     }
 
-    private async Task ListenAsync(CancellationToken token)
+    private async Task ListenAsync()
     {
         l.log1($"[ListenAsync] Клиент слушает на порту {_udpClient.Client.LocalEndPoint}");
 
@@ -63,7 +50,6 @@ public class VoiceReceiver
         {
             while (_isListening)
             {
-                l.log1($"[VoiceReceiver] Начало цикла");
                 UdpReceiveResult result;
                 try
                 {
@@ -109,6 +95,6 @@ public class VoiceReceiver
             return;
 
         l.log1("[VoiceReceiver] Остановка прослушивания...");
-        _cts?.Cancel();
+        _isListening = false;
     }
 }

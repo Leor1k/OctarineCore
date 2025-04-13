@@ -11,6 +11,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Threading;
+using System.Net.Sockets;
+using System.Net;
 
 namespace Octarine_Core.Classic
 {
@@ -22,6 +24,7 @@ namespace Octarine_Core.Classic
         public VoiceClient _voiceClient;
         private Log l = new Log();
         ApiRequests apir;
+        public UdpClient udpClient;
         
 
         public CallingController(OctarineWindow octarineWindow)
@@ -31,8 +34,9 @@ namespace Octarine_Core.Classic
                 var capabilities = WaveIn.GetCapabilities(i);
                 l.log($"Микрофон {i}: {capabilities.ProductName}");
             }
-            _voiceReceiver = new VoiceReceiver();
-            _voiceClient = new VoiceClient();
+            CreateNewUdpPort();
+            _voiceReceiver = new VoiceReceiver(udpClient);
+            _voiceClient = new VoiceClient(udpClient);
             _octarine = octarineWindow;
             apir = new ApiRequests();
             Properties.Settings.Default.UserPort = 0;
@@ -84,11 +88,6 @@ namespace Octarine_Core.Classic
             {
                 l.log($"[ERROR] {message}");
             });
-            _connection.On<int>("ReceiveUdpPort", (udpPort) =>
-            {
-                l.log($"[VoiceReceiver] Получил свой реальный UDP-порт от сервера: {udpPort} в ReceiveUdpPort");
-                _voiceReceiver.SetUdpPort(udpPort);
-            });
             _connection.On<string, string>("RejectEndCall", (RoomId, UserId) =>
             {
                 Application.Current.Dispatcher.Invoke(() =>
@@ -121,7 +120,16 @@ namespace Octarine_Core.Classic
 
 
         }
-
+        private void StopVoiceAndreciver()
+        {
+            _voiceClient.StopRecording();
+            _voiceReceiver.StopListening();
+            CreateNewUdpPort();
+        }
+        public void CreateNewUdpPort()
+        {
+            udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));
+        }
         public async Task StartConnectionAsync()
         {
             try
@@ -148,14 +156,13 @@ namespace Octarine_Core.Classic
             {
                 l.Ex($"[StartCallAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
+            _voiceReceiver.StartListening();
 
-            // Если прослушивание не было остановлено, то просто запустим заново
-            _voiceReceiver.StartListening(_voiceClient._udpClient);
-
-            l.log("[StartCallAsync] Запуск записи...");
+            l.log("[VoiceClient] Запуск записи...");
             _voiceClient.StartRecording();
-            l.log("[StartCallAsync] Запись запущена.");
+            l.log("[VoiceClient] Запись запущена.");
         }
+
 
 
 
@@ -179,7 +186,7 @@ namespace Octarine_Core.Classic
             {
                 l.Ex($"[StartCallAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
-            _voiceReceiver.StartListening(_voiceClient._udpClient);
+            _voiceReceiver.StartListening();
             l.log("[VoiceClient] Вызов StartRecording()...");
             _voiceClient.StartRecording();
             l.log("[VoiceClient] Вызвался успешно StartRecording()...");
@@ -222,8 +229,7 @@ namespace Octarine_Core.Classic
             {
                 l.Ex($"[EndCall] Ошибка:{ex.Message} : {ex.Source}");
             }
-            _voiceClient.StopRecording();
-            _voiceReceiver.StopListening();
+            StopVoiceAndreciver();
         }
 
     }

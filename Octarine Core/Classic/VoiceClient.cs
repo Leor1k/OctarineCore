@@ -17,8 +17,9 @@ namespace Octarine_Core.Classic
         private Log l = new Log();
         public int LocalPort { get; private set; }
 
-        public VoiceClient()
+        public VoiceClient(UdpClient udpClient)
         {
+
             try
             {
                 _waveIn = new WaveInEvent
@@ -27,7 +28,7 @@ namespace Octarine_Core.Classic
                     WaveFormat = new WaveFormat(16000, 16, 2),
                     BufferMilliseconds = 100
                 };
-                _udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));
+                _udpClient =udpClient;
                 LocalPort = ((IPEndPoint)_udpClient.Client.LocalEndPoint).Port;
                 l.log1($"Создание UDP : {_udpClient.Client.LocalEndPoint}");
                 _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);

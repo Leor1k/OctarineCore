@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using NAudio.Wave;
 
 namespace Octarine_Core.Classic
@@ -38,14 +39,12 @@ namespace Octarine_Core.Classic
         {
             l.log1("[StartListening] Ожидание получения UDP-порта...");
 
-            int port = await _portTaskSource.Task;
-
             Console.WriteLine($"[StartListening] Получен реальный UDP: {udpClient.Client.LocalEndPoint}");
 
             try
             {
                 _udpClient = udpClient;
-                _udpClient.Client.ReceiveBufferSize = 65536; ;
+                _udpClient.Client.ReceiveBufferSize = 65536;
                 l.log1($"[StartListening] Клиент слушает на порту {_udpClient.Client.LocalEndPoint}----");
 
                 while (true)
@@ -63,7 +62,7 @@ namespace Octarine_Core.Classic
                     int roomId = BitConverter.ToInt32(receivedData, 0);
                     byte[] audioData = new byte[receivedData.Length - 4];
                     Buffer.BlockCopy(receivedData, 4, audioData, 0, audioData.Length);
-                    l.log1($"[VoiceReceiver] Получен аудиопакет для RoomID {roomId} от {sender}");
+                    l.log1($"[VoiceReceiver] Получен аудиопакет для RoomID {roomId} от {sender}: {sender.Address}+{sender.Port}");
                     _waveProvider.AddSamples(audioData, 0, audioData.Length);
                 }
             }

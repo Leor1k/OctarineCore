@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Windows;
+using System.Windows.Forms;
 using NAudio.Wave;
 
 namespace Octarine_Core.Classic
@@ -30,7 +32,6 @@ namespace Octarine_Core.Classic
                 l.log1($"Создание UDP : {_udpClient.Client.LocalEndPoint}");
                 _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
                 _udpClient.Client.SendBufferSize = 65536;
-
                 l.log1($"[VoiceClient] Клиент запущен на порту {LocalPort}, отправляет на {_serverIp}:{_serverPort}");
 
 
@@ -57,7 +58,8 @@ namespace Octarine_Core.Classic
                     Buffer.BlockCopy(roomIdBytes, 0, packet, 0, roomIdBytes.Length);
                     Buffer.BlockCopy(e.Buffer, 0, packet, roomIdBytes.Length, e.BytesRecorded);
 
-                    l.log($"[OnAudioData] Отправка {packet.Length} байт с Id {roomId} на {_serverEndPoint}");
+                    l.log1($"[CLIENT] Отправка аудио с локального порта: {(_udpClient.Client.LocalEndPoint as IPEndPoint)?.Port}");
+                    l.log1($"[CLIENT] Локальный EndPoint: {_udpClient.Client.LocalEndPoint}");
 
                     await _udpClient.SendAsync(packet, packet.Length, _serverEndPoint);
                 }

@@ -3,7 +3,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using NAudio.Wave;
 
 namespace Octarine_Core.Classic
@@ -14,9 +13,10 @@ namespace Octarine_Core.Classic
         private WaveOutEvent _waveOut;
         private BufferedWaveProvider _waveProvider;
         private Log l = new Log();
-        private TaskCompletionSource<int> _portTaskSource = new TaskCompletionSource<int>();
         private bool _isListening;
-        private CancellationTokenSource _cts = new CancellationTokenSource();
+        private CancellationTokenSource _cts;
+        private Task _listeningTask;
+        private TaskCompletionSource<int> _portTaskSource = new TaskCompletionSource<int>();
 
         public VoiceReceiver()
         {
@@ -29,7 +29,6 @@ namespace Octarine_Core.Classic
             _waveOut.Init(_waveProvider);
             _waveOut.Play();
         }
-
         public void SetUdpPort(int udpPort)
         {
             if (!_portTaskSource.Task.IsCompleted)
@@ -37,36 +36,49 @@ namespace Octarine_Core.Classic
                 _portTaskSource.SetResult(udpPort);
             }
         }
-
-        public async Task StartListening(UdpClient udpClient)
+        public void StartListening(UdpClient udpClient)
         {
-            l.log1("[StartListening] Начало StartListening");
             if (_isListening)
             {
                 l.log1("[StartListening] Уже запущен");
                 return;
             }
 
+            l.log1("[StartListening] Запуск прослушивания...");
             _isListening = true;
             _cts = new CancellationTokenSource();
+            _udpClient = udpClient;
+            _udpClient.Client.ReceiveBufferSize = 65536;
+
+            _listeningTask = Task.Run(() => ListenAsync(_cts.Token));
+        }
+
+        private async Task ListenAsync(CancellationToken token)
+        {
+            l.log1($"[ListenAsync] Клиент слушает на порту {_udpClient.Client.LocalEndPoint}");
 
             try
             {
-                _udpClient = udpClient;
-                _udpClient.Client.ReceiveBufferSize = 65536;
-                l.log1($"[StartListening] Клиент слушает на порту {_udpClient.Client.LocalEndPoint}----");
-
-                while (!_cts.Token.IsCancellationRequested)
+                while (!token.IsCancellationRequested)
                 {
                     l.log1($"[VoiceReceiver] Начало цикла");
-                    var result = await _udpClient.ReceiveAsync();
+                    UdpReceiveResult result;
+                    try
+                    {
+                        result = await _udpClient.ReceiveAsync();
+                    }
+                    catch (ObjectDisposedException)
+                    {
+                        l.log1("[VoiceReceiver] Сокет был закрыт");
+                        break;
+                    }
 
                     byte[] receivedData = result.Buffer;
                     IPEndPoint sender = result.RemoteEndPoint;
 
                     if (receivedData.Length < 4)
                     {
-                        l.log1($"[StartListening] Ошибка: слишком короткий пакет от {sender}");
+                        l.log1($"[VoiceReceiver] Ошибка: слишком короткий пакет от {sender}");
                         continue;
                     }
 
@@ -78,10 +90,6 @@ namespace Octarine_Core.Classic
                     _waveProvider.AddSamples(audioData, 0, audioData.Length);
                 }
             }
-            catch (ObjectDisposedException)
-            {
-                l.log1("[VoiceReceiver] Поток остановлен — сокет закрыт");
-            }
             catch (Exception ex)
             {
                 l.log1($"[VoiceReceiver] Ошибка приёма данных: {ex.Message}");
@@ -92,10 +100,14 @@ namespace Octarine_Core.Classic
                 l.log1("[VoiceReceiver] Слушатель завершён.");
             }
         }
+
         public void StopListening()
         {
+            if (!_isListening)
+                return;
+
             l.log1("[VoiceReceiver] Остановка прослушивания...");
-            _cts.Cancel();
+            _cts?.Cancel();
         }
     }
 }

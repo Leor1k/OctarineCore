@@ -10,7 +10,6 @@ using NAudio.Wave;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Threading;
 using System.Net.Sockets;
 using System.Net;
 
@@ -122,9 +121,15 @@ namespace Octarine_Core.Classic
         }
         private void StopVoiceAndreciver()
         {
+            l.log1("[StopVoiceAndreciver] Начал очистку");
+            l.log1($"[StopVoiceAndreciver] был порт {udpClient.Client.LocalEndPoint}");
+            udpClient.Close();
+            l.log1("[StopVoiceAndreciver] закрыл клиент");
             _voiceClient.StopRecording();
             _voiceReceiver.StopListening();
             CreateNewUdpPort();
+            l.log1($"[StopVoiceAndreciver] Пересоздал порт {udpClient.Client.LocalEndPoint}");
+
         }
         public void CreateNewUdpPort()
         {

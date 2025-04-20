@@ -21,8 +21,6 @@ namespace Octarine_Core.Resource.UsersIntefeces
             UsersID = Id;
             controller = _controller;
             LoadUserImage();
-
-
         }
         public AddUserToRoomBrick(string Name, int Id)
         {

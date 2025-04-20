@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -50,11 +50,11 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 Interval = TimeSpan.FromSeconds(20)
             };
             _callTimer.Tick += (s, e) => EndCall();
+            controller.SetChutBar(this);
         }
         public void RemoveFromUserList(int UserId)
         {
             FriendsList.Remove(UserId.ToString());
-            MessageBox.Show("Удалил из списка в chutUpbat");
         }
         public ChatUpBur(string RoomaName, int[] friendIds, CallingController controller, int chatId)
         {
@@ -77,6 +77,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 Interval = TimeSpan.FromSeconds(20)
             };
             _callTimer.Tick += (s, e) => EndCall();
+            controller.SetChutBar(this);
         }
         private async Task InitializeAdminAsync(int chatId)
         {
@@ -127,15 +128,37 @@ namespace Octarine_Core.Resource.UsersIntefeces
         {
             StandartGrid.Visibility = Visibility.Hidden;
             CallGrid.Visibility = Visibility.Visible;
-            t1.Text = Properties.Settings.Default.UserName;
-            t2.Text = FriendName;
             CallRequest req = new CallRequest(ChatId, Properties.Settings.Default.UserID.ToString(), FriendsList);
+            LoadUserDataInCall(Properties.Settings.Default.UserID);
             await Controller.StartCallAsync(req);
             Properties.Settings.Default.InColling = true;
             _callTimer.Start();
-
         }
-
+        public async void LoadUserDataInCall(int userId)
+        {
+           var api = new ApiRequests();
+            List<UserDataFoCall> list = await api.GetAsync<UserDataFoCall>(Properties.Settings.Default.GetUserData+ userId);
+            if (list.Count != 0)
+            {
+                foreach (UserDataFoCall user in list)
+                {
+                    ///ToDo опять работа
+                    var item = new UserCalItem(user.Id, user.Username);
+                    StackWitnName.Children.Add(item);
+                }
+            }
+        }
+        public void RemoveUserFromRoom(int UserId)
+        {
+            foreach (UserCalItem user in StackWitnName.Children)
+            {
+                if (user._userId == UserId)
+                {
+                    StackWitnName.Children.Remove(user);
+                    break;
+                }
+            }
+        }
         private async void EndCallBtn_Click(object sender, RoutedEventArgs e)
         {
             await EndCall();
@@ -148,6 +171,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
             StandartGrid.Visibility = Visibility.Visible;
             CallGrid.Visibility = Visibility.Hidden;
             Properties.Settings.Default.InColling = false;
+            StackWitnName.Children.Clear();
         }
 
         private void AddUserInRoomBTN_Click(object sender, RoutedEventArgs e)

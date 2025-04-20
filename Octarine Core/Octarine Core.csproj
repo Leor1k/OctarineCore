@@ -302,7 +302,9 @@
     <Compile Include="Models\Friends.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\MessagesDTO.cs" />
+    <Compile Include="Models\UserDataFoCall.cs" />
     <Compile Include="Models\UserDto.cs" />
+    <Compile Include="Models\UserInCall.cs" />
     <Compile Include="Models\WhantsBeFriend.cs" />
     <Compile Include="Resource\UsersIntefeces\AddUserToRoomBrick.xaml.cs">
       <DependentUpon>AddUserToRoomBrick.xaml</DependentUpon>
@@ -333,6 +335,9 @@
     </Compile>
     <Compile Include="Resource\UsersIntefeces\SearchingFriend.xaml.cs">
       <DependentUpon>SearchingFriend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\UsersIntefeces\UserCalItem.xaml.cs">
+      <DependentUpon>UserCalItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resource\UsersIntefeces\UsersBrick.xaml.cs">
       <DependentUpon>UsersBrick.xaml</DependentUpon>
@@ -412,6 +417,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\UsersIntefeces\SearchingFriend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\UsersIntefeces\UserCalItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

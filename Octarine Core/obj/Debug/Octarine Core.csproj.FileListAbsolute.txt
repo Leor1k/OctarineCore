@@ -327,3 +327,5 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octar
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine.E0A7653C.Up2Date
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.exe
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UserCalItem.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UserCalItem.baml

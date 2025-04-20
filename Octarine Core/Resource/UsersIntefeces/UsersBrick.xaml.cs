@@ -5,9 +5,6 @@ using Octarine_Core.Classic;
 
 namespace Octarine_Core.Resource.UsersIntefeces
 {
-    /// <summary>
-    /// Логика взаимодействия для UsersBrick.xaml
-    /// </summary>
     public partial class UsersBrick : UserControl
     {
         public string UserName { get; set; }
@@ -29,7 +26,5 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 UsersImage.Source = UserBitMap;
             }
         }
-
-
     }
 }

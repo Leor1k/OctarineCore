@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Octarine_Core.Resource.UsersIntefeces"
-             mc:Ignorable="d" Style="{x:Null}" Width="1500" Height="150" Foreground="{x:Null}"
+             mc:Ignorable="d" Style="{x:Null}" Width="1500" Height="177" Foreground="{x:Null}"
              BorderBrush="Transparent" BorderThickness="0" Margin="0,25,0,0">
     <Grid>
         <Grid x:Name="StandartGrid" Height="77" VerticalAlignment="Center">
@@ -45,11 +45,8 @@
         </Grid>
         <Grid x:Name="CallGrid" Visibility="Hidden">
             <Rectangle RadiusX="30" RadiusY="30" Fill="{DynamicResource MainGray}" Grid.ColumnSpan="2"/>
-            <StackPanel x:Name="StackWitnName" Margin="0,10,0,75" Orientation="Horizontal" HorizontalAlignment="Center" Grid.RowSpan="1">
-                <TextBox x:Name="t1" TextWrapping="Wrap" Text="TextBox" Width="120" TextAlignment="Center" Margin="15,0,15,0"/>
-                <TextBox x:Name="t2" TextWrapping="Wrap" Text="TextBox" Width="120" TextAlignment="Center"/>
-            </StackPanel>
-            <Button x:Name="EndCallBtn" BorderBrush="{x:Null}" Margin="721,82,721,10" RenderTransformOrigin="0.5,0.5" Click="EndCallBtn_Click">
+            <StackPanel x:Name="StackWitnName" Margin="0,10,0,63" Orientation="Horizontal" HorizontalAlignment="Center" Grid.RowSpan="1"/>
+            <Button x:Name="EndCallBtn" BorderBrush="{x:Null}" Margin="721,119,721,0" RenderTransformOrigin="0.5,0.5" Click="EndCallBtn_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

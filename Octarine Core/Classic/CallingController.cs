@@ -1,17 +1,17 @@
-﻿using Microsoft.AspNetCore.SignalR.Client;
+﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Sockets;
 using System.Threading.Tasks;
-using System;
-using Octarine_Core.Resource.UsersIntefeces;
-using Octarine_Core.Autorisation;
-using Octarine_Core.Apis;
-using Octarine_Core.Models;
-using NAudio.Wave;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Net.Sockets;
-using System.Net;
+using Microsoft.AspNetCore.SignalR.Client;
+using NAudio.Wave;
+using Octarine_Core.Apis;
+using Octarine_Core.Autorisation;
+using Octarine_Core.Models;
+using Octarine_Core.Resource.UsersIntefeces;
 
 namespace Octarine_Core.Classic
 {
@@ -24,7 +24,8 @@ namespace Octarine_Core.Classic
         private Log l = new Log();
         ApiRequests apir;
         public UdpClient udpClient;
-        
+        private ChatUpBur optimalChat;
+
         public CallingController(OctarineWindow octarineWindow)
         {
             for (int i = 0; i < WaveIn.DeviceCount; i++)
@@ -67,23 +68,20 @@ namespace Octarine_Core.Classic
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     l.log($"[UserJoinedCall] User {UserId} подключился в комнату с {RoomId}");
-                    foreach (var item in octarineWindow.IngoGrid.Children)
-                    {
-                        if (item.GetType() == typeof(ChatUpBur))
-                        {
-                            ChatUpBur cub = item as ChatUpBur;
-                            cub._callTimer.Stop();
-                        }
-                    }
+                    optimalChat._callTimer.Stop();
+                    optimalChat.LoadUserDataInCall(Convert.ToInt32(UserId));
+                    ///Todo тест1
                 });
             });
             _connection.On<string, List<string>>("CallAccepted", (roomId, participants) =>
             {
+                ///Todo пусто
                 l.log($"[CallingController] Звонок принят. Комната: {roomId}, участники: {string.Join(", ", participants)}");
             });
 
             _connection.On<string>("Error", message =>
             {
+                ///Todo пусто2
                 l.log($"[ERROR] {message}");
             });
             _connection.On<string, string>("RejectEndCall", (RoomId, UserId) =>
@@ -103,20 +101,18 @@ namespace Octarine_Core.Classic
             });
             _connection.On<string, string>("UserLeftCall", (RoomId, UserId) =>
             {
+                ///Todo тест2
                 Application.Current.Dispatcher.Invoke(async () =>
                 {
-                    foreach (var item in octarineWindow.MainGrid.Children)
-                    {
-                        if (item.GetType() == typeof(ChatUpBur))
-                        {
-                            ChatUpBur cub = item as ChatUpBur;
-                            await cub.EndCall();
-                        }
-                    }
+                    await optimalChat.EndCall();
                 });
             });
 
 
+        }
+        public void SetChutBar(ChatUpBur bar)
+        {
+            optimalChat = bar;
         }
         private void StopVoiceAndreciver()
         {
@@ -133,7 +129,7 @@ namespace Octarine_Core.Classic
         }
         public void CreateNewUdpPort()
         {
-            udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));   
+            udpClient = new UdpClient(new IPEndPoint(IPAddress.Any, 0));
         }
         public void UpdateUdpClients()
         {

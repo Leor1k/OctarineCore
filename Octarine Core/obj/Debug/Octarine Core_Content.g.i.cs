@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/icons/adduser.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/sounds/accept.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/sounds/denied.wav")]
 
 

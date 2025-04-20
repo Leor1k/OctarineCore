@@ -7,6 +7,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using Octarine_Core.Apis;
+using Octarine_Core.Autorisation;
 using Octarine_Core.Classic;
 using Octarine_Core.Models;
 
@@ -142,8 +143,12 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 foreach (UserDataFoCall user in list)
                 {
                     ///ToDo опять работа
-                    var item = new UserCalItem(user.Id, user.Username);
-                    StackWitnName.Children.Add(item);
+                    ///
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        var item = new UserCalItem(user.Id, user.Username);
+                        StackWitnName.Children.Add(item);
+                    });              
                 }
             }
         }
@@ -164,7 +169,6 @@ namespace Octarine_Core.Resource.UsersIntefeces
             if (StackWitnName.Children.Count == 1)
             {
                 await EndCall();
-                MessageBox.Show("Комната пуста, завершаем звонок");
             }
         }
         private async void EndCallBtn_Click(object sender, RoutedEventArgs e)

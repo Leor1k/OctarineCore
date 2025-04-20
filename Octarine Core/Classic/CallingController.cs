@@ -25,6 +25,7 @@ namespace Octarine_Core.Classic
         ApiRequests apir;
         public UdpClient udpClient;
         private ChatUpBur optimalChat;
+        private readonly SoundController soundController;
 
         public CallingController(OctarineWindow octarineWindow)
         {
@@ -34,6 +35,7 @@ namespace Octarine_Core.Classic
                 l.log($"Микрофон {i}: {capabilities.ProductName}");
             }
             CreateNewUdpPort();
+            soundController = new SoundController();
             _voiceReceiver = new VoiceReceiver(udpClient);
             _voiceClient = new VoiceClient(udpClient);
             _octarine = octarineWindow;
@@ -70,6 +72,7 @@ namespace Octarine_Core.Classic
                     l.log($"[UserJoinedCall] User {UserId} подключился в комнату с {RoomId}");
                     optimalChat._callTimer.Stop();
                     optimalChat.LoadUserDataInCall(Convert.ToInt32(UserId));
+                    soundController.StartAccept();
                     ///Todo тест1
                 });
             });
@@ -80,6 +83,7 @@ namespace Octarine_Core.Classic
                 foreach (var item in listID)
                 {
                     optimalChat.LoadUserDataInCall(Convert.ToInt32(item));
+                    MessageBox.Show($"Info {item}");
                 }
             });
 
@@ -99,6 +103,8 @@ namespace Octarine_Core.Classic
                             EntreredCall ec = item as EntreredCall;
                             var parentContainer = VisualTreeHelper.GetParent(ec) as Panel;
                             parentContainer?.Children.Remove(ec);
+                            soundController.StartDenied();
+                            break;
                         }
                     }
                 });
@@ -109,6 +115,7 @@ namespace Octarine_Core.Classic
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     optimalChat.RemoveUserFromRoom(Convert.ToInt32(UserId));
+                    soundController.StartDenied();
                 });
             });
 
@@ -197,10 +204,12 @@ namespace Octarine_Core.Classic
             {
                 l.Ex($"[StartCallAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
+            optimalChat.LoadUserDataInCall(Properties.Settings.Default.UserID);
             _voiceReceiver.StartListening();
             l.log("[VoiceClient] Вызов StartRecording()...");
             _voiceClient.StartRecording();
             l.log("[VoiceClient] Вызвался успешно StartRecording()...");
+            soundController.StartAccept();
         }
 
 
@@ -221,6 +230,7 @@ namespace Octarine_Core.Classic
             {
                 l.Ex($"[RejectCallAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
+            soundController.StartDenied();
         }
         public async Task EndCall(string userId, string roomId)
         {
@@ -240,6 +250,7 @@ namespace Octarine_Core.Classic
             {
                 l.Ex($"[EndCall] Ошибка:{ex.Message} : {ex.Source}");
             }
+            soundController.StartDenied();
             StopVoiceAndreciver();
         }
 

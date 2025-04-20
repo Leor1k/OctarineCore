@@ -422,3 +422,202 @@
 [2025-04-20 13:00:59] [VoiceClient] Запись остановлена.
 [2025-04-20 13:31:51] Микрофон 0: Microphone (Vault)
 [2025-04-20 13:31:52] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 13:35:57] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:35:58] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:36:01] [StartCallAsync] Начало вызова. Комната: 55, Caller: 4, Участники: 2
+[2025-04-20 13:36:01] [VoiceClient] Запуск записи...
+[2025-04-20 13:36:01] [StartRecording] Запуск записи...
+[2025-04-20 13:36:01] [StartRecording] Запись началась!
+[2025-04-20 13:36:01] [VoiceClient] Запись запущена.
+[2025-04-20 13:36:03] [UserJoinedCall] User 2 подключился в комнату с 55
+[2025-04-20 13:36:10] [EndCall] Отмена. User: 4, Комната: 55
+[2025-04-20 13:36:10] [EndCall] Отправил в end-call
+[2025-04-20 13:36:10] [VoiceClient] Запись остановлена.
+[2025-04-20 13:36:22] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:36:22] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:36:26] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 13:36:27] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 13:36:27] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 52790 
+[2025-04-20 13:36:27] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 13:36:27] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 13:36:27] [StartRecording] Запуск записи...
+[2025-04-20 13:36:27] [StartRecording] Запись началась!
+[2025-04-20 13:36:27] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 13:37:06] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:37:06] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:37:13] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 13:37:16] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 13:37:16] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 59086 
+[2025-04-20 13:37:16] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 13:37:16] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 13:37:16] [StartRecording] Запуск записи...
+[2025-04-20 13:37:16] [StartRecording] Запись началась!
+[2025-04-20 13:37:16] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 13:39:20] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:39:20] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:39:25] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 13:39:26] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 13:39:26] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 53648 
+[2025-04-20 13:39:26] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 13:39:26] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 13:39:26] [StartRecording] Запуск записи...
+[2025-04-20 13:39:26] [StartRecording] Запись началась!
+[2025-04-20 13:39:26] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 13:40:02] [EndCall] Отмена. User: 4, Комната: 55
+[2025-04-20 13:40:02] [EndCall] Отправил в end-call
+[2025-04-20 13:40:02] [VoiceClient] Запись остановлена.
+[2025-04-20 13:41:00] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:41:00] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:41:03] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 13:41:05] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 13:41:05] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 52503 
+[2025-04-20 13:41:05] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 13:41:05] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 13:41:05] [StartRecording] Запуск записи...
+[2025-04-20 13:41:11] [StartRecording] Запись началась!
+[2025-04-20 13:41:11] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 13:42:48] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:42:48] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:42:54] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 13:42:55] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 13:42:55] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 61826 
+[2025-04-20 13:42:55] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 13:42:55] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 13:42:55] [StartRecording] Запуск записи...
+[2025-04-20 13:43:03] [StartRecording] Запись началась!
+[2025-04-20 13:43:03] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 13:44:19] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:44:19] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 13:44:43] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:44:44] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:44:51] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 13:44:52] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 13:44:52] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 63249 
+[2025-04-20 13:44:52] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 13:44:52] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 13:44:52] [StartRecording] Запуск записи...
+[2025-04-20 13:44:52] [StartRecording] Запись началась!
+[2025-04-20 13:44:52] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 13:45:10] [EndCall] Отмена. User: 4, Комната: 55
+[2025-04-20 13:45:10] [EndCall] Отправил в end-call
+[2025-04-20 13:45:10] [VoiceClient] Запись остановлена.
+[2025-04-20 13:48:58] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:48:58] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:49:03] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 13:49:06] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 13:49:06] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 54767 
+[2025-04-20 13:49:06] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 13:49:06] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 13:49:06] [StartRecording] Запуск записи...
+[2025-04-20 13:49:06] [StartRecording] Запись началась!
+[2025-04-20 13:49:06] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 13:49:09] [EndCall] Отмена. User: 4, Комната: 55
+[2025-04-20 13:49:09] [EndCall] Отправил в end-call
+[2025-04-20 13:49:09] [VoiceClient] Запись остановлена.
+[2025-04-20 13:58:43] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:58:43] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:58:47] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 13:58:50] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 13:58:50] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 61542 
+[2025-04-20 13:58:50] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 13:58:50] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 13:58:50] [StartRecording] Запуск записи...
+[2025-04-20 13:58:50] [StartRecording] Запись началась!
+[2025-04-20 13:58:50] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 13:59:03] [EndCall] Отмена. User: 4, Комната: 55
+[2025-04-20 13:59:03] [EndCall] Отправил в end-call
+[2025-04-20 13:59:03] [VoiceClient] Запись остановлена.
+[2025-04-20 13:59:52] Микрофон 0: Microphone (Vault)
+[2025-04-20 13:59:52] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 13:59:57] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 13:59:58] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 13:59:58] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 51033 
+[2025-04-20 13:59:58] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 13:59:58] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 13:59:58] [StartRecording] Запуск записи...
+[2025-04-20 13:59:58] [StartRecording] Запись началась!
+[2025-04-20 13:59:58] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 14:00:14] [EndCall] Отмена. User: 4, Комната: 55
+[2025-04-20 14:00:14] [EndCall] Отправил в end-call
+[2025-04-20 14:00:14] [VoiceClient] Запись остановлена.
+[2025-04-20 14:42:17] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:42:17] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 14:43:15] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:43:15] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 14:46:37] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:46:37] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 14:47:37] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:47:37] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 14:49:32] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:49:32] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 14:50:22] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:50:22] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 14:50:55] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:50:55] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 14:54:46] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:54:46] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 14:55:31] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:55:31] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 14:57:25] Микрофон 0: Microphone (Vault)
+[2025-04-20 14:57:25] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 15:00:55] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:00:55] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 15:01:43] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:01:43] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 15:01:57] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:01:57] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 15:10:42] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:10:42] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 15:10:48] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 15:11:01] [RejectCallAsync] Отклонён вызов. User: 4, Комната: 55
+[2025-04-20 15:11:01] [RejectCallAsync] Отпрален запрос с  RoomId: 55, UserId: 4
+[2025-04-20 15:11:05] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 15:11:16] [RejectCallAsync] Отклонён вызов. User: 4, Комната: 55
+[2025-04-20 15:11:16] [RejectCallAsync] Отпрален запрос с  RoomId: 55, UserId: 4
+[2025-04-20 15:12:57] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:12:57] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 15:13:02] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 15:13:07] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 15:13:07] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 64466 
+[2025-04-20 15:13:07] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 15:13:07] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 15:13:07] [StartRecording] Запуск записи...
+[2025-04-20 15:13:07] [StartRecording] Запись началась!
+[2025-04-20 15:13:07] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 15:13:13] [EndCall] Отмена. User: 4, Комната: 55
+[2025-04-20 15:13:13] [EndCall] Отправил в end-call
+[2025-04-20 15:13:13] [VoiceClient] Запись остановлена.
+[2025-04-20 15:13:13] [OnAudioData] Ошибка при отправке: Доступ к ликвидированному объекту невозможен.
+Имя объекта: "System.Net.Sockets.UdpClient".
+[2025-04-20 15:30:15] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:30:15] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 15:30:26] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 15:30:31] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 15:30:31] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 52214 
+[2025-04-20 15:30:31] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 15:30:31] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 15:30:31] [StartRecording] Запуск записи...
+[2025-04-20 15:30:31] [StartRecording] Запись началась!
+[2025-04-20 15:30:31] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 15:30:42] [EndCall] Отмена. User: 4, Комната: 55
+[2025-04-20 15:30:42] [EndCall] Отправил в end-call
+[2025-04-20 15:30:42] [VoiceClient] Запись остановлена.
+[2025-04-20 15:37:19] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:37:19] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-20 15:37:55] [CallingController] Входящий звонок от 2 в комнате 55
+[2025-04-20 15:37:58] [CallingController] Принят вызов. User: 4, Комната: 55
+[2025-04-20 15:37:58] [CallingController] Отпрален запрос с  RoomId: 55, UserId: 4 и localendpoint 65296 
+[2025-04-20 15:37:58] [StartCallAsync] Отправил в confirm-call
+[2025-04-20 15:37:58] [VoiceClient] Вызов StartRecording()...
+[2025-04-20 15:37:58] [StartRecording] Запуск записи...
+[2025-04-20 15:37:58] [StartRecording] Запись началась!
+[2025-04-20 15:37:58] [VoiceClient] Вызвался успешно StartRecording()...
+[2025-04-20 15:38:01] [EndCall] Отмена. User: 4, Комната: 55
+[2025-04-20 15:38:01] [EndCall] Отправил в end-call
+[2025-04-20 15:38:01] [VoiceClient] Запись остановлена.
+[2025-04-20 15:41:37] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:41:37] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 15:44:08] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:44:08] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-20 15:44:35] Микрофон 0: Microphone (Vault)
+[2025-04-20 15:44:35] [StartConnectionAsync] Подключение установлено. UserID: 2

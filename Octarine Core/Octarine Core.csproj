@@ -292,6 +292,8 @@
     <Compile Include="Classic\Log.cs" />
     <Compile Include="Classic\MinIO.cs" />
     <Compile Include="Classic\SettingController.cs" />
+    <Compile Include="Classic\SaundPlayer.cs" />
+    <Compile Include="Classic\SoundController.cs" />
     <Compile Include="Classic\VoiceClient.cs" />
     <Compile Include="Classic\VoiceReceiver.cs" />
     <Compile Include="Models\CallRequest.cs" />
@@ -532,6 +534,18 @@
     <Resource Include="Resource\Icons\CloseButton.png" />
     <Resource Include="Resource\Icons\Line 3.png" />
     <Resource Include="Resource\Icons\WindowFill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Sounds\Melody.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Sounds\Sileens.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Sounds\Accept.wav" />
+    <Content Include="Resource\Sounds\Denied.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

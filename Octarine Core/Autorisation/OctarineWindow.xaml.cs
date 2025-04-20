@@ -30,9 +30,8 @@ namespace Octarine_Core.Autorisation
             LoadControllers();
             MainChatStack.SizeChanged += MainChatStack_SizeChanged;
             LoadProperiries();
-           
-
         }
+
         private void LoadControllers ()
         {
             FormConroller ff = new FormConroller(MainGrid);
@@ -249,9 +248,7 @@ namespace Octarine_Core.Autorisation
                 Properties.Settings.Default.IdActiveChat =id;
 
             }
-
             Properties.Settings.Default.FriendId = friendID;
-            Scr.ScrollToEnd();
         }
         public async Task ShowGroupChat(string RoomName, int[] friendIDs, int chatID)
         {

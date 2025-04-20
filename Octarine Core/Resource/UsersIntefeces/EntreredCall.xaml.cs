@@ -16,7 +16,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
         public string RoomId { get; set; }
         public CallingController Controller { get; set; }
         private Timer _timer;
-
+        SoundController sound;
         public EntreredCall(string FriendName, string roomID, CallingController controller)
         {
             InitializeComponent();
@@ -28,6 +28,8 @@ namespace Octarine_Core.Resource.UsersIntefeces
             {
                 await Application.Current.Dispatcher.InvokeAsync(async () => await DeniedCall());
             }, null, 20000, Timeout.Infinite);
+            sound = new SoundController();
+            sound.StartRingtone();
         }
 
         private async void AcceptCallBt_Click(object sender, RoutedEventArgs e)
@@ -61,6 +63,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 var eror = new ErrorAutUIController();
                 eror.ShowUserError($"Ошибка: {ex.Message}", Properties.Settings.Default.BorderForEror, false);
             }
+            sound.StopRingtone();
         }
 
         private async void DeniedCallBtn_Click(object sender, RoutedEventArgs e)
@@ -78,7 +81,7 @@ namespace Octarine_Core.Resource.UsersIntefeces
             });
             _timer?.Dispose();
             Properties.Settings.Default.InColling = false;
-
+            sound.StopRingtone();
         }
     }
 }

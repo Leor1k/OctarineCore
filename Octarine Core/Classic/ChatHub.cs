@@ -39,6 +39,8 @@ namespace Octarine_Core.Classic
                     }
                     else
                     {
+                        SoundController controller = new SoundController();
+                        controller.StartMessage();
                     }
                     
                 });

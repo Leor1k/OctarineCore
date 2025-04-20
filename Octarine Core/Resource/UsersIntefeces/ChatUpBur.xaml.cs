@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
@@ -155,8 +154,17 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 if (user._userId == UserId)
                 {
                     StackWitnName.Children.Remove(user);
+                    CheckUsersCount();
                     break;
                 }
+            }
+        }
+        public async void CheckUsersCount()
+        {
+            if (StackWitnName.Children.Count == 1)
+            {
+                await EndCall();
+                MessageBox.Show("Комната пуста, завершаем звонок");
             }
         }
         private async void EndCallBtn_Click(object sender, RoutedEventArgs e)
@@ -173,7 +181,6 @@ namespace Octarine_Core.Resource.UsersIntefeces
             Properties.Settings.Default.InColling = false;
             StackWitnName.Children.Clear();
         }
-
         private void AddUserInRoomBTN_Click(object sender, RoutedEventArgs e)
         {
             if (list != null)

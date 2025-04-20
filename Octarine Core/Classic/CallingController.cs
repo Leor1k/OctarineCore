@@ -73,10 +73,14 @@ namespace Octarine_Core.Classic
                     ///Todo тест1
                 });
             });
-            _connection.On<string, List<string>>("CallAccepted", (roomId, participants) =>
+
+            _connection.On<List<string>>("UsersDataForCall", (listID) =>
             {
                 ///Todo пусто
-                l.log($"[CallingController] Звонок принят. Комната: {roomId}, участники: {string.Join(", ", participants)}");
+                foreach (var item in listID)
+                {
+                    optimalChat.LoadUserDataInCall(Convert.ToInt32(item));
+                }
             });
 
             _connection.On<string>("Error", message =>
@@ -102,9 +106,9 @@ namespace Octarine_Core.Classic
             _connection.On<string, string>("UserLeftCall", (RoomId, UserId) =>
             {
                 ///Todo тест2
-                Application.Current.Dispatcher.Invoke(async () =>
+                Application.Current.Dispatcher.Invoke(() =>
                 {
-                    await optimalChat.EndCall();
+                    optimalChat.RemoveUserFromRoom(Convert.ToInt32(UserId));
                 });
             });
 

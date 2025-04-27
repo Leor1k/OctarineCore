@@ -685,3 +685,7 @@
 [2025-04-27 14:34:42] [StartConnectionAsync] Подключение установлено. UserID: 2
 [2025-04-27 14:35:59] Микрофон 0: Microphone (Vault)
 [2025-04-27 14:35:59] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 14:59:41] Микрофон 0: Microphone (Vault)
+[2025-04-27 14:59:41] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-27 15:00:37] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:00:37] [StartConnectionAsync] Подключение установлено. UserID: 4

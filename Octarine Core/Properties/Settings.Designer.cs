@@ -422,5 +422,29 @@ namespace Octarine_Core.Properties {
                 this["MuteAllVoiceHotKey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
+        public float ClientVolume {
+            get {
+                return ((float)(this["ClientVolume"]));
+            }
+            set {
+                this["ClientVolume"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
+        public float ReciverVolume {
+            get {
+                return ((float)(this["ReciverVolume"]));
+            }
+            set {
+                this["ReciverVolume"] = value;
+            }
+        }
     }
 }

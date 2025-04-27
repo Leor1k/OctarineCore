@@ -31,6 +31,7 @@ namespace Octarine_Core.Autorisation
             LoadControllers();
             MainChatStack.SizeChanged += MainChatStack_SizeChanged;
             LoadProperiries();
+            formc.SwitchSettingGrid(AccauntGrid);
         }
 
         private void LoadControllers ()
@@ -48,7 +49,32 @@ namespace Octarine_Core.Autorisation
             Properties.Settings.Default.InColling = false;
             Properties.Settings.Default.BorderForEror = FirstErorrGrid;
             Properties.Settings.Default.ChatController = _chatController;
+            LoadSlider();
         }
+        private void LoadSlider ()
+        {
+            MicrophoneVolumeSlider.Value = Properties.Settings.Default.ClientVolume;
+            CountProcent(MicrophoneVolumeSlider.Value, MicroProsentValue);
+            MicrophoneVolumeSlider.ValueChanged += (s, e) =>
+            {
+                Properties.Settings.Default.ClientVolume = (float)MicrophoneVolumeSlider.Value;
+                CountProcent(MicrophoneVolumeSlider.Value, MicroProsentValue);
+            };
+
+            SpeakerVolumeSlider.Value = Properties.Settings.Default.ReciverVolume;
+            CountProcent(SpeakerVolumeSlider.Value, SpeakerVolumeProcentValue);
+            SpeakerVolumeSlider.ValueChanged += (s, e) =>
+            {
+                Properties.Settings.Default.ReciverVolume = (float)SpeakerVolumeSlider.Value;
+                CountProcent(SpeakerVolumeSlider.Value, SpeakerVolumeProcentValue);
+            };
+        }
+
+        private void CountProcent (double value, TextBlock showingPlace)
+        {
+            showingPlace.Text = (value * 100).ToString() + "%";
+        }
+        
         private async void InitializeChatHub()
         {
             _chatHub = new ChatHub(MainChatStack, _chatController);
@@ -380,6 +406,11 @@ namespace Octarine_Core.Autorisation
         private void HotKeyShow_Click(object sender, RoutedEventArgs e)
         {
             formc.SwitchSettingGrid(HotKeyGrid);
+        }
+
+        private void SpaundSettingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            formc.SwitchSettingGrid(SoundSettingGrid);
         }
     }
 }

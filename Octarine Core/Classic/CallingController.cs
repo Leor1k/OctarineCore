@@ -249,7 +249,7 @@ namespace Octarine_Core.Classic
             if (_voiceClient.volumeClient == 0.0f)
             {
                 ///ToDo тут насроку надо сделать
-                _voiceClient.volumeClient = 0.5f;
+                _voiceClient.volumeClient = Properties.Settings.Default.ClientVolume;
             }
             else
             {
@@ -261,8 +261,8 @@ namespace Octarine_Core.Classic
             if (_voiceReceiver.volumeReciver == 0.0f)
             {
                 ///ToDo тут насроку надо сделать
-                _voiceReceiver.volumeReciver = 0.5f;
-                _voiceClient.volumeClient = 0.5f;
+                _voiceReceiver.volumeReciver = Properties.Settings.Default.ReciverVolume;
+                _voiceClient.volumeClient = Properties.Settings.Default.ClientVolume;
 
             }
             else

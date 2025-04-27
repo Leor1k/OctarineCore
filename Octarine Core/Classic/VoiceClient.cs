@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Windows;
-using System.Windows.Forms;
 using NAudio.Wave;
 
 namespace Octarine_Core.Classic
@@ -35,7 +33,7 @@ namespace Octarine_Core.Classic
                 _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
                 _udpClient.Client.SendBufferSize = 65536;
                 l.log1($"[VoiceClient] Клиент запущен на порту {LocalPort}, отправляет на {_serverIp}:{_serverPort}");
-                volumeClient = 0.5f;
+                volumeClient =Properties.Settings.Default.ClientVolume;
 
 
                 _waveIn.DataAvailable += OnAudioData;

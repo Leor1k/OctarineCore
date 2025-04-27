@@ -26,7 +26,7 @@ public class VoiceReceiver
         };
         _waveOut.Init(_waveProvider);
         _waveOut.Play();
-        volumeReciver = 0.5f;
+        volumeReciver = Octarine_Core.Properties.Settings.Default.ReciverVolume;
     }
 
     public void StartListening()

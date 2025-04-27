@@ -689,3 +689,33 @@
 [2025-04-27 14:59:41] [StartConnectionAsync] Подключение установлено. UserID: 4
 [2025-04-27 15:00:37] Микрофон 0: Microphone (Vault)
 [2025-04-27 15:00:37] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-27 15:01:35] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:01:35] [StartConnectionAsync] Подключение установлено. UserID: 4
+[2025-04-27 15:01:57] [StartCallAsync] Начало вызова. Комната: 55, Caller: 4, Участники: 2
+[2025-04-27 15:01:57] [VoiceClient] Запуск записи...
+[2025-04-27 15:01:57] [StartRecording] Запуск записи...
+[2025-04-27 15:01:57] [StartRecording] Запись началась!
+[2025-04-27 15:01:57] [VoiceClient] Запись запущена.
+[2025-04-27 15:01:59] [UserJoinedCall] User 2 подключился в комнату с 55
+[2025-04-27 15:15:28] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:15:28] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:24:40] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:24:40] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:25:30] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:25:30] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:28:51] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:28:51] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:29:28] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:29:28] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:32:19] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:32:19] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:32:31] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:32:31] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:32:50] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:32:50] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:33:07] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:33:07] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:35:19] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:35:19] [StartConnectionAsync] Подключение установлено. UserID: 2
+[2025-04-27 15:37:08] Микрофон 0: Microphone (Vault)
+[2025-04-27 15:37:08] [StartConnectionAsync] Подключение установлено. UserID: 2

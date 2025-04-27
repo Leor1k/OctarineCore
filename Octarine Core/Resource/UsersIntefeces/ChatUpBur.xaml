@@ -7,7 +7,7 @@
              mc:Ignorable="d" Style="{x:Null}" Width="1500" Height="177" Foreground="{x:Null}"
              BorderBrush="Transparent" BorderThickness="0" Margin="0,25,0,0">
     <Grid>
-        <Grid x:Name="StandartGrid" Height="77" VerticalAlignment="Center">
+        <Grid x:Name="StandartGrid" Height="77" VerticalAlignment="Center" d:IsHidden="True">
             <Rectangle RadiusX="30" RadiusY="30" Fill="{DynamicResource MainGray}"/>
             <DockPanel LastChildFill="False">
                 <Image 
@@ -43,10 +43,10 @@
                 </Image>
             </DockPanel>
         </Grid>
-        <Grid x:Name="CallGrid" Visibility="Hidden">
+        <Grid x:Name="CallGrid" Visibility="Visible">
             <Rectangle RadiusX="30" RadiusY="30" Fill="{DynamicResource MainGray}" Grid.ColumnSpan="2"/>
             <StackPanel x:Name="StackWitnName" Margin="0,10,0,63" Orientation="Horizontal" HorizontalAlignment="Center" Grid.RowSpan="1"/>
-            <Button x:Name="EndCallBtn" BorderBrush="{x:Null}" Margin="721,119,721,0" RenderTransformOrigin="0.5,0.5" Click="EndCallBtn_Click">
+            <Button x:Name="EndCallBtn" BorderBrush="{x:Null}" Margin="791,114,651,5" RenderTransformOrigin="0.5,0.5" Click="EndCallBtn_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -58,6 +58,18 @@
                 <Button.Background>
                     <ImageBrush ImageSource="/Resource/Icons/PhoneEndButtob.png" Stretch="Uniform"/>
                 </Button.Background>
+            </Button>
+            <Button x:Name="MuteMicrBtn" Visibility="Hidden" Padding="10,0" DockPanel.Dock="Right" HorizontalContentAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Margin="723,108,714,-1" Click="MuteMicrBtn_Click">
+                <Viewbox Margin="0,5,0,5" d:IsLocked="True">
+                    <Image x:Name="MuteMicroImage" Source="{StaticResource MuteMicro}"
+       RenderOptions.BitmapScalingMode="HighQuality"/>
+                </Viewbox>
+            </Button>
+            <Button x:Name="MuteVoiceBtn" Visibility="Visible" Padding="10,0" HorizontalContentAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Margin="656,107,781,0" Click="MuteVoiceBtn_Click">
+                <Viewbox  Margin="0,5,0,5">
+                    <Image x:Name="MuteVoiceImage" Source="{StaticResource MuteVoice}"
+                    RenderOptions.BitmapScalingMode="HighQuality"/>
+                </Viewbox>
             </Button>
         </Grid>
     </Grid>

@@ -41,6 +41,9 @@
     <Reference Include="CommunityToolkit.HighPerformance, Version=8.3.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
       <HintPath>..\packages\CommunityToolkit.HighPerformance.8.3.0\lib\netstandard2.0\CommunityToolkit.HighPerformance.dll</HintPath>
     </Reference>
+    <Reference Include="GlobalHotKey, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GlobalHotKey.1.1.0\lib\GlobalHotKey.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNetCore.Connections.Abstractions, Version=9.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Connections.Abstractions.9.0.1\lib\net462\Microsoft.AspNetCore.Connections.Abstractions.dll</HintPath>
     </Reference>
@@ -289,6 +292,8 @@
     <Compile Include="Classic\ErrorAutUIController.cs" />
     <Compile Include="Classic\FormConroller.cs" />
     <Compile Include="Classic\FriendForSignalR.cs" />
+    <Compile Include="Classic\HotKeyController.cs" />
+    <Compile Include="Classic\HotKeyParser.cs" />
     <Compile Include="Classic\Log.cs" />
     <Compile Include="Classic\MinIO.cs" />
     <Compile Include="Classic\SettingController.cs" />
@@ -325,6 +330,9 @@
     </Compile>
     <Compile Include="Resource\UsersIntefeces\FriendBrick.xaml.cs">
       <DependentUpon>FriendBrick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\UsersIntefeces\HotKeyBrick.xaml.cs">
+      <DependentUpon>HotKeyBrick.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resource\UsersIntefeces\MessageBrick.xaml.cs">
       <DependentUpon>MessageBrick.xaml</DependentUpon>
@@ -403,6 +411,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resource\IconsSVG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\UsersIntefeces\HotKeyBrick.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

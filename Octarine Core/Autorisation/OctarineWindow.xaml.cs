@@ -21,6 +21,7 @@ namespace Octarine_Core.Autorisation
         private CallingController _callingController;
         private ErrorAutUIController _errorAutUIController;
         private SettingController _settingController;
+        private HotKeyController _hotKeyController;
         public OctarineWindow()
         {
             InitializeComponent();
@@ -34,12 +35,13 @@ namespace Octarine_Core.Autorisation
 
         private void LoadControllers ()
         {
-            FormConroller ff = new FormConroller(MainGrid);
+            FormConroller ff = new FormConroller(MainGrid, SettingsGrid);
             formc = ff;
             formc.SwitchOctarineBorder(InfoBorder);
             _chatController = new ChatController(MainChatStack, this);
             _errorAutUIController = new ErrorAutUIController(FirstErorrGrid);
             _settingController = new SettingController(this);
+            _hotKeyController = new HotKeyController(this);
         }
         private void LoadProperiries ()
         {
@@ -368,6 +370,16 @@ namespace Octarine_Core.Autorisation
             }
            
                 
+        }
+
+        private void AcShow_Click(object sender, RoutedEventArgs e)
+        {
+            formc.SwitchSettingGrid(AccauntGrid);
+        }
+
+        private void HotKeyShow_Click(object sender, RoutedEventArgs e)
+        {
+            formc.SwitchSettingGrid(HotKeyGrid);
         }
     }
 }

@@ -7,7 +7,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using Octarine_Core.Apis;
-using Octarine_Core.Autorisation;
 using Octarine_Core.Classic;
 using Octarine_Core.Models;
 
@@ -244,6 +243,32 @@ namespace Octarine_Core.Resource.UsersIntefeces
             }
 
 
+        }
+
+        private void MuteVoiceBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MuteVoiceImage.Source == (ImageSource)FindResource("MuteVoice"))
+            {
+                MuteVoiceImage.Source = (ImageSource)FindResource("UnMuteVoice");
+            }
+            else
+            {
+                MuteVoiceImage.Source = (ImageSource)FindResource("MuteVoice");
+            }
+            Controller.MuteAllCall();
+        }
+
+        private void MuteMicrBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MuteMicroImage.Source == (ImageSource)FindResource("MuteMicro"))
+            {
+                MuteMicroImage.Source = (ImageSource)FindResource("UnMuteMicro");
+            }
+            else
+            {
+                MuteMicroImage.Source = (ImageSource)FindResource("MuteMicro");
+            }
+            Controller.MuteMicro();
         }
     }
 }

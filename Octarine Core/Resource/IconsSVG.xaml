@@ -212,4 +212,186 @@
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
+    <DrawingImage x:Key="MuteMicro">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V279 H279 V0 H0 Z">
+                <GeometryDrawing Brush="#34D399">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="139.416,139.416" RadiusX="138.832" RadiusY="138.832"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M138.59 188.84L138.59 222.05">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8.61" StartLineCap="Round" EndLineCap="Round" Brush="#FFFFFF"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M106.61 222.05H171.8">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8.61" StartLineCap="Round" EndLineCap="Round" Brush="#FFFFFF"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#FFFFFF">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="98,105.2,82.41,82.41" RadiusX="22.14" RadiusY="22.14"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#ADFF2F">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="104.15,56,68.88,123" RadiusX="13.53" RadiusY="13.53"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="UnMuteMicro">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V278 H278 V0 H0 Z">
+                <GeometryDrawing Brush="#D33434">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="138.832,138.832" RadiusX="138.832" RadiusY="138.832"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M138.006 188.256L138.006 221.466">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8.61" StartLineCap="Round" EndLineCap="Round" Brush="#FFFFFF"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M106.026 221.466H171.216">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8.61" StartLineCap="Round" EndLineCap="Round" Brush="#FFFFFF"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#FFFFFF">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="97.416,104.616,82.41,82.41" RadiusX="22.14" RadiusY="22.14"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#ADFF2F">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="103.566,55.416,68.88,123" RadiusX="13.53" RadiusY="13.53"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="MuteVoice">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V278 H279 V0 H0 Z">
+                <GeometryDrawing Brush="#34D399">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="139.416,138.832" RadiusX="138.832" RadiusY="138.832"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#FFFFFF">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="71,60,137,131" RadiusX="48" RadiusY="48"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#34D399">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="86,73,108,127" RadiusX="42" RadiusY="42"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#34D399">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="86,132,108,58"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M182 141L182 185">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8" StartLineCap="Round" EndLineCap="Round" Brush="#ADFF2F"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#FFFFFF">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="194,130,35,65" RadiusX="15" RadiusY="15"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M97 185L97 141">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8" StartLineCap="Round" EndLineCap="Round" Brush="#ADFF2F"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M109 178L109 147">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8" StartLineCap="Round" EndLineCap="Round" Brush="#ADFF2F"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M169 178L169 147">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8" StartLineCap="Round" EndLineCap="Round" Brush="#ADFF2F"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#FFFFFF">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="86,195,35,65" RadiusX="15" RadiusY="15">
+                            <RectangleGeometry.Transform>
+                                <RotateTransform Angle="-180" CenterX="86" CenterY="195"/>
+                            </RectangleGeometry.Transform>
+                        </RectangleGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="UnMuteVoice">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V278 H278 V0 H0 Z">
+                <GeometryDrawing Brush="#D33434">
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="138.832,138.832" RadiusX="138.832" RadiusY="138.832"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#FFFFFF">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="70.416,60,137,131" RadiusX="48" RadiusY="48"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#D33434">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="85.416,73,108,127" RadiusX="42" RadiusY="42"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#D33434">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="85.416,132,108,58"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M181.416 141L181.416 185">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8" StartLineCap="Round" EndLineCap="Round" Brush="#ADFF2F"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#FFFFFF">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="193.416,130,35,65" RadiusX="15" RadiusY="15"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M96.416 185L96.416 141">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8" StartLineCap="Round" EndLineCap="Round" Brush="#ADFF2F"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M108.416 178L108.416 147">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8" StartLineCap="Round" EndLineCap="Round" Brush="#ADFF2F"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="M168.416 178L168.416 147">
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="8" StartLineCap="Round" EndLineCap="Round" Brush="#ADFF2F"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#FFFFFF">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="85.416,195,35,65" RadiusX="15" RadiusY="15">
+                            <RectangleGeometry.Transform>
+                                <RotateTransform Angle="-180" CenterX="85.416" CenterY="195"/>
+                            </RectangleGeometry.Transform>
+                        </RectangleGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
 </ResourceDictionary>

@@ -147,7 +147,6 @@ namespace Octarine_Core.Classic
             _voiceClient._udpClient = udpClient;
             _voiceReceiver._udpClient = udpClient;
         }
-
         public async Task StartConnectionAsync()
         {
             try
@@ -160,7 +159,6 @@ namespace Octarine_Core.Classic
                 l.Ex($"[StartConnectionAsync] Ошибка:{ex.Message} : {ex.Source}");
             }
         }
-
         public async Task StartCallAsync(CallRequest request)
         {
             l.log1("=============================Начало звонка=============================");
@@ -180,11 +178,6 @@ namespace Octarine_Core.Classic
             _voiceClient.StartRecording();
             l.log("[VoiceClient] Запись запущена.");
         }
-
-
-
-
-
         public async Task AcceptCallAsync(string userId, string roomId)
         {
             l.log1("=============================Начаор звонка=============================");
@@ -211,8 +204,6 @@ namespace Octarine_Core.Classic
             l.log("[VoiceClient] Вызвался успешно StartRecording()...");
             soundController.StartAccept();
         }
-
-
         public async Task RejectCallAsync(string userId, string roomId)
         {
             l.log($"[RejectCallAsync] Отклонён вызов. User: {userId}, Комната: {roomId}");
@@ -252,6 +243,34 @@ namespace Octarine_Core.Classic
             }
             soundController.StartDenied();
             StopVoiceAndreciver();
+        }
+        public void MuteMicro ()
+        {
+            if (_voiceClient.volumeClient == 0.0f)
+            {
+                ///ToDo тут насроку надо сделать
+                _voiceClient.volumeClient = 0.5f;
+            }
+            else
+            {
+                _voiceClient.volumeClient = 0.0f;
+            }
+        }
+        public void MuteAllCall()
+        {
+            if (_voiceReceiver.volumeReciver == 0.0f)
+            {
+                ///ToDo тут насроку надо сделать
+                _voiceReceiver.volumeReciver = 0.5f;
+                _voiceClient.volumeClient = 0.5f;
+
+            }
+            else
+            {
+                _voiceReceiver.volumeReciver = 0.0f;
+                _voiceClient.volumeClient = 0.0f;
+            }
+
         }
 
     }

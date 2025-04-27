@@ -13,6 +13,7 @@ public class VoiceReceiver
     private Log l = new Log();
     private bool _isListening;
     private Task _listeningTask;
+    public double volumeReciver;
 
     public VoiceReceiver(UdpClient udpClient)
     {
@@ -25,6 +26,7 @@ public class VoiceReceiver
         };
         _waveOut.Init(_waveProvider);
         _waveOut.Play();
+        volumeReciver = 0.5f;
     }
 
     public void StartListening()
@@ -75,6 +77,13 @@ public class VoiceReceiver
                 Buffer.BlockCopy(receivedData, 4, audioData, 0, audioData.Length);
 
                 l.log1($"[VoiceReceiver] Получен аудиопакет для RoomID {roomId} от {sender}");
+                for (int i = 0; i < audioData.Length; i += 2)
+                {
+                    short sample = (short)(audioData[i] | (audioData[i + 1] << 8));
+                    sample = (short)(sample * volumeReciver);
+                    audioData[i] = (byte)(sample & 0xFF);
+                    audioData[i + 1] = (byte)((sample >> 8) & 0xFF);
+                }
                 _waveProvider.AddSamples(audioData, 0, audioData.Length);
             }
         }

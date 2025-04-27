@@ -139,37 +139,46 @@ RenderOptions.BitmapScalingMode="HighQuality"/>
                 </Grid>
             </Grid>
         </Border>
-        <Border x:Name="settingsBorder" BorderBrush="{DynamicResource MainWhite}" Tag ="dynamic"  BorderThickness="1" Margin="25,13,25,25" Background="{DynamicResource MainGray}" d:IsLocked="True" d:IsHidden="True">
+        <Border x:Name="settingsBorder" BorderBrush="{DynamicResource MainWhite}" Tag ="dynamic"  BorderThickness="1" Margin="25,13,25,25" Background="{DynamicResource MainGray}">
             <DockPanel x:Name="MainDockSettings" LastChildFill="False">
                 <StackPanel x:Name="ChapterStack" Width="254" Margin="2,0,0,0" Background="{DynamicResource SecondGreen}">
-                    <Button Content="Аккаунт" Height="62" Background="{DynamicResource MainGray}" Margin="10,5,10,0" FontSize="18" BorderThickness="0.7"  BorderBrush="{DynamicResource MainWhite}"/>
+                    <Button x:Name="AcShow" Content="Аккаунт" Height="62" Background="{DynamicResource MainGray}" Margin="10,5,10,0" FontSize="18" BorderThickness="0.7"  BorderBrush="{DynamicResource MainWhite}" Click="AcShow_Click"/>
+                    <Button x:Name="HotKeyShow" Content="Горячие клавиши" Height="62" Background="{DynamicResource MainGray}" FontSize="18" BorderThickness="0.7"  BorderBrush="{DynamicResource MainWhite}" Margin="10,5,10,0" Click="HotKeyShow_Click"/>
                 </StackPanel>
-                <Grid x:Name="AccauntSettingsGrid" Width="1610">
-                    <Rectangle HorizontalAlignment="Center" RadiusX="15" RadiusY="15" Height="966" Margin="0,31,0,0" VerticalAlignment="Top" Width="1544" Fill="{DynamicResource SecondGreen}"/>
-                    <TextBlock Margin="1064,64,55,0" TextWrapping="Wrap" Text="Настройки аккаунта" VerticalAlignment="Top" FontSize="48"/>
-                    <TextBox x:Name="ChangeNameTb" HorizontalAlignment="Left" Margin="214,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" Height="50" FontSize="36"/>
-                    <TextBlock Margin="90,220,1401,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" FontSize="36"/>
-                    <TextBlock Margin="901,156,467,0" TextWrapping="Wrap" Text="Фото профиля" VerticalAlignment="Top" FontSize="36"/>
-                    <Rectangle HorizontalAlignment="Left" RadiusX="12" RadiusY="12" Height="261" Margin="1178,133,0,0" VerticalAlignment="Top" Width="262" Fill="{DynamicResource MainGray}" RenderTransformOrigin="0.5,0.5">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform Angle="0"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                    </Rectangle>
-                    <Image x:Name="UsersImageSettings" RenderOptions.BitmapScalingMode="HighQuality" Margin="1202,156,194,654" Source="/OctarineLogo.ico"/>
-                    <Button x:Name="SaveChanges" Content="Сохранить " HorizontalAlignment="Left" Margin="1018,916,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource LightGreen}" FontSize="24" Click="SaveChanges_Click"/>
-                    <Button Content="Выйти" HorizontalAlignment="Left" Margin="1300,917,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource MainGray}" FontSize="24" Click="Button_Click"/>
-                    <Button x:Name="ChanheImageBtn" Content="Выбрать" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,399,253,0" FontSize="24" Background="{DynamicResource MainGray}" Click="ChanheImageBtn_Click"/>
-                    <TextBlock Margin="152,292,986,0" TextWrapping="Wrap" Text="Ваш персональный ID" VerticalAlignment="Top" FontSize="36" TextAlignment="Center"/>
-                    <TextBox x:Name="IdTextSetting"  Margin="214,344,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" Height="50" FontSize="36" TextAlignment="Center" HorizontalAlignment="Left"/>
+                <Grid x:Name="SettingsGrid" Width="1610">
+                    <Grid x:Name="AccauntGrid" Width="1588" d:IsHidden="True">
+                        <Rectangle HorizontalAlignment="Center" RadiusX="15" RadiusY="15" Height="1004" VerticalAlignment="Center" Width="1568" Fill="{DynamicResource SecondGreen}"/>
+                        <TextBlock Margin="1031,33,85,0" TextWrapping="Wrap" Text="Настройки аккаунта" VerticalAlignment="Top" FontSize="48"/>
+                        <TextBox x:Name="ChangeNameTb" HorizontalAlignment="Left" Margin="174,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" Height="50" FontSize="36"/>
+                        <TextBlock Margin="50,273,1438,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" FontSize="36"/>
+                        <TextBlock Margin="1146,107,200,0" TextWrapping="Wrap" Text="Фото профиля" VerticalAlignment="Top" FontSize="36"/>
+                        <Rectangle HorizontalAlignment="Left" RadiusX="12" RadiusY="12" Height="261" Margin="1136,155,0,0" VerticalAlignment="Top" Width="262" Fill="{DynamicResource MainGray}" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Image x:Name="UsersImageSettings" RenderOptions.BitmapScalingMode="HighQuality" Margin="1169,163,223,616" Source="/OctarineLogo.ico"/>
+                        <Button x:Name="SaveChanges" Content="Сохранить " HorizontalAlignment="Left" Margin="985,885,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource LightGreen}" FontSize="24" Click="SaveChanges_Click"/>
+                        <Button Content="Выйти" HorizontalAlignment="Left" Margin="1267,886,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource MainGray}" FontSize="24" Click="Button_Click"/>
+                        <Button x:Name="ChanheImageBtn" Content="Выбрать" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,420,275,0" FontSize="24" Background="{DynamicResource MainGray}" Click="ChanheImageBtn_Click" BorderThickness="5,0,5,0"/>
+                        <TextBlock Margin="114,136,1021,0" TextWrapping="Wrap" Text="Ваш персональный ID" VerticalAlignment="Top" FontSize="36" TextAlignment="Center"/>
+                        <TextBox x:Name="IdTextSetting"  Margin="176,188,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" Height="50" FontSize="36" TextAlignment="Center" HorizontalAlignment="Left"/>
+                    </Grid>
+                    <Grid x:Name="HotKeyGrid" Width="1588" Margin="11,0,11,0">
+                        <Rectangle HorizontalAlignment="Center" RadiusX="15" RadiusY="15" Height="1004" VerticalAlignment="Center" Width="1568" Fill="{DynamicResource SecondGreen}"/>
+                        <TextBlock Margin="871,33,85,0" TextWrapping="Wrap" Text="Настройки горячих клавиш" VerticalAlignment="Top" FontSize="48"/>
+                        <StackPanel x:Name="HotKeyStack" Margin="35,140,35,0"/>
+                        <Button Content="Выйти" HorizontalAlignment="Left" Margin="1267,886,0,0" VerticalAlignment="Top" Height="60" Width="250" Background="{DynamicResource MainGray}" FontSize="24" Click="Button_Click"/>
+                    </Grid>
                 </Grid>
             </DockPanel>
         </Border>
-        <Grid x:Name="FirstErorrGrid" Margin="321,54,25,967" d:IsLocked="True" d:IsHidden="True"/>
+        <Grid x:Name="FirstErorrGrid" Margin="321,54,25,967" d:IsHidden="True"/>
         <Grid x:Name="OarticalsGrid" Margin="1339,204,57,204" d:IsLocked="True" d:IsHidden="True"/>
     </Grid>
 </Window>

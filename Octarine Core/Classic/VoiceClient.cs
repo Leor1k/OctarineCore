@@ -15,6 +15,7 @@ namespace Octarine_Core.Classic
         private IPEndPoint _serverEndPoint;
         private WaveInEvent _waveIn;
         private Log l = new Log();
+        public float volumeClient;
         public int LocalPort { get; private set; }
 
         public VoiceClient(UdpClient udpClient)
@@ -34,7 +35,7 @@ namespace Octarine_Core.Classic
                 _serverEndPoint = new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort);
                 _udpClient.Client.SendBufferSize = 65536;
                 l.log1($"[VoiceClient] Клиент запущен на порту {LocalPort}, отправляет на {_serverIp}:{_serverPort}");
-
+                volumeClient = 0.5f;
 
 
                 _waveIn.DataAvailable += OnAudioData;
@@ -52,15 +53,21 @@ namespace Octarine_Core.Classic
                 try
                 {
                     int roomId = Properties.Settings.Default.UserID;
+                    byte[] audioData = new byte[e.BytesRecorded];
+                    Buffer.BlockCopy(e.Buffer, 0, audioData, 0, e.BytesRecorded);
+
+                    for (int i = 0; i < audioData.Length; i += 2)
+                    {
+                        short sample = (short)(audioData[i] | (audioData[i + 1] << 8));
+                        sample = (short)(sample * volumeClient);
+                        audioData[i] = (byte)(sample & 0xFF);
+                        audioData[i + 1] = (byte)((sample >> 8) & 0xFF);
+                    }
 
                     byte[] roomIdBytes = BitConverter.GetBytes(roomId);
-                    byte[] packet = new byte[roomIdBytes.Length + e.BytesRecorded];
-
+                    byte[] packet = new byte[roomIdBytes.Length + audioData.Length];
                     Buffer.BlockCopy(roomIdBytes, 0, packet, 0, roomIdBytes.Length);
-                    Buffer.BlockCopy(e.Buffer, 0, packet, roomIdBytes.Length, e.BytesRecorded);
-
-                    l.log1($"[CLIENT] Отправка аудио с локального порта: {(_udpClient.Client.LocalEndPoint as IPEndPoint)?.Port}");
-                    l.log1($"[CLIENT] Локальный EndPoint: {_udpClient.Client.LocalEndPoint}");
+                    Buffer.BlockCopy(audioData, 0, packet, roomIdBytes.Length, audioData.Length);
 
                     await _udpClient.SendAsync(packet, packet.Length, _serverEndPoint);
                 }
@@ -70,9 +77,6 @@ namespace Octarine_Core.Classic
                 }
             }
         }
-
-
-
         public void StartRecording()
         {
             try

@@ -116,5 +116,11 @@
     <Setting Name="GetUserData" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://147.45.175.135:5000/api/friends/getUsersParts?userIds=</Value>
     </Setting>
+    <Setting Name="MuteMicroHotKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">M</Value>
+    </Setting>
+    <Setting Name="MuteAllVoiceHotKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

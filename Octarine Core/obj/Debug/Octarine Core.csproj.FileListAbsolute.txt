@@ -163,33 +163,11 @@ C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octa
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Octarine Core.pdb
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\ErorrShowing.g.cs
 C:\Users\ProrokSamBoy\Desktop\Testics\Octarine-Core\Octarine Core\obj\Debug\Resource\UsersIntefeces\ErorrShowing.baml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.csproj.AssemblyReference.cache
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Colors.baml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Ojects.baml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Texts.baml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\IconsSVG.baml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\Auth.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\CheckResponse.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\OctarineWindow.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\AddUserToRoomBrick.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ChatUpBur.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\EntreredCall.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ErorrShowing.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendAddList.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendBrick.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\MessageBrick.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\MoreUI.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\Partikals.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\SearchingFriend.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UsersBrick.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\App.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.cache
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.lref
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Octarine Core.exe.config
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Octarine Core.exe
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Octarine Core.pdb
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\CommunityToolkit.HighPerformance.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\GlobalHotKey.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Client.dll
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Microsoft.AspNetCore.Http.Connections.Common.dll
@@ -305,6 +283,32 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\Syste
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Threading.Channels.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Debug\System.ValueTuple.xml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.csproj.AssemblyReference.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Colors.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Ojects.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\Texts.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\IconsSVG.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\Auth.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\CheckResponse.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\OctarineWindow.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\AddUserToRoomBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ChatUpBur.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\EntreredCall.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ErorrShowing.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendAddList.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\HotKeyBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\MessageBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\MoreUI.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\Partikals.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\SearchingFriend.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UserCalItem.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UsersBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\App.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core_Content.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.cache
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core_MarkupCompile.lref
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\App.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\Auth.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Autorisation\CheckResponse.baml
@@ -315,10 +319,12 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resou
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\ErorrShowing.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendAddList.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\FriendBrick.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\HotKeyBrick.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\MessageBrick.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\MoreUI.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\Partikals.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\SearchingFriend.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UserCalItem.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UsersBrick.baml
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.g.resources
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine_Core.Properties.Resources.resources
@@ -327,6 +333,3 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octar
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine.E0A7653C.Up2Date
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.exe
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core.pdb
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UserCalItem.g.cs
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Resource\UsersIntefeces\UserCalItem.baml
-C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Debug\Octarine Core_Content.g.cs

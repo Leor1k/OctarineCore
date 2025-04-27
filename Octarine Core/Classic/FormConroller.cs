@@ -6,9 +6,12 @@ namespace Octarine_Core.Classic
     internal class FormConroller
     {
         private Grid _mainGrid;
-        public FormConroller (Grid mainGrid)
+        private Grid _settingGrid;
+
+        public FormConroller (Grid mainGrid, Grid SettingGrid)
         {
             _mainGrid = mainGrid;
+            _settingGrid = SettingGrid;
         }
         public void SwitchOctarineBorder( Border selectedBorder)
         {
@@ -24,6 +27,17 @@ namespace Octarine_Core.Classic
                 }
             }
             selectedBorder.Visibility = Visibility.Visible;
+        }
+        public void SwitchSettingGrid (Grid selectedGrid)
+        {
+            foreach (Grid grid in _settingGrid.Children)
+            {
+                if (grid.GetType() == typeof(Grid))
+                {
+                    grid.Visibility = Visibility.Hidden;
+                }
+            }
+            selectedGrid.Visibility = Visibility.Visible;
         }
     }
 }

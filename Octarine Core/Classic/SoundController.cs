@@ -21,7 +21,8 @@ namespace Octarine_Core.Classic
 
             if (!Directory.Exists(soundDir))
             {
-                MessageBox.Show($"Папка со звуками не найдена: {soundDir}");
+                ErrorAutUIController errorAutUIController = new ErrorAutUIController();
+                errorAutUIController.ShowUserError($"Папка со звуками не найдена: {soundDir}", Properties.Settings.Default.BorderForEror, false);
                 return;
             }
 
@@ -33,7 +34,8 @@ namespace Octarine_Core.Classic
 
             if (!File.Exists(ringtonePath))
             {
-                MessageBox.Show($"Файл рингтона не найден: {ringtonePath}");
+                ErrorAutUIController errorAutUIController = new ErrorAutUIController();
+                errorAutUIController.ShowUserError($"Файл рингтона не найден: {ringtonePath}", Properties.Settings.Default.BorderForEror, false);
                 return;
             }
 

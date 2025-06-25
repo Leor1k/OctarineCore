@@ -33,7 +33,14 @@ namespace Octarine_Core.Autorisation
             LoadProperiries();
             formc.SwitchSettingGrid(AccauntGrid);
         }
-
+        public void MuteMicro()
+        {
+            _callingController.MuteMicro();
+        }
+        public void MuteVoice()
+        {
+            _callingController.MuteAllCall();
+        }
         private void LoadControllers ()
         {
             FormConroller ff = new FormConroller(MainGrid, SettingsGrid);

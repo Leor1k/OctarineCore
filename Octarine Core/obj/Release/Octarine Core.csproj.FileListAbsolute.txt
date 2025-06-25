@@ -162,3 +162,13 @@ C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Oct
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Octarine.E0A7653C.Up2Date
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Octarine Core.exe
 C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Octarine Core.pdb
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Release\GlobalHotKey.dll
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Resource\UsersIntefeces\HotKeyBrick.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Resource\UsersIntefeces\UserCalItem.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Octarine Core_Content.g.cs
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Resource\UsersIntefeces\HotKeyBrick.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Resource\UsersIntefeces\UserCalItem.baml
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Release\Octarine Core.exe.manifest
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\bin\Release\Octarine Core.application
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Octarine Core.exe.manifest
+C:\Users\ProrokSamBoy\Desktop\Testics\OctarineCore\Octarine Core\obj\Release\Octarine Core.application

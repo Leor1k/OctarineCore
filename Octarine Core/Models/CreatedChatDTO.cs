@@ -20,7 +20,6 @@ namespace Octarine_Core.Models
         public int CreatorId { get; set; }
         public void ShowChat()
         {
-            MessageBox.Show($"Чат: {ChatId} и создал его: {CreatorId} с именем:");
         }
     }
     public class GroupChat

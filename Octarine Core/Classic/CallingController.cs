@@ -83,7 +83,6 @@ namespace Octarine_Core.Classic
                 foreach (var item in listID)
                 {
                     optimalChat.LoadUserDataInCall(Convert.ToInt32(item));
-                    MessageBox.Show($"Info {item}");
                 }
             });
 
@@ -263,7 +262,6 @@ namespace Octarine_Core.Classic
                 ///ToDo тут насроку надо сделать
                 _voiceReceiver.volumeReciver = Properties.Settings.Default.ReciverVolume;
                 _voiceClient.volumeClient = Properties.Settings.Default.ClientVolume;
-
             }
             else
             {

@@ -38,7 +38,6 @@ namespace Octarine_Core.Resource.UsersIntefeces
                 {
                     if (DefaltKey.Content == "M")
                     {
-                        MessageBox.Show(e.Key.ToString() + " Для микро");
                         if (e.Key.ToString() != Properties.Settings.Default.MuteAllVoiceHotKey)
                         {
                             ChangeHotKey = false;
@@ -50,7 +49,6 @@ namespace Octarine_Core.Resource.UsersIntefeces
                     }
                     else if (DefaltKey.Content == "N")
                     {
-                        MessageBox.Show(e.Key.ToString() + " Для Звука");
                         if (e.Key.ToString() != Properties.Settings.Default.MuteMicroHotKey)
                         {
                             ChangeHotKey = false;

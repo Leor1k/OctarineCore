@@ -36,8 +36,8 @@ namespace Octarine_Core.Classic
             var muteAllStr = Properties.Settings.Default.MuteAllVoiceHotKey;
             if (!string.IsNullOrEmpty(muteAllStr))
             {
-                _muteMicHotKey = HotKeyParser.Parse(muteAllStr);
-                _hotKeyManager.Register(_muteMicHotKey);
+                _muteAllHotKey = HotKeyParser.Parse(muteAllStr);
+                _hotKeyManager.Register(_muteAllHotKey);
                 HotKeyBrick brik = new HotKeyBrick("Выключить/включить звук в звонке", "N", Properties.Settings.Default.MuteAllVoiceHotKey, this);
                 _octarine.HotKeyStack.Children.Add(brik);
             }
@@ -49,11 +49,11 @@ namespace Octarine_Core.Classic
             {
                 if (e.HotKey.Equals(_muteMicHotKey))
                 {
-                    MuteMicrophone();
+                    _octarine.MuteMicro();
                 }
                 if (e.HotKey.Equals(_muteAllHotKey))
                 {
-                    MuteAllVoice();
+                    _octarine.MuteVoice();
                 }
             });
         }
@@ -77,14 +77,19 @@ namespace Octarine_Core.Classic
                 _hotKeyManager.Unregister(_muteAllHotKey);
             }
             _muteAllHotKey = HotKeyParser.Parse(hotkeyStr);
-            _hotKeyManager.Register(_muteAllHotKey);
+            try
+            {
+                _hotKeyManager.Register(_muteAllHotKey);
+            }
+            catch
+            {
+
+            }
+            
 
             Properties.Settings.Default.MuteAllVoiceHotKey = hotkeyStr;
             Properties.Settings.Default.Save();
         }
-        public void MuteMicrophone() => MessageBox.Show("Microphone muted!");
-        public void MuteAllVoice() => MessageBox.Show("All voices muted!");
-        public void TestButton() => MessageBox.Show("Test button pressed!");
 
         public void Dispose()
         {
